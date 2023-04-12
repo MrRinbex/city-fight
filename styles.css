@@ -1,5 +1,5 @@
 * {
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 body {
   margin: 0;
@@ -13,6 +13,11 @@ body {
 .container {
   position: relative;
 }
+canvas {
+  background: url(./image/background.jpg);
+  background-size: cover;
+  height: 80%;
+}
 
 .score-bar {
   position: absolute;
@@ -25,6 +30,9 @@ body {
 }
 
 .timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: yellow;
   width: 10%;
   height: 70px;
@@ -57,6 +65,18 @@ body {
 #enemyHealth {
   position: absolute;
   background: red;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#notification {
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
   top: 0;
   right: 0;
   bottom: 0;

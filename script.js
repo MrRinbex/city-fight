@@ -1,12 +1,17 @@
 const canvas = document.querySelector("canvas");
 const enemyHealth = document.querySelector("#enemyHealth");
 const playerHealth = document.querySelector("#playerHealth");
+const timer = document.querySelector("#timer");
+const notification = document.querySelector("#notification");
 const context = canvas.getContext("2d");
 
 canvas.width = 1024;
 canvas.height = 576;
 
 context.fillRect(0, 0, canvas.width, canvas.height);
+function clearCanvas() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+}
 
 const gravity = 0.6;
 
@@ -103,6 +108,35 @@ const enemy = new SpriteObject({
   },
 });
 
+// timer function with display text
+let timerCount = 50;
+const decreaseTimer = () => {
+  if (timerCount > 0) {
+    setTimeout(decreaseTimer, 1000);
+    timerCount--;
+    timer.innerHTML = timerCount;
+  }
+  if (player.health === enemy.health && timerCount === 0) {
+    notification.innerHTML = "Tie Game";
+    notification.style.display = "flex";
+  } else if (
+    (player.health > enemy.health && timerCount === 0) ||
+    enemy.health <= 0
+  ) {
+    notification.innerHTML = "Blue Win";
+    notification.style.display = "flex";
+    timerCount = 0;
+  } else if (
+    (player.health < enemy.health && timerCount === 0) ||
+    player.health <= 0
+  ) {
+    notification.innerHTML = "Red Win";
+    notification.style.display = "flex";
+    timerCount = 0;
+  }
+};
+decreaseTimer();
+
 const keys = {
   d: { pressed: false },
   q: { pressed: false },
@@ -123,22 +157,41 @@ function animate() {
   window.requestAnimationFrame(animate);
   context.fillStyle = "black";
   context.fillRect(0, 0, canvas.width, canvas.height);
+  clearCanvas();
   player.update();
   enemy.update();
 
   // player Move
   player.velocity.x = 0;
-  if (keys.d.pressed && player.lastKey === "d") {
+
+  if (
+    keys.d.pressed &&
+    player.lastKey === "d" &&
+    player.position.x + player.width <= canvas.width
+  ) {
     player.velocity.x = 6;
-  } else if (keys.q.pressed && player.lastKey === "q") {
+  } else if (
+    keys.q.pressed &&
+    player.lastKey === "q" &&
+    player.position.x >= 0
+  ) {
     player.velocity.x = -6;
   }
 
   //enemy move
   enemy.velocity.x = 0;
-  if (keys.ArrowRight.pressed && enemy.lastKey === "ArrowRight") {
+
+  if (
+    keys.ArrowRight.pressed &&
+    enemy.lastKey === "ArrowRight" &&
+    enemy.position.x + enemy.width <= canvas.width
+  ) {
     enemy.velocity.x = 6;
-  } else if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft") {
+  } else if (
+    keys.ArrowLeft.pressed &&
+    enemy.lastKey === "ArrowLeft" &&
+    enemy.position.x >= 0
+  ) {
     enemy.velocity.x = -6;
   }
 
@@ -148,7 +201,6 @@ function animate() {
     player.isAttacking
   ) {
     player.isAttacking = false;
-    console.log("attack player");
     enemy.health -= 10;
     enemyHealth.style.width = enemy.health + "%";
   }
@@ -157,80 +209,88 @@ function animate() {
     enemy.isAttacking
   ) {
     enemy.isAttacking = false;
-    console.log("attack enemy");
     player.health -= 10;
     playerHealth.style.width = player.health + "%";
   }
+
+  // change offset direction
+  if (enemy.position.x < player.position.x) {
+    enemy.attackBox.offset.x = 0;
+  } else enemy.attackBox.offset.x = -50;
+
+  if (enemy.position.x < player.position.x) {
+    player.attackBox.offset.x = -50;
+  } else player.attackBox.offset.x = 0;
 }
 animate();
-
 window.addEventListener("keydown", (e) => {
-  // console.log(e.key);
-  switch (e.key) {
-    // player keys
-    case "d":
-      keys.d.pressed = true;
-      player.lastKey = "d";
-      break;
-    case "q":
-      keys.q.pressed = true;
-      player.lastKey = "q";
-      break;
-    case "z":
-      player.velocity.y = -20;
-      break;
-    case "s":
-      player.isAttacking = true;
-      break;
+  if (player.health && enemy.health && timerCount > 0) {
+    switch (e.key) {
+      // player keys
+      case "d":
+        keys.d.pressed = true;
+        player.lastKey = "d";
+        break;
+      case "q":
+        keys.q.pressed = true;
+        player.lastKey = "q";
+        break;
+      case "z":
+        player.velocity.y = -20;
+        break;
+      case "s":
+        player.isAttacking = true;
+        break;
 
-    // enemy keys
-    case "ArrowRight":
-      keys.ArrowRight.pressed = true;
-      enemy.lastKey = "ArrowRight";
-      break;
-    case "ArrowLeft":
-      keys.ArrowLeft.pressed = true;
-      enemy.lastKey = "ArrowLeft";
-      break;
-    case "ArrowUp":
-      enemy.velocity.y = -20;
-      break;
-    case "ArrowDown":
-      enemy.isAttacking = true;
-      break;
+      // enemy keys
+      case "ArrowRight":
+        keys.ArrowRight.pressed = true;
+        enemy.lastKey = "ArrowRight";
+        break;
+      case "ArrowLeft":
+        keys.ArrowLeft.pressed = true;
+        enemy.lastKey = "ArrowLeft";
+        break;
+      case "ArrowUp":
+        enemy.velocity.y = -20;
+        break;
+      case "ArrowDown":
+        enemy.isAttacking = true;
+        break;
 
-    default:
-      break;
+      default:
+        break;
+    }
   }
-  // console.log(e.key);
 });
 
 window.addEventListener("keyup", (e) => {
-  switch (e.key) {
-    // player keys
-    case "d":
-      keys.d.pressed = false;
-      break;
-    case "q":
-      keys.q.pressed = false;
-      break;
-    case "s":
-      player.isAttacking = false;
-      break;
+  if (player.health && enemy.health) {
+    switch (e.key) {
+      // player keys
+      case "d":
+        keys.d.pressed = false;
+        break;
+      case "q":
+        keys.q.pressed = false;
+        break;
+      case "s":
+        player.isAttacking = false;
+        break;
 
-    // enemy keys
-    case "ArrowRight":
-      keys.ArrowRight.pressed = false;
-      break;
-    case "ArrowLeft":
-      keys.ArrowLeft.pressed = false;
-      break;
-    case "ArrowDown":
-      enemy.isAttacking = false;
-      break;
+      // enemy keys
+      case "ArrowRight":
+        keys.ArrowRight.pressed = false;
+        break;
+      case "ArrowLeft":
+        keys.ArrowLeft.pressed = false;
+        break;
+      case "ArrowDown":
+        enemy.isAttacking = false;
+        break;
 
-    default:
-      break;
+      default:
+        break;
+    }
   }
-  // console.log(e.key);
 });
