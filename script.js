@@ -1,8 +1,10 @@
 const canvas = document.querySelector("canvas");
+const enemyHealth = document.querySelector("#enemyHealth");
+const playerHealth = document.querySelector("#playerHealth");
 const context = canvas.getContext("2d");
 
-canvas.width = 1920;
-canvas.height = 877;
+canvas.width = 1024;
+canvas.height = 576;
 
 context.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -26,6 +28,7 @@ class SpriteObject {
     };
     this.color = color;
     this.isAttacking;
+    this.health = 100;
   }
 
   draw() {
@@ -146,6 +149,8 @@ function animate() {
   ) {
     player.isAttacking = false;
     console.log("attack player");
+    enemy.health -= 10;
+    enemyHealth.style.width = enemy.health + "%";
   }
   if (
     playerEnemyCollision({ body1: enemy, body2: player }) &&
@@ -153,6 +158,8 @@ function animate() {
   ) {
     enemy.isAttacking = false;
     console.log("attack enemy");
+    player.health -= 10;
+    playerHealth.style.width = player.health + "%";
   }
 }
 animate();

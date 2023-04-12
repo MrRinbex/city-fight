@@ -1,2 +1,26 @@
-<canvas></canvas>
-<script src="script.js"></script>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Street Fighter</title>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="score-bar">
+      <!--player-health-->
+      <div class="player-health">
+        <div style="height: 30px"></div>
+        <div id="playerHealth"></div>
+      </div>
+      <!--timer-->
+      <div class="timer"></div>
+      <!--enemy-health-->
+      <div class="enemy-health">
+        <div style="height: 30px"></div>
+        <div id="enemyHealth"></div>
+      </div>
+    </div>
+    <canvas></canvas>
+  </div>
+  <script src="script.js"></script>
+</body>

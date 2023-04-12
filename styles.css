@@ -1,0 +1,64 @@
+* {
+  border: 1px solid green;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  position: relative;
+}
+
+.score-bar {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 3vh;
+}
+
+.timer {
+  background-color: yellow;
+  width: 10%;
+  height: 70px;
+}
+.player-health {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  background-color: gainsboro;
+  width: 40%;
+  height: 30px;
+}
+
+#playerHealth {
+  position: absolute;
+  background: blue;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.enemy-health {
+  position: relative;
+  background-color: gainsboro;
+  width: 40%;
+  height: 30px;
+}
+
+#enemyHealth {
+  position: absolute;
+  background: red;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
