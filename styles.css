@@ -14,9 +14,25 @@ body {
   position: relative;
 }
 canvas {
-  background: url(./image/background.jpg);
+  background: url(./image/background/City1.png);
   background-size: cover;
-  height: 80%;
+  height: 75%;
+  background-repeat: repeat;
+  animation: scroll 200s linear infinite;
+}
+@keyframes scroll {
+  100% {
+    background-position: 10000px 1px;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .score-bar {

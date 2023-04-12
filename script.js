@@ -12,72 +12,12 @@ context.fillRect(0, 0, canvas.width, canvas.height);
 function clearCanvas() {
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
-
-const gravity = 0.6;
-
-class SpriteObject {
-  constructor({ position, velocity, color, offset }) {
-    this.position = position;
-    this.velocity = velocity;
-    this.width = 50;
-    this.height = 150;
-    this.lastKey;
-    this.attackBox = {
-      position: {
-        x: this.position.x,
-        y: this.position.y,
-      },
-      offset,
-      width: 100,
-      height: 25,
-    };
-    this.color = color;
-    this.isAttacking;
-    this.health = 100;
-  }
-
-  draw() {
-    context.fillStyle = this.color;
-    context.fillRect(this.position.x, this.position.y, this.width, this.height);
-
-    // attack box
-    if (this.isAttacking) {
-      context.fillStyle = "white";
-      context.fillRect(
-        this.attackBox.position.x,
-        this.attackBox.position.y,
-        this.attackBox.width,
-        this.attackBox.height
-      );
-    }
-  }
-
-  update() {
-    this.draw();
-    this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
-    this.attackBox.position.y = this.position.y;
-    this.position.x += this.velocity.x;
-    this.position.y += this.velocity.y;
-
-    if (this.position.y + this.height + this.velocity.y >= canvas.height) {
-      this.velocity.y = 0;
-    } else {
-      this.velocity.y += gravity;
-    }
-  }
-
-  attack() {
-    this.isAttacking = true;
-    setTimeout(() => {
-      this.isAttacking = false;
-    }, 100);
-  }
-}
+const gravity = 0.1;
 
 // Player
-const player = new SpriteObject({
+const player = new Fighter({
   position: {
-    x: 300,
+    x: 100,
     y: 150,
   },
   velocity: {
@@ -89,10 +29,31 @@ const player = new SpriteObject({
     x: 0,
     y: 0,
   },
+  imageSrc: "./image/Golem/Golem_normal.png",
+  sprites: {
+    idle: {
+      imageSrc: "./image/Golem/Golem_normal.png",
+    },
+    walk: {
+      imageSrc: "./image//Golem/Golem_Walking.png",
+    },
+    jump: {
+      imageSrc: "./image/Golem/Golem_Jump_Loop.png",
+    },
+    fall: {
+      imageSrc: "./image/Golem/Golem_fall.png",
+    },
+    startAttack: {
+      imageSrc: "./image/Golem/Golem_start_Attacking_.png",
+    },
+    endAttack: {
+      imageSrc: "./image/Golem/Golem_end_Attacking.png",
+    },
+  },
 });
 
 // Enemy
-const enemy = new SpriteObject({
+const enemy = new Fighter({
   position: {
     x: 740,
     y: 150,
@@ -105,6 +66,27 @@ const enemy = new SpriteObject({
   offset: {
     x: -50,
     y: 0,
+  },
+  imageSrc: "./image/Minotaur/Minotaur_normal.png",
+  sprites: {
+    idle: {
+      imageSrc: "./image/Minotaur/Minotaur_normal.png",
+    },
+    walk: {
+      imageSrc: "./image/Minotaur/Minotaur_Walking.png",
+    },
+    jump: {
+      imageSrc: "./image/Minotaur/Minotaur_Jump_Loop.png",
+    },
+    fall: {
+      imageSrc: "./image/Minotaur/Minotaur_fall.png",
+    },
+    startAttack: {
+      imageSrc: "./image/Minotaur/Minotaur_start_Attacking.png",
+    },
+    endAttack: {
+      imageSrc: "./image/Minotaur/Minotaur_end_Attacking.png",
+    },
   },
 });
 
@@ -126,6 +108,7 @@ const decreaseTimer = () => {
     notification.innerHTML = "Blue Win";
     notification.style.display = "flex";
     timerCount = 0;
+    // canvas.style.animation = "fadeIn 1.5s ease forwards";
   } else if (
     (player.health < enemy.health && timerCount === 0) ||
     player.health <= 0
@@ -133,6 +116,7 @@ const decreaseTimer = () => {
     notification.innerHTML = "Red Win";
     notification.style.display = "flex";
     timerCount = 0;
+    // canvas.style.animation = "fadeIn 1.5s ease forwards";
   }
 };
 decreaseTimer();
@@ -140,8 +124,10 @@ decreaseTimer();
 const keys = {
   d: { pressed: false },
   q: { pressed: false },
+  s: { pressed: false },
   ArrowRight: { pressed: false },
   ArrowLeft: { pressed: false },
+  ArrowDown: { pressed: false },
 };
 
 function playerEnemyCollision({ body1, body2 }) {
@@ -163,45 +149,70 @@ function animate() {
 
   // player Move
   player.velocity.x = 0;
+  if (keys.s.pressed) {
+    player.image = player.sprites.startAttack.image;
+  } else {
+    player.image = player.sprites.idle.image;
+  }
 
   if (
     keys.d.pressed &&
     player.lastKey === "d" &&
     player.position.x + player.width <= canvas.width
   ) {
-    player.velocity.x = 6;
+    player.velocity.x = 1.5;
+    player.image = player.sprites.walk.image;
   } else if (
     keys.q.pressed &&
     player.lastKey === "q" &&
-    player.position.x >= 0
+    player.position.x >= 10
   ) {
-    player.velocity.x = -6;
+    player.velocity.x = -1.5;
+    player.image = player.sprites.walk.image;
+  }
+
+  if (player.velocity.y < 0) {
+    player.image = player.sprites.jump.image;
+  } else if (player.velocity.y > 0) {
+    player.image = player.sprites.fall.image;
   }
 
   //enemy move
   enemy.velocity.x = 0;
+  if (keys.ArrowDown.pressed) {
+    enemy.image = enemy.sprites.startAttack.image;
+  } else {
+    enemy.image = enemy.sprites.idle.image;
+  }
 
   if (
     keys.ArrowRight.pressed &&
     enemy.lastKey === "ArrowRight" &&
     enemy.position.x + enemy.width <= canvas.width
   ) {
-    enemy.velocity.x = 6;
+    enemy.velocity.x = 1.5;
+    enemy.image = enemy.sprites.walk.image;
   } else if (
     keys.ArrowLeft.pressed &&
     enemy.lastKey === "ArrowLeft" &&
     enemy.position.x >= 0
   ) {
-    enemy.velocity.x = -6;
+    enemy.velocity.x = -1.5;
+    enemy.image = enemy.sprites.walk.image;
   }
 
+  if (enemy.velocity.y < 0) {
+    enemy.image = enemy.sprites.jump.image;
+  } else if (enemy.velocity.y > 0) {
+    enemy.image = enemy.sprites.fall.image;
+  }
   //attack box collision
   if (
     playerEnemyCollision({ body1: player, body2: enemy }) &&
     player.isAttacking
   ) {
     player.isAttacking = false;
-    enemy.health -= 10;
+    enemy.health -= 1;
     enemyHealth.style.width = enemy.health + "%";
   }
   if (
@@ -209,7 +220,7 @@ function animate() {
     enemy.isAttacking
   ) {
     enemy.isAttacking = false;
-    player.health -= 10;
+    player.health -= 1;
     playerHealth.style.width = player.health + "%";
   }
 
@@ -223,6 +234,8 @@ function animate() {
   } else player.attackBox.offset.x = 0;
 }
 animate();
+
+// keys event
 window.addEventListener("keydown", (e) => {
   if (player.health && enemy.health && timerCount > 0) {
     switch (e.key) {
@@ -236,10 +249,13 @@ window.addEventListener("keydown", (e) => {
         player.lastKey = "q";
         break;
       case "z":
-        player.velocity.y = -20;
+        if (player.velocity.y === 0) {
+          player.velocity.y = -7;
+        }
         break;
       case "s":
         player.isAttacking = true;
+        keys.s.pressed = true;
         break;
 
       // enemy keys
@@ -252,10 +268,13 @@ window.addEventListener("keydown", (e) => {
         enemy.lastKey = "ArrowLeft";
         break;
       case "ArrowUp":
-        enemy.velocity.y = -20;
+        if (enemy.velocity.y === 0) {
+          enemy.velocity.y = -7;
+        }
         break;
       case "ArrowDown":
         enemy.isAttacking = true;
+        keys.ArrowDown.pressed = true;
         break;
 
       default:
@@ -276,6 +295,9 @@ window.addEventListener("keyup", (e) => {
         break;
       case "s":
         player.isAttacking = false;
+        setTimeout(() => {
+          keys.s.pressed = false;
+        }, 250);
         break;
 
       // enemy keys
@@ -287,6 +309,9 @@ window.addEventListener("keyup", (e) => {
         break;
       case "ArrowDown":
         enemy.isAttacking = false;
+        setTimeout(() => {
+          keys.ArrowDown.pressed = false;
+        }, 250);
         break;
 
       default:
