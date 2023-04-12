@@ -27,6 +27,7 @@ class SpriteObject {
     this.color = color;
     this.isAttacking;
   }
+
   draw() {
     context.fillStyle = this.color;
     context.fillRect(this.position.x, this.position.y, this.width, this.height);
@@ -42,6 +43,7 @@ class SpriteObject {
       );
     }
   }
+
   update() {
     this.draw();
     this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
@@ -64,10 +66,11 @@ class SpriteObject {
   }
 }
 
+// Player
 const player = new SpriteObject({
   position: {
-    x: 0,
-    y: 0,
+    x: 300,
+    y: 150,
   },
   velocity: {
     x: 0,
@@ -80,10 +83,11 @@ const player = new SpriteObject({
   },
 });
 
+// Enemy
 const enemy = new SpriteObject({
   position: {
-    x: 440,
-    y: 550,
+    x: 740,
+    y: 150,
   },
   velocity: {
     x: 0,
@@ -102,6 +106,15 @@ const keys = {
   ArrowRight: { pressed: false },
   ArrowLeft: { pressed: false },
 };
+
+function playerEnemyCollision({ body1, body2 }) {
+  return (
+    body1.attackBox.position.x + body1.attackBox.width >= body2.position.x &&
+    body1.attackBox.position.x <= body2.position.x + body2.width &&
+    body1.attackBox.position.y + body1.attackBox.height >= body2.position.y &&
+    body1.attackBox.position.y <= body2.position.y + body2.height
+  );
+}
 
 function animate() {
   window.requestAnimationFrame(animate);
@@ -128,20 +141,24 @@ function animate() {
 
   //attack box collision
   if (
-    player.attackBox.position.x + player.attackBox.width >= enemy.position.x &&
-    player.attackBox.position.x <= enemy.position.x + enemy.width &&
-    player.attackBox.position.y + player.attackBox.height >= enemy.position.y &&
-    player.attackBox.position.y <= enemy.position.y + enemy.height &&
+    playerEnemyCollision({ body1: player, body2: enemy }) &&
     player.isAttacking
   ) {
     player.isAttacking = false;
-    console.log("contact");
+    console.log("attack player");
+  }
+  if (
+    playerEnemyCollision({ body1: enemy, body2: player }) &&
+    enemy.isAttacking
+  ) {
+    enemy.isAttacking = false;
+    console.log("attack enemy");
   }
 }
 animate();
 
 window.addEventListener("keydown", (e) => {
-  console.log(e.key);
+  // console.log(e.key);
   switch (e.key) {
     // player keys
     case "d":
@@ -155,7 +172,7 @@ window.addEventListener("keydown", (e) => {
     case "z":
       player.velocity.y = -20;
       break;
-    case " ":
+    case "s":
       player.isAttacking = true;
       break;
 
@@ -178,7 +195,7 @@ window.addEventListener("keydown", (e) => {
     default:
       break;
   }
-  console.log(e.key);
+  // console.log(e.key);
 });
 
 window.addEventListener("keyup", (e) => {
@@ -190,7 +207,7 @@ window.addEventListener("keyup", (e) => {
     case "q":
       keys.q.pressed = false;
       break;
-    case " ":
+    case "s":
       player.isAttacking = false;
       break;
 
@@ -208,5 +225,5 @@ window.addEventListener("keyup", (e) => {
     default:
       break;
   }
-  console.log(e.key);
+  // console.log(e.key);
 });
