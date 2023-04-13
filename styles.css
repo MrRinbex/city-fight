@@ -33,6 +33,9 @@ canvas {
   to {
     opacity: 1;
   }
+  to {
+    opacity: none;
+  }
 }
 
 .score-bar {

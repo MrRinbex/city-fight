@@ -151,8 +151,11 @@ function playerEnemyCollision({ body1, body2 }) {
 
 function animate() {
   window.requestAnimationFrame(animate);
+
+  // game over
   if (gameOver) {
-    canvas.style.animation = "fadeIn 1.5s ease forwards";
+    canvas.style.animation = "none";
+    canvas.style.background = "url('./image/background/background.jpg')";
   }
   context.fillStyle = "black";
   context.fillRect(0, 0, canvas.width, canvas.height);
@@ -247,26 +250,28 @@ function animate() {
   // change offset direction
   if (enemy.position.x < player.position.x) {
     enemy.attackBox.offset.x = 0;
-  } else enemy.attackBox.offset.x = -50;
-
-  if (enemy.position.x < player.position.x) {
     player.attackBox.offset.x = -50;
-  } else player.attackBox.offset.x = 0;
+  } else {
+    enemy.attackBox.offset.x = -50;
+    player.attackBox.offset.x = 0;
+  }
 }
 animate();
 
 // keys event
 window.addEventListener("keydown", (e) => {
-  if (player.health && enemy.health && timerCount > 0) {
+  if (!gameOver) {
     switch (e.key) {
       // player keys
       case "d":
         keys.d.pressed = true;
         player.lastKey = "d";
+        player.dirX = 1;
         break;
       case "q":
         keys.q.pressed = true;
         player.lastKey = "q";
+        player.dirX = -1;
         break;
       case "z":
         if (player.velocity.y === 0) {
@@ -282,10 +287,12 @@ window.addEventListener("keydown", (e) => {
       case "ArrowRight":
         keys.ArrowRight.pressed = true;
         enemy.lastKey = "ArrowRight";
+        enemy.dirX = 1;
         break;
       case "ArrowLeft":
         keys.ArrowLeft.pressed = true;
         enemy.lastKey = "ArrowLeft";
+        enemy.dirX = -1;
         break;
       case "ArrowUp":
         if (enemy.velocity.y === 0) {

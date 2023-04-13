@@ -7,6 +7,7 @@ class Fighter {
     this.image.src = imageSrc;
     this.width = 155;
     this.height = 175;
+    this.dirX = 1;
 
     //sprites images
     this.sprites = sprites;
@@ -31,7 +32,20 @@ class Fighter {
   }
 
   draw() {
-    context.drawImage(this.image, this.position.x, this.position.y);
+    context.save();
+    context.translate(
+      this.position.x + this.width / 2,
+      this.position.y + this.height / 2
+    );
+    context.scale(this.dirX, 1);
+    context.drawImage(
+      this.image,
+      -this.width / 2,
+      -this.height / 2,
+      this.width,
+      this.height
+    );
+    context.restore();
   }
 
   update() {
