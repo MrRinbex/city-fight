@@ -13,6 +13,7 @@ function clearCanvas() {
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
 const gravity = 0.1;
+let gameOver = false;
 
 // Player
 const player = new Fighter({
@@ -48,6 +49,9 @@ const player = new Fighter({
     },
     endAttack: {
       imageSrc: "./image/Golem/Golem_end_Attacking.png",
+    },
+    death: {
+      imageSrc: "./image/Golem/Golem_FullDying.png",
     },
   },
 });
@@ -87,6 +91,9 @@ const enemy = new Fighter({
     endAttack: {
       imageSrc: "./image/Minotaur/Minotaur_end_Attacking.png",
     },
+    death: {
+      imageSrc: "./image/Minotaur/Minotaur_FullDying.png",
+    },
   },
 });
 
@@ -101,6 +108,7 @@ const decreaseTimer = () => {
   if (player.health === enemy.health && timerCount === 0) {
     notification.innerHTML = "Tie Game";
     notification.style.display = "flex";
+    gameOver = true;
   } else if (
     (player.health > enemy.health && timerCount === 0) ||
     enemy.health <= 0
@@ -108,6 +116,7 @@ const decreaseTimer = () => {
     notification.innerHTML = "Blue Win";
     notification.style.display = "flex";
     timerCount = 0;
+    gameOver = true;
     // canvas.style.animation = "fadeIn 1.5s ease forwards";
   } else if (
     (player.health < enemy.health && timerCount === 0) ||
@@ -116,6 +125,7 @@ const decreaseTimer = () => {
     notification.innerHTML = "Red Win";
     notification.style.display = "flex";
     timerCount = 0;
+    gameOver = true;
     // canvas.style.animation = "fadeIn 1.5s ease forwards";
   }
 };
@@ -141,6 +151,9 @@ function playerEnemyCollision({ body1, body2 }) {
 
 function animate() {
   window.requestAnimationFrame(animate);
+  if (gameOver) {
+    canvas.style.animation = "fadeIn 1.5s ease forwards";
+  }
   context.fillStyle = "black";
   context.fillRect(0, 0, canvas.width, canvas.height);
   clearCanvas();
@@ -222,6 +235,13 @@ function animate() {
     enemy.isAttacking = false;
     player.health -= 1;
     playerHealth.style.width = player.health + "%";
+  }
+
+  // Game over
+  if (gameOver && enemy.health < player.health) {
+    enemy.image = enemy.sprites.death.image;
+  } else if (gameOver && enemy.health > player.health) {
+    player.image = player.sprites.death.image;
   }
 
   // change offset direction
