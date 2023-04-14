@@ -12,8 +12,11 @@ context.fillRect(0, 0, canvas.width, canvas.height);
 function clearCanvas() {
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
-const gravity = 0.1;
 let gameOver = false;
+
+// gravity effect
+let gravity = 0.002;
+setTimeout(() => (gravity = 0.1), 2000);
 
 // Player
 const player = new Fighter({
@@ -30,6 +33,7 @@ const player = new Fighter({
     x: 0,
     y: 0,
   },
+  dirX: 1,
   imageSrc: "./image/Golem/Golem_normal.png",
   sprites: {
     idle: {
@@ -71,6 +75,7 @@ const enemy = new Fighter({
     x: -50,
     y: 0,
   },
+  dirX: -1,
   imageSrc: "./image/Minotaur/Minotaur_normal.png",
   sprites: {
     idle: {
