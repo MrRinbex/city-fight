@@ -13,6 +13,7 @@ function clearCanvas() {
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
 let gameOver = false;
+let startEffect = true;
 
 // gravity effect
 let gravity = 0.002;
@@ -57,6 +58,9 @@ const player = new Fighter({
     death: {
       imageSrc: "./image/Golem/Golem_FullDying.png",
     },
+    startEffect: {
+      imageSrc: "./image/start-effect/Explosion_green.png",
+    },
   },
 });
 
@@ -98,6 +102,9 @@ const enemy = new Fighter({
     },
     death: {
       imageSrc: "./image/Minotaur/Minotaur_FullDying.png",
+    },
+    startEffect: {
+      imageSrc: "./image/start-effect/Explosion_white.png",
     },
   },
 });
@@ -168,9 +175,14 @@ function animate() {
   player.update();
   enemy.update();
 
+  // start effect
+  setTimeout(() => (startEffect = false), 2000);
+
   // player Move
   player.velocity.x = 0;
-  if (keys.s.pressed) {
+  if (startEffect) {
+    player.image = player.sprites.startEffect.image;
+  } else if (keys.s.pressed) {
     player.image = player.sprites.startAttack.image;
   } else {
     player.image = player.sprites.idle.image;
@@ -192,15 +204,17 @@ function animate() {
     player.image = player.sprites.walk.image;
   }
 
-  if (player.velocity.y < 0) {
+  if (player.velocity.y < 0 && !startEffect) {
     player.image = player.sprites.jump.image;
-  } else if (player.velocity.y > 0) {
+  } else if (player.velocity.y > 0 && !startEffect) {
     player.image = player.sprites.fall.image;
   }
 
   //enemy move
   enemy.velocity.x = 0;
-  if (keys.ArrowDown.pressed) {
+  if (startEffect) {
+    enemy.image = enemy.sprites.startEffect.image;
+  } else if (keys.ArrowDown.pressed) {
     enemy.image = enemy.sprites.startAttack.image;
   } else {
     enemy.image = enemy.sprites.idle.image;
@@ -222,9 +236,9 @@ function animate() {
     enemy.image = enemy.sprites.walk.image;
   }
 
-  if (enemy.velocity.y < 0) {
+  if (enemy.velocity.y < 0 && !startEffect) {
     enemy.image = enemy.sprites.jump.image;
-  } else if (enemy.velocity.y > 0) {
+  } else if (enemy.velocity.y > 0 && !startEffect) {
     enemy.image = enemy.sprites.fall.image;
   }
   //attack box collision
@@ -265,7 +279,7 @@ animate();
 
 // keys event
 window.addEventListener("keydown", (e) => {
-  if (!gameOver) {
+  if (!gameOver && !startEffect) {
     switch (e.key) {
       // player keys
       case "d":
