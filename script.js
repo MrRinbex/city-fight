@@ -76,7 +76,7 @@ const enemy = new Fighter({
   },
   color: "red",
   offset: {
-    x: -50,
+    x: 0,
     y: 0,
   },
   dirX: -1,
@@ -107,6 +107,25 @@ const enemy = new Fighter({
       imageSrc: "./image/start-effect/Explosion_white.png",
     },
   },
+});
+
+//Hits
+const playerHit = new Hits({
+  position: {
+    x: player.position.x,
+    y: player.position.y,
+  },
+  color: "green",
+  imageSrc: "./image/start-effect/Explosion_white.png",
+});
+
+const enemyHit = new Hits({
+  position: {
+    x: enemy.position.x,
+    y: enemy.position.y,
+  },
+  color: "red",
+  imageSrc: "./image/start-effect/Explosion_green.png",
 });
 
 // timer function with display text
@@ -153,12 +172,17 @@ const keys = {
 };
 
 function playerEnemyCollision({ body1, body2 }) {
-  return (
-    body1.attackBox.position.x + body1.attackBox.width >= body2.position.x &&
-    body1.attackBox.position.x <= body2.position.x + body2.width &&
-    body1.attackBox.position.y + body1.attackBox.height >= body2.position.y &&
-    body1.attackBox.position.y <= body2.position.y + body2.height
-  );
+  if (
+    (body1.position.x < body2.position.x && body1.dirX === 1) ||
+    (body1.position.x > body2.position.x && body1.dirX === -1)
+  ) {
+    return (
+      body1.attackBox.position.x + body1.attackBox.width >= body2.position.x &&
+      body1.attackBox.position.x <= body2.position.x + body2.width &&
+      body1.attackBox.position.y + body1.attackBox.height >= body2.position.y &&
+      body1.attackBox.position.y <= body2.position.y + body2.height
+    );
+  }
 }
 
 function animate() {
@@ -244,18 +268,26 @@ function animate() {
   //attack box collision
   if (
     playerEnemyCollision({ body1: player, body2: enemy }) &&
-    player.isAttacking
+    player.isAttacking &&
+    (player.dirX === 1 || player.dirX === -1)
   ) {
-    player.isAttacking = false;
-    enemy.health -= 1;
+    playerHit.update();
+    setTimeout(() => {
+      player.isAttacking = false;
+    }, 100);
+    enemy.health -= 0.05;
     enemyHealth.style.width = enemy.health + "%";
   }
   if (
     playerEnemyCollision({ body1: enemy, body2: player }) &&
-    enemy.isAttacking
+    enemy.isAttacking &&
+    (enemy.dirX === 1 || enemy.dirX === -1)
   ) {
-    enemy.isAttacking = false;
-    player.health -= 1;
+    enemyHit.update();
+    setTimeout(() => {
+      enemy.isAttacking = false;
+    }, 100);
+    player.health -= 0.05;
     playerHealth.style.width = player.health + "%";
   }
 
@@ -264,15 +296,6 @@ function animate() {
     enemy.image = enemy.sprites.death.image;
   } else if (gameOver && enemy.health > player.health) {
     player.image = player.sprites.death.image;
-  }
-
-  // change offset direction
-  if (enemy.position.x < player.position.x) {
-    enemy.attackBox.offset.x = 0;
-    player.attackBox.offset.x = -50;
-  } else {
-    enemy.attackBox.offset.x = -50;
-    player.attackBox.offset.x = 0;
   }
 }
 animate();
