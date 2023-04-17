@@ -9,33 +9,50 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: center;
+  background-color: black;
 }
+
 .container {
   position: relative;
+}
+
+.title {
+  height: 50px;
+  /* color: #fff; */
+  text-align: center;
+  font-size: 2.5em;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  animation: animate 7s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
 }
 canvas {
   margin-bottom: 5px;
   background: url(./image/background/City4.png);
+  border: 2px solid goldenrod;
   background-size: cover;
   height: 75%;
   background-repeat: repeat;
   animation: scroll 200s linear infinite;
 }
+
 @keyframes scroll {
   100% {
     background-position: 10000px 1px;
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-  to {
-    opacity: none;
   }
 }
 
@@ -53,17 +70,25 @@ canvas {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: yellow;
+  background-color: transparent;
   width: 10%;
   height: 70px;
+  border-radius: 30px 30px 30px 30px;
+  font-size: large;
+  font-weight: bold;
+  -webkit-text-stroke: 1.5px rgba(37, 37, 37, 0.5);
+  animation: blink 1s infinite;
+  -webkit-animation: blink 10s infinite;
 }
 .player-health {
   display: flex;
   justify-content: flex-end;
   position: relative;
-  background-color: gainsboro;
+  background-color: transparent;
   width: 40%;
   height: 30px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 30px 0px 0px 30px;
 }
 
 #playerHealth {
@@ -73,13 +98,16 @@ canvas {
   right: 0;
   bottom: 0;
   width: 100%;
+  border-radius: 30px 0px 0px 30px;
 }
 
 .enemy-health {
   position: relative;
-  background-color: gainsboro;
+  background-color: transparent;
   width: 40%;
   height: 30px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 0px 30px 30px 0px;
 }
 
 #enemyHealth {
@@ -89,6 +117,7 @@ canvas {
   right: 0;
   bottom: 0;
   left: 0;
+  border-radius: 0px 30px 30px 0px;
 }
 
 #notification {
@@ -154,8 +183,8 @@ canvas {
 @keyframes blink {
   20%,
   24%,
-  55% {
-    color: #111;
+  50% {
+    color: #fffcfc00;
     text-shadow: none;
   }
   0%,

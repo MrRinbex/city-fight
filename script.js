@@ -146,6 +146,7 @@ const decreaseTimer = () => {
   if (player.health === enemy.health && timerCount === 0) {
     notification.innerHTML = "Tie Game";
     notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
     gameOver = true;
   } else if (
     (player.health > enemy.health && timerCount === 0) ||
@@ -153,6 +154,7 @@ const decreaseTimer = () => {
   ) {
     notification.innerHTML = "Blue Win";
     notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
   } else if (
@@ -162,6 +164,7 @@ const decreaseTimer = () => {
     notification.innerHTML = "Red Win";
     notification.style.display = "flex";
     timerCount = 0;
+    timer.innerHTML = "Game Over";
     gameOver = true;
   }
 };
@@ -192,8 +195,6 @@ function playerEnemyCollision({ body1, body2 }) {
     );
   }
 }
-// if (gameStart && !gameOver) {
-// }
 
 function animate() {
   window.requestAnimationFrame(animate);
