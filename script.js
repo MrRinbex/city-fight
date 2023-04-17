@@ -3,6 +3,11 @@ const enemyHealth = document.querySelector("#enemyHealth");
 const playerHealth = document.querySelector("#playerHealth");
 const timer = document.querySelector("#timer");
 const notification = document.querySelector("#notification");
+const mapsContainer = document.querySelector(".maps-container");
+const city1 = document.querySelector("#city1");
+const city2 = document.querySelector("#city2");
+const city3 = document.querySelector("#city3");
+const city4 = document.querySelector("#city4");
 const context = canvas.getContext("2d");
 
 canvas.width = 1024;
@@ -12,6 +17,7 @@ context.fillRect(0, 0, canvas.width, canvas.height);
 function clearCanvas() {
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
+let gameStart = false;
 let gameOver = false;
 let startEffect = true;
 
@@ -188,7 +194,11 @@ function playerEnemyCollision({ body1, body2 }) {
 function animate() {
   window.requestAnimationFrame(animate);
 
-  // game over
+  // Game Start
+  if (gameStart) {
+    mapsContainer.style.display = "none";
+  }
+  // game Over
   if (gameOver) {
     canvas.style.animation = "none";
     canvas.style.background = "url('./image/background/background.jpg')";
@@ -387,4 +397,25 @@ window.addEventListener("keyup", (e) => {
         break;
     }
   }
+});
+
+city1.addEventListener("click", () => {
+  canvas.style.background = "url('./image/background/City1.png')";
+  canvas.style.backgroundSize = "cover";
+  gameStart = true;
+});
+city2.addEventListener("click", () => {
+  canvas.style.background = "url('./image/background/City2.png')";
+  canvas.style.backgroundSize = "cover";
+  gameStart = true;
+});
+city3.addEventListener("click", () => {
+  canvas.style.background = "url('./image/background/City3.png')";
+  canvas.style.backgroundSize = "cover";
+  gameStart = true;
+});
+city4.addEventListener("click", () => {
+  canvas.style.background = "url('./image/background/City4.png')";
+  canvas.style.backgroundSize = "cover";
+  gameStart = true;
 });

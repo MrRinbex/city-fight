@@ -14,6 +14,7 @@ body {
   position: relative;
 }
 canvas {
+  margin-bottom: 5px;
   background: url(./image/background/City4.png);
   background-size: cover;
   height: 75%;
@@ -100,4 +101,74 @@ canvas {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.maps-container {
+  height: 100px;
+  display: flex;
+}
+
+.maps {
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid goldenrod;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  color: blanchedalmond;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.maps div {
+  cursor: pointer;
+  -webkit-text-stroke: 1.5px rgba(37, 37, 37, 0.5);
+  /* transform: translate(-50%, -50%); */
+  /* z-index: 10; */
+  animation: blink 9s infinite;
+  -webkit-animation: blink 3s infinite;
+}
+
+#city1 {
+  background: url(./image/background/City1.png);
+  background-size: contain;
+}
+
+#city2 {
+  background: url(./image/background/City2.png);
+  background-size: contain;
+}
+
+#city3 {
+  background: url(./image/background/City3.png);
+  background-size: contain;
+}
+
+#city4 {
+  background: url(./image/background/City4.png);
+  background-size: contain;
+}
+
+@keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px #b91382, 0 0 15px #a50d72, 0 0 20px #581040,
+      0 0 40px #220318, 0 0 60px #9e8997, 0 0 10px blanchedalmond,
+      0 0 98px #b91382;
+    color: blanchedalmond;
+  }
 }
