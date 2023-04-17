@@ -135,12 +135,13 @@ const enemyHit = new Hits({
 });
 
 // timer function with display text
-let timerCount = 50;
+let timerCount = 60;
+let start = false;
 const decreaseTimer = () => {
-  if (timerCount > 0) {
-    setTimeout(decreaseTimer, 1000);
+  if (timerCount > 0 && gameStart) {
     timerCount--;
     timer.innerHTML = timerCount;
+    setTimeout(() => {}, 1000);
   }
   if (player.health === enemy.health && timerCount === 0) {
     notification.innerHTML = "Tie Game";
@@ -154,7 +155,6 @@ const decreaseTimer = () => {
     notification.style.display = "flex";
     timerCount = 0;
     gameOver = true;
-    // canvas.style.animation = "fadeIn 1.5s ease forwards";
   } else if (
     (player.health < enemy.health && timerCount === 0) ||
     player.health <= 0
@@ -163,10 +163,12 @@ const decreaseTimer = () => {
     notification.style.display = "flex";
     timerCount = 0;
     gameOver = true;
-    // canvas.style.animation = "fadeIn 1.5s ease forwards";
   }
 };
-decreaseTimer();
+
+setInterval(() => {
+  decreaseTimer();
+}, 1000);
 
 const keys = {
   d: { pressed: false },
@@ -190,27 +192,28 @@ function playerEnemyCollision({ body1, body2 }) {
     );
   }
 }
+// if (gameStart && !gameOver) {
+// }
 
 function animate() {
   window.requestAnimationFrame(animate);
 
   // Game Start
   if (gameStart) {
+    // start effect
+    setTimeout(() => (startEffect = false), 2000);
     mapsContainer.style.display = "none";
+    context.fillStyle = "black";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    clearCanvas();
+    player.update();
+    enemy.update();
   }
   // game Over
   if (gameOver) {
     canvas.style.animation = "none";
     canvas.style.background = "url('./image/background/background.jpg')";
   }
-  context.fillStyle = "black";
-  context.fillRect(0, 0, canvas.width, canvas.height);
-  clearCanvas();
-  player.update();
-  enemy.update();
-
-  // start effect
-  setTimeout(() => (startEffect = false), 2000);
 
   // player Move
   player.velocity.x = 0;
@@ -403,19 +406,23 @@ city1.addEventListener("click", () => {
   canvas.style.background = "url('./image/background/City1.png')";
   canvas.style.backgroundSize = "cover";
   gameStart = true;
+  start = true;
 });
 city2.addEventListener("click", () => {
   canvas.style.background = "url('./image/background/City2.png')";
   canvas.style.backgroundSize = "cover";
   gameStart = true;
+  start = true;
 });
 city3.addEventListener("click", () => {
   canvas.style.background = "url('./image/background/City3.png')";
   canvas.style.backgroundSize = "cover";
   gameStart = true;
+  start = true;
 });
 city4.addEventListener("click", () => {
   canvas.style.background = "url('./image/background/City4.png')";
   canvas.style.backgroundSize = "cover";
   gameStart = true;
+  start = true;
 });
