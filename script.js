@@ -1,6 +1,6 @@
 const canvas = document.querySelector("canvas");
-const enemyHealth = document.querySelector("#enemyHealth");
-const playerHealth = document.querySelector("#playerHealth");
+const minotaurHealth = document.querySelector("#minotaurHealth");
+const golemHealth = document.querySelector("#golemHealth");
 const timer = document.querySelector("#timer");
 const notification = document.querySelector("#notification");
 const mapsContainer = document.querySelector(".maps-container");
@@ -17,6 +17,7 @@ context.fillRect(0, 0, canvas.width, canvas.height);
 function clearCanvas() {
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
+
 let gameStart = false;
 let gameOver = false;
 let startEffect = true;
@@ -25,10 +26,10 @@ let startEffect = true;
 let gravity = 0.002;
 setTimeout(() => (gravity = 0.1), 2000);
 
-// Player
-const player = new Fighter({
+// golem
+const golem = new Fighter({
   position: {
-    x: 100,
+    x: (canvas.width * 20) / 100,
     y: 150,
   },
   velocity: {
@@ -70,10 +71,10 @@ const player = new Fighter({
   },
 });
 
-// Enemy
-const enemy = new Fighter({
+// minotaur
+const minotaur = new Fighter({
   position: {
-    x: 740,
+    x: (canvas.width * 70) / 100,
     y: 150,
   },
   velocity: {
@@ -116,19 +117,19 @@ const enemy = new Fighter({
 });
 
 //Hits
-const playerHit = new Hits({
+const golemHit = new Hits({
   position: {
-    x: player.position.x,
-    y: player.position.y,
+    x: golem.position.x,
+    y: golem.position.y,
   },
   color: "green",
   imageSrc: "./image/start-effect/Explosion_white.png",
 });
 
-const enemyHit = new Hits({
+const minotaurHit = new Hits({
   position: {
-    x: enemy.position.x,
-    y: enemy.position.y,
+    x: minotaur.position.x,
+    y: minotaur.position.y,
   },
   color: "red",
   imageSrc: "./image/start-effect/Explosion_green.png",
@@ -143,14 +144,14 @@ const decreaseTimer = () => {
     timer.innerHTML = timerCount;
     setTimeout(() => {}, 1000);
   }
-  if (player.health === enemy.health && timerCount === 0) {
+  if (golem.health === minotaur.health && timerCount === 0) {
     notification.innerHTML = "Tie Game";
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     gameOver = true;
   } else if (
-    (player.health > enemy.health && timerCount === 0) ||
-    enemy.health <= 0
+    (golem.health > minotaur.health && timerCount === 0) ||
+    minotaur.health <= 0
   ) {
     notification.innerHTML = "Blue Win";
     notification.style.display = "flex";
@@ -158,8 +159,8 @@ const decreaseTimer = () => {
     timerCount = 0;
     gameOver = true;
   } else if (
-    (player.health < enemy.health && timerCount === 0) ||
-    player.health <= 0
+    (golem.health < minotaur.health && timerCount === 0) ||
+    golem.health <= 0
   ) {
     notification.innerHTML = "Red Win";
     notification.style.display = "flex";
@@ -182,7 +183,7 @@ const keys = {
   ArrowDown: { pressed: false },
 };
 
-function playerEnemyCollision({ body1, body2 }) {
+function golemminotaurCollision({ body1, body2 }) {
   if (
     (body1.position.x < body2.position.x && body1.dirX === 1) ||
     (body1.position.x > body2.position.x && body1.dirX === -1)
@@ -207,8 +208,8 @@ function animate() {
     context.fillStyle = "black";
     context.fillRect(0, 0, canvas.width, canvas.height);
     clearCanvas();
-    player.update();
-    enemy.update();
+    golem.update();
+    minotaur.update();
   }
   // game Over
   if (gameOver) {
@@ -216,100 +217,100 @@ function animate() {
     canvas.style.background = "url('./image/background/background.jpg')";
   }
 
-  // player Move
-  player.velocity.x = 0;
+  // golem Move
+  golem.velocity.x = 0;
   if (startEffect) {
-    player.image = player.sprites.startEffect.image;
+    golem.image = golem.sprites.startEffect.image;
   } else if (keys.s.pressed) {
-    player.image = player.sprites.startAttack.image;
+    golem.image = golem.sprites.startAttack.image;
   } else {
-    player.image = player.sprites.idle.image;
+    golem.image = golem.sprites.idle.image;
   }
 
   if (
     keys.d.pressed &&
-    player.lastKey === "d" &&
-    player.position.x + player.width <= canvas.width
+    golem.lastKey === "d" &&
+    golem.position.x + golem.width <= canvas.width
   ) {
-    player.velocity.x = 1.5;
-    player.image = player.sprites.walk.image;
+    golem.velocity.x = 1.5;
+    golem.image = golem.sprites.walk.image;
   } else if (
     keys.q.pressed &&
-    player.lastKey === "q" &&
-    player.position.x >= 10
+    golem.lastKey === "q" &&
+    golem.position.x >= 10
   ) {
-    player.velocity.x = -1.5;
-    player.image = player.sprites.walk.image;
+    golem.velocity.x = -1.5;
+    golem.image = golem.sprites.walk.image;
   }
 
-  if (player.velocity.y < 0 && !startEffect) {
-    player.image = player.sprites.jump.image;
-  } else if (player.velocity.y > 0 && !startEffect) {
-    player.image = player.sprites.fall.image;
+  if (golem.velocity.y < 0 && !startEffect) {
+    golem.image = golem.sprites.jump.image;
+  } else if (golem.velocity.y > 0 && !startEffect) {
+    golem.image = golem.sprites.fall.image;
   }
 
-  //enemy move
-  enemy.velocity.x = 0;
+  //minotaur move
+  minotaur.velocity.x = 0;
   if (startEffect) {
-    enemy.image = enemy.sprites.startEffect.image;
+    minotaur.image = minotaur.sprites.startEffect.image;
   } else if (keys.ArrowDown.pressed) {
-    enemy.image = enemy.sprites.startAttack.image;
+    minotaur.image = minotaur.sprites.startAttack.image;
   } else {
-    enemy.image = enemy.sprites.idle.image;
+    minotaur.image = minotaur.sprites.idle.image;
   }
 
   if (
     keys.ArrowRight.pressed &&
-    enemy.lastKey === "ArrowRight" &&
-    enemy.position.x + enemy.width <= canvas.width
+    minotaur.lastKey === "ArrowRight" &&
+    minotaur.position.x + minotaur.width <= canvas.width
   ) {
-    enemy.velocity.x = 1.5;
-    enemy.image = enemy.sprites.walk.image;
+    minotaur.velocity.x = 1.5;
+    minotaur.image = minotaur.sprites.walk.image;
   } else if (
     keys.ArrowLeft.pressed &&
-    enemy.lastKey === "ArrowLeft" &&
-    enemy.position.x >= 0
+    minotaur.lastKey === "ArrowLeft" &&
+    minotaur.position.x >= 0
   ) {
-    enemy.velocity.x = -1.5;
-    enemy.image = enemy.sprites.walk.image;
+    minotaur.velocity.x = -1.5;
+    minotaur.image = minotaur.sprites.walk.image;
   }
 
-  if (enemy.velocity.y < 0 && !startEffect) {
-    enemy.image = enemy.sprites.jump.image;
-  } else if (enemy.velocity.y > 0 && !startEffect) {
-    enemy.image = enemy.sprites.fall.image;
+  if (minotaur.velocity.y < 0 && !startEffect) {
+    minotaur.image = minotaur.sprites.jump.image;
+  } else if (minotaur.velocity.y > 0 && !startEffect) {
+    minotaur.image = minotaur.sprites.fall.image;
   }
   //attack box collision
   if (
-    playerEnemyCollision({ body1: player, body2: enemy }) &&
-    player.isAttacking &&
-    (player.dirX === 1 || player.dirX === -1)
+    golemminotaurCollision({ body1: golem, body2: minotaur }) &&
+    golem.isAttacking &&
+    (golem.dirX === 1 || golem.dirX === -1)
   ) {
-    playerHit.update();
+    golemHit.update();
     setTimeout(() => {
-      player.isAttacking = false;
+      golem.isAttacking = false;
     }, 100);
-    enemy.health -= 0.05;
-    enemyHealth.style.width = enemy.health + "%";
+    minotaur.health -= 0.05;
+    minotaurHealth.style.width = minotaur.health + "%";
   }
   if (
-    playerEnemyCollision({ body1: enemy, body2: player }) &&
-    enemy.isAttacking &&
-    (enemy.dirX === 1 || enemy.dirX === -1)
+    golemminotaurCollision({ body1: minotaur, body2: golem }) &&
+    minotaur.isAttacking &&
+    (minotaur.dirX === 1 || minotaur.dirX === -1)
   ) {
-    enemyHit.update();
+    minotaurHit.update();
     setTimeout(() => {
-      enemy.isAttacking = false;
+      minotaur.isAttacking = false;
     }, 100);
-    player.health -= 0.05;
-    playerHealth.style.width = player.health + "%";
+    golem.health -= 0.05;
+    golemHealth.style.width = golem.health + "%";
   }
 
   // Game over
-  if (gameOver && enemy.health < player.health) {
-    enemy.image = enemy.sprites.death.image;
-  } else if (gameOver && enemy.health > player.health) {
-    player.image = player.sprites.death.image;
+  if (gameOver && minotaur.health < golem.health) {
+    minotaur.image = minotaur.sprites.death.image;
+  } else if (gameOver && minotaur.health > golem.health) {
+    golem.image = golem.sprites.death.image;
   }
 }
 animate();
@@ -318,45 +319,45 @@ animate();
 window.addEventListener("keydown", (e) => {
   if (!gameOver && !startEffect) {
     switch (e.key) {
-      // player keys
+      // golem keys
       case "d":
         keys.d.pressed = true;
-        player.lastKey = "d";
-        player.dirX = 1;
+        golem.lastKey = "d";
+        golem.dirX = 1;
         break;
       case "q":
         keys.q.pressed = true;
-        player.lastKey = "q";
-        player.dirX = -1;
+        golem.lastKey = "q";
+        golem.dirX = -1;
         break;
       case "z":
-        if (player.velocity.y === 0) {
-          player.velocity.y = -7;
+        if (golem.velocity.y === 0) {
+          golem.velocity.y = -7;
         }
         break;
       case "s":
-        player.isAttacking = true;
+        golem.isAttacking = true;
         keys.s.pressed = true;
         break;
 
-      // enemy keys
+      // minotaur keys
       case "ArrowRight":
         keys.ArrowRight.pressed = true;
-        enemy.lastKey = "ArrowRight";
-        enemy.dirX = 1;
+        minotaur.lastKey = "ArrowRight";
+        minotaur.dirX = 1;
         break;
       case "ArrowLeft":
         keys.ArrowLeft.pressed = true;
-        enemy.lastKey = "ArrowLeft";
-        enemy.dirX = -1;
+        minotaur.lastKey = "ArrowLeft";
+        minotaur.dirX = -1;
         break;
       case "ArrowUp":
-        if (enemy.velocity.y === 0) {
-          enemy.velocity.y = -7;
+        if (minotaur.velocity.y === 0) {
+          minotaur.velocity.y = -7;
         }
         break;
       case "ArrowDown":
-        enemy.isAttacking = true;
+        minotaur.isAttacking = true;
         keys.ArrowDown.pressed = true;
         break;
 
@@ -367,9 +368,9 @@ window.addEventListener("keydown", (e) => {
 });
 
 window.addEventListener("keyup", (e) => {
-  if (player.health && enemy.health) {
+  if (golem.health && minotaur.health) {
     switch (e.key) {
-      // player keys
+      // golem keys
       case "d":
         keys.d.pressed = false;
         break;
@@ -377,13 +378,13 @@ window.addEventListener("keyup", (e) => {
         keys.q.pressed = false;
         break;
       case "s":
-        player.isAttacking = false;
+        golem.isAttacking = false;
         setTimeout(() => {
           keys.s.pressed = false;
         }, 250);
         break;
 
-      // enemy keys
+      // minotaur keys
       case "ArrowRight":
         keys.ArrowRight.pressed = false;
         break;
@@ -391,7 +392,7 @@ window.addEventListener("keyup", (e) => {
         keys.ArrowLeft.pressed = false;
         break;
       case "ArrowDown":
-        enemy.isAttacking = false;
+        minotaur.isAttacking = false;
         setTimeout(() => {
           keys.ArrowDown.pressed = false;
         }, 250);

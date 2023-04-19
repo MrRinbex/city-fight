@@ -92,33 +92,35 @@ class Hits {
   update() {
     this.draw();
 
-    if (player.isAttacking) {
-      this.position.x = player.attackBox.position.x + player.attackBox.width;
-      this.position.y = player.attackBox.position.y + player.attackBox.height;
-    } else if (enemy.isAttacking) {
-      this.position.x = enemy.attackBox.position.x + enemy.attackBox.width;
-      this.position.y = enemy.attackBox.position.y + enemy.attackBox.height;
+    if (golem.isAttacking) {
+      this.position.x = golem.attackBox.position.x + golem.attackBox.width;
+      this.position.y = golem.attackBox.position.y + golem.attackBox.height;
+    } else if (minotaur.isAttacking) {
+      this.position.x =
+        minotaur.attackBox.position.x + minotaur.attackBox.width;
+      this.position.y =
+        minotaur.attackBox.position.y + minotaur.attackBox.height;
     }
 
-    if (player.dirX === -1 && player.isAttacking) {
+    if (golem.dirX === -1 && golem.isAttacking) {
       this.position.x += -200;
     } else if (
-      player.dirX === 1 &&
-      player.position.x >= enemy.position.x &&
-      player.isAttacking
+      golem.dirX === 1 &&
+      golem.position.x >= minotaur.position.x &&
+      golem.isAttacking
     ) {
       this.position.x += 0;
     }
 
-    if (enemy.dirX === 1 && enemy.isAttacking) {
+    if (minotaur.dirX === 1 && minotaur.isAttacking) {
       this.position.x += 0;
     } else if (
-      enemy.dirX === -1 &&
-      enemy.position.x <= player.position.x &&
-      enemy.isAttacking
+      minotaur.dirX === -1 &&
+      minotaur.position.x <= golem.position.x &&
+      minotaur.isAttacking
     ) {
       this.position.x += -150;
-    } else if (enemy.dirX === -1 && enemy.isAttacking) {
+    } else if (minotaur.dirX === -1 && minotaur.isAttacking) {
       this.position.x += -200;
     }
   }
