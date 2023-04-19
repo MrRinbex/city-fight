@@ -8,19 +8,65 @@ body {
   background-color: black;
   position: relative;
 }
+
 .right-side {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 86vh;
   width: 20vw;
-  /* border: 2px solid green; */
-  background: url(./image/background/Golem_03_Idle_000.png);
+  padding-top: 11vh;
+}
+
+.right-side div {
+  width: 100%;
+  height: 33%;
+}
+
+.golem-fighter-1 {
+  background: url(./image/team-golem/Golem_01.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+.golem-fighter-2 {
+  background: url(./image/team-golem/Golem_02.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.golem-fighter-3 {
+  background: url(./image/team-golem/Golem_03.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .left-side {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 86vh;
   width: 20vw;
-  /* border: 2px solid green; */
-  background: url(./image/background/Minotaur_01_Idle\ Blinking_000.png);
+  padding-top: 11vh;
+}
+
+.left-side div {
+  width: 100%;
+  height: 33%;
+}
+
+.minotaur-fighter-1 {
+  background: url(./image/team-minotaur/Minotaur_01.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.minotaur-fighter-2 {
+  background: url(./image/team-minotaur/Minotaur_02.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.minotaur-fighter-3 {
+  background: url(./image/team-minotaur/Minotaur_03.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
