@@ -10,7 +10,7 @@ const city3 = document.querySelector("#city3");
 const city4 = document.querySelector("#city4");
 const context = canvas.getContext("2d");
 
-canvas.width = 1024;
+canvas.width = (window.innerWidth * 60) / 100;
 canvas.height = 576;
 
 context.fillRect(0, 0, canvas.width, canvas.height);
