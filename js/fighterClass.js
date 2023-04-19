@@ -1,11 +1,10 @@
 class Fighter {
-  constructor({ position, velocity, color, offset, imageSrc, sprites, dirX }) {
+  constructor({ position, velocity, color, offset, sprites, dirX }) {
     this.position = position;
     this.velocity = velocity;
     this.lastKey;
     this.image = new Image();
-    this.image.src = imageSrc;
-    this.width = 155;
+    this.width = 255;
     this.height = 175;
     this.dirX = dirX;
 
@@ -68,13 +67,25 @@ class Fighter {
 }
 
 class Hits {
-  constructor({ position, color, imageSrc }) {
-    this.position = position;
+  constructor({ color, imageSrc }) {
+    this.position();
     this.image = new Image();
     this.image.src = imageSrc;
     this.width = 55;
     this.height = 55;
     this.color = color;
+  }
+  position() {
+    if (golemSkin === "golem 1") {
+      x = golem_1.position.x;
+      y = golem_1.position.y;
+    } else if (golemSkin === "golem 2") {
+      x = golem_2.position.x;
+      y = golem_2.position.y;
+    } else if (golemSkin === "golem 3") {
+      x = golem_3.position.x;
+      y = golem_3.position.y;
+    }
   }
 
   draw() {
@@ -92,9 +103,15 @@ class Hits {
   update() {
     this.draw();
 
-    if (golem.isAttacking) {
-      this.position.x = golem.attackBox.position.x + golem.attackBox.width;
-      this.position.y = golem.attackBox.position.y + golem.attackBox.height;
+    if (golem_1.isAttacking || golem_2.isAttacking || golem_3.isAttacking) {
+      this.position.x =
+        golem_1.attackBox.position.x + golem_1.attackBox.width ||
+        golem_2.attackBox.position.x + golem_2.attackBox.width ||
+        golem_3.attackBox.position.x + golem_3.attackBox.width;
+      this.position.y =
+        golem_1.attackBox.position.y + golem_1.attackBox.height ||
+        golem_2.attackBox.position.y + golem_2.attackBox.height ||
+        golem_3.attackBox.position.y + golem_3.attackBox.height;
     } else if (minotaur.isAttacking) {
       this.position.x =
         minotaur.attackBox.position.x + minotaur.attackBox.width;
@@ -102,26 +119,48 @@ class Hits {
         minotaur.attackBox.position.y + minotaur.attackBox.height;
     }
 
-    if (golem.dirX === -1 && golem.isAttacking) {
-      this.position.x += -200;
+    if (
+      (golem_1.dirX === -1 && golem_1.isAttacking) ||
+      (golem_2.dirX === -1 && golem_2.isAttacking) ||
+      (golem_3.dirX === -1 && golem_3.isAttacking)
+    ) {
+      this.position.x += -250;
     } else if (
-      golem.dirX === 1 &&
-      golem.position.x >= minotaur.position.x &&
-      golem.isAttacking
+      (golem_1.dirX === 1 && golem_1.isAttacking) ||
+      (golem_2.dirX === 1 && golem_2.isAttacking) ||
+      (golem_3.dirX === 1 && golem_3.isAttacking)
+    ) {
+      this.position.x += 50;
+    } else if (
+      (golem_1.dirX === 1 &&
+        golem_1.position.x >= minotaur.position.x &&
+        golem_1.isAttacking) ||
+      (golem_2.dirX === 1 &&
+        golem_2.position.x >= minotaur.position.x &&
+        golem_2.isAttacking) ||
+      (golem_3.dirX === 1 &&
+        golem_3.position.x >= minotaur.position.x &&
+        golem_3.isAttacking)
     ) {
       this.position.x += 0;
     }
 
     if (minotaur.dirX === 1 && minotaur.isAttacking) {
-      this.position.x += 0;
+      this.position.x += 50;
     } else if (
-      minotaur.dirX === -1 &&
-      minotaur.position.x <= golem.position.x &&
-      minotaur.isAttacking
+      (minotaur.dirX === -1 &&
+        minotaur.position.x <= golem_1.position.x &&
+        minotaur.isAttacking) ||
+      (minotaur.dirX === -1 &&
+        minotaur.position.x <= golem_2.position.x &&
+        minotaur.isAttacking) ||
+      (minotaur.dirX === -1 &&
+        minotaur.position.x <= golem_3.position.x &&
+        minotaur.isAttacking)
     ) {
       this.position.x += -150;
     } else if (minotaur.dirX === -1 && minotaur.isAttacking) {
-      this.position.x += -200;
+      this.position.x += -250;
     }
   }
 }

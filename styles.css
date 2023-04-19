@@ -36,6 +36,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   height: 30%;
+  cursor: pointer;
 }
 
 .golem-fighter-2 {
@@ -43,6 +44,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   height: 30%;
+  cursor: pointer;
 }
 
 .golem-fighter-3 {
@@ -50,6 +52,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   height: 30%;
+  cursor: pointer;
 }
 
 .left-side {
@@ -79,6 +82,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   height: 30%;
+  cursor: pointer;
 }
 
 .minotaur-fighter-2 {
@@ -86,6 +90,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   height: 30%;
+  cursor: pointer;
 }
 
 .minotaur-fighter-3 {
@@ -93,6 +98,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   height: 30%;
+  cursor: pointer;
 }
 
 .container {
@@ -101,6 +107,10 @@ body {
   width: 60vw;
   align-items: center;
   justify-content: center;
+}
+.container-canvas {
+  border: 4px solid white;
+  border-radius: 3px 3px 3px 3px;
 }
 
 .title {
@@ -131,7 +141,6 @@ body {
 canvas {
   margin-bottom: 5px;
   background: url(./image/background/City4.png);
-  border: 2px solid goldenrod;
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -223,14 +232,13 @@ canvas {
 
 .maps-container {
   height: 10vh;
-  width: 60.2vw;
+  width: 100%;
   display: flex;
 }
 
 .maps {
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid goldenrod;
   width: 25%;
   height: 100%;
   text-align: center;
@@ -253,24 +261,32 @@ canvas {
   background: url(./image/background/City1.png);
   background-size: contain;
   background-repeat: repeat-x;
+  border: dashed green;
+  border-top: none;
 }
 
 #city2 {
   background: url(./image/background/City2.png);
   background-size: contain;
   background-repeat: repeat-x;
+  border: dashed goldenrod;
+  border-top: none;
 }
 
 #city3 {
   background: url(./image/background/City3.png);
   background-size: contain;
   background-repeat: repeat-x;
+  border: dashed palevioletred;
+  border-top: none;
 }
 
 #city4 {
   background: url(./image/background/City4.png);
   background-size: contain;
   background-repeat: repeat-x;
+  border: dashed yellowgreen;
+  border-top: none;
 }
 
 @keyframes blink {

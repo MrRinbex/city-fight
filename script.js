@@ -1,127 +1,12 @@
-const canvas = document.querySelector("canvas");
-const minotaurHealth = document.querySelector("#minotaurHealth");
-const golemHealth = document.querySelector("#golemHealth");
-const timer = document.querySelector("#timer");
-const notification = document.querySelector("#notification");
-const mapsContainer = document.querySelector(".maps-container");
-const city1 = document.querySelector("#city1");
-const city2 = document.querySelector("#city2");
-const city3 = document.querySelector("#city3");
-const city4 = document.querySelector("#city4");
-const context = canvas.getContext("2d");
-
-canvas.width = (window.innerWidth * 60) / 100;
-canvas.height = 576;
-
-context.fillRect(0, 0, canvas.width, canvas.height);
-function clearCanvas() {
-  context.clearRect(0, 0, canvas.width, canvas.height);
-}
-
-let gameStart = false;
-let gameOver = false;
-let startEffect = true;
-
 // gravity effect
 let gravity = 0.002;
 setTimeout(() => (gravity = 0.1), 2000);
 
-// golem
-const golem = new Fighter({
-  position: {
-    x: (canvas.width * 20) / 100,
-    y: 150,
-  },
-  velocity: {
-    x: 0,
-    y: 0,
-  },
-  color: "blue",
-  offset: {
-    x: 0,
-    y: 0,
-  },
-  dirX: 1,
-  imageSrc: "./image/Golem/Golem_normal.png",
-  sprites: {
-    idle: {
-      imageSrc: "./image/Golem/Golem_normal.png",
-    },
-    walk: {
-      imageSrc: "./image//Golem/Golem_Walking.png",
-    },
-    jump: {
-      imageSrc: "./image/Golem/Golem_Jump_Loop.png",
-    },
-    fall: {
-      imageSrc: "./image/Golem/Golem_fall.png",
-    },
-    startAttack: {
-      imageSrc: "./image/Golem/Golem_start_Attacking_.png",
-    },
-    endAttack: {
-      imageSrc: "./image/Golem/Golem_end_Attacking.png",
-    },
-    death: {
-      imageSrc: "./image/Golem/Golem_FullDying.png",
-    },
-    startEffect: {
-      imageSrc: "./image/start-effect/Explosion_green.png",
-    },
-  },
-});
-
-// minotaur
-const minotaur = new Fighter({
-  position: {
-    x: (canvas.width * 70) / 100,
-    y: 150,
-  },
-  velocity: {
-    x: 0,
-    y: 0,
-  },
-  color: "red",
-  offset: {
-    x: 0,
-    y: 0,
-  },
-  dirX: -1,
-  imageSrc: "./image/Minotaur/Minotaur_normal.png",
-  sprites: {
-    idle: {
-      imageSrc: "./image/Minotaur/Minotaur_normal.png",
-    },
-    walk: {
-      imageSrc: "./image/Minotaur/Minotaur_Walking.png",
-    },
-    jump: {
-      imageSrc: "./image/Minotaur/Minotaur_Jump_Loop.png",
-    },
-    fall: {
-      imageSrc: "./image/Minotaur/Minotaur_fall.png",
-    },
-    startAttack: {
-      imageSrc: "./image/Minotaur/Minotaur_start_Attacking.png",
-    },
-    endAttack: {
-      imageSrc: "./image/Minotaur/Minotaur_end_Attacking.png",
-    },
-    death: {
-      imageSrc: "./image/Minotaur/Minotaur_FullDying.png",
-    },
-    startEffect: {
-      imageSrc: "./image/start-effect/Explosion_white.png",
-    },
-  },
-});
+console.log(golem_1);
+console.log(golem_2);
 
 //Hits
 const golemHit = new Hits({
-  position: {
-    x: golem.position.x,
-    y: golem.position.y,
-  },
   color: "green",
   imageSrc: "./image/start-effect/Explosion_white.png",
 });
@@ -137,20 +22,26 @@ const minotaurHit = new Hits({
 
 // timer function with display text
 let timerCount = 60;
-let start = false;
 const decreaseTimer = () => {
   if (timerCount > 0 && gameStart) {
     timerCount--;
     timer.innerHTML = timerCount;
-    setTimeout(() => {}, 1000);
   }
-  if (golem.health === minotaur.health && timerCount === 0) {
+
+  //golem 1
+  if (
+    golemSkin === "golem 1" &&
+    golem_1.health === minotaur.health &&
+    timerCount === 0
+  ) {
     notification.innerHTML = "Tie Game";
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     gameOver = true;
   } else if (
-    (golem.health > minotaur.health && timerCount === 0) ||
+    (golemSkin === "golem 1" &&
+      golem_1.health > minotaur.health &&
+      timerCount === 0) ||
     minotaur.health <= 0
   ) {
     notification.innerHTML = "Blue Win";
@@ -159,8 +50,78 @@ const decreaseTimer = () => {
     timerCount = 0;
     gameOver = true;
   } else if (
-    (golem.health < minotaur.health && timerCount === 0) ||
-    golem.health <= 0
+    (golemSkin === "golem 1" &&
+      golem_1.health < minotaur.health &&
+      timerCount === 0) ||
+    golem_1.health <= 0
+  ) {
+    notification.innerHTML = "Red Win";
+    notification.style.display = "flex";
+    timerCount = 0;
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  }
+
+  //golem 2
+  if (
+    golemSkin === "golem 2" &&
+    golem_2.health === minotaur.health &&
+    timerCount === 0
+  ) {
+    notification.innerHTML = "Tie Game";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 2" &&
+      golem_2.health > minotaur.health &&
+      timerCount === 0) ||
+    minotaur.health <= 0
+  ) {
+    notification.innerHTML = "Blue Win";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    timerCount = 0;
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 2" &&
+      golem_2.health < minotaur.health &&
+      timerCount === 0) ||
+    golem_2.health <= 0
+  ) {
+    notification.innerHTML = "Red Win";
+    notification.style.display = "flex";
+    timerCount = 0;
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  }
+
+  //golem 3
+  if (
+    golemSkin === "golem 3" &&
+    golem_3.health === minotaur.health &&
+    timerCount === 0
+  ) {
+    notification.innerHTML = "Tie Game";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 3" &&
+      golem_3.health > minotaur.health &&
+      timerCount === 0) ||
+    minotaur.health <= 0
+  ) {
+    notification.innerHTML = "Blue Win";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    timerCount = 0;
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 3" &&
+      golem_3.health < minotaur.health &&
+      timerCount === 0) ||
+    golem_3.health <= 0
   ) {
     notification.innerHTML = "Red Win";
     notification.style.display = "flex";
@@ -172,6 +133,7 @@ const decreaseTimer = () => {
 
 setInterval(() => {
   decreaseTimer();
+  console.log(gameOver);
 }, 1000);
 
 const keys = {
@@ -183,7 +145,7 @@ const keys = {
   ArrowDown: { pressed: false },
 };
 
-function golemminotaurCollision({ body1, body2 }) {
+function golemMinotaurCollision({ body1, body2 }) {
   if (
     (body1.position.x < body2.position.x && body1.dirX === 1) ||
     (body1.position.x > body2.position.x && body1.dirX === -1)
@@ -202,51 +164,131 @@ function animate() {
 
   // Game Start
   if (gameStart) {
-    // start effect
     setTimeout(() => (startEffect = false), 2000);
     mapsContainer.style.display = "none";
     context.fillStyle = "black";
     context.fillRect(0, 0, canvas.width, canvas.height);
     clearCanvas();
-    golem.update();
+    if (golemSkin === "golem 1") {
+      golem_1.update();
+    } else if (golemSkin === "golem 2") {
+      golem_2.update();
+    } else if (golemSkin === "golem 3") {
+      golem_3.update();
+      console.log(3);
+    }
     minotaur.update();
-  }
-  // game Over
-  if (gameOver) {
-    canvas.style.animation = "none";
-    canvas.style.background = "url('./image/background/background.jpg')";
   }
 
   // golem Move
-  golem.velocity.x = 0;
-  if (startEffect) {
-    golem.image = golem.sprites.startEffect.image;
+  golem_1.velocity.x = 0;
+  golem_2.velocity.x = 0;
+  golem_3.velocity.x = 0;
+  if (startEffect && golemSkin === "golem 1") {
+    golem_1.image = golem_1.sprites.startEffect.image;
   } else if (keys.s.pressed) {
-    golem.image = golem.sprites.startAttack.image;
+    golem_1.image = golem_1.sprites.startAttack.image;
   } else {
-    golem.image = golem.sprites.idle.image;
+    golem_1.image = golem_1.sprites.idle.image;
+  }
+
+  if (startEffect && golemSkin === "golem 2") {
+    golem_2.image = golem_2.sprites.startEffect.image;
+  } else if (keys.s.pressed) {
+    golem_2.image = golem_2.sprites.startAttack.image;
+  } else {
+    golem_2.image = golem_2.sprites.idle.image;
+  }
+
+  if (startEffect && golemSkin === "golem 3") {
+    golem_3.image = golem_3.sprites.startEffect.image;
+  } else if (keys.s.pressed) {
+    golem_3.image = golem_3.sprites.startAttack.image;
+  } else {
+    golem_3.image = golem_3.sprites.idle.image;
+  }
+  if (
+    golemSkin === "golem 1" &&
+    keys.d.pressed &&
+    golem_1.lastKey === "d" &&
+    golem_1.position.x + golem_1.width <= canvas.width
+  ) {
+    golem_1.velocity.x = 1.5;
+    golem_1.image = golem_1.sprites.walk.image;
+  } else if (
+    golemSkin === "golem 1" &&
+    keys.q.pressed &&
+    golem_1.lastKey === "q" &&
+    golem_1.position.x >= 10
+  ) {
+    golem_1.velocity.x = -1.5;
+    golem_1.image = golem_1.sprites.walk.image;
   }
 
   if (
+    golemSkin === "golem 2" &&
     keys.d.pressed &&
-    golem.lastKey === "d" &&
-    golem.position.x + golem.width <= canvas.width
+    golem_2.lastKey === "d" &&
+    golem_2.position.x + golem_2.width <= canvas.width
   ) {
-    golem.velocity.x = 1.5;
-    golem.image = golem.sprites.walk.image;
+    golem_2.velocity.x = 1.5;
+    golem_2.image = golem_2.sprites.walk.image;
   } else if (
+    golemSkin === "golem 2" &&
     keys.q.pressed &&
-    golem.lastKey === "q" &&
-    golem.position.x >= 10
+    golem_2.lastKey === "q" &&
+    golem_2.position.x >= 10
   ) {
-    golem.velocity.x = -1.5;
-    golem.image = golem.sprites.walk.image;
+    golem_2.velocity.x = -1.5;
+    golem_2.image = golem_2.sprites.walk.image;
   }
 
-  if (golem.velocity.y < 0 && !startEffect) {
-    golem.image = golem.sprites.jump.image;
-  } else if (golem.velocity.y > 0 && !startEffect) {
-    golem.image = golem.sprites.fall.image;
+  if (
+    golemSkin === "golem 3" &&
+    keys.d.pressed &&
+    golem_3.lastKey === "d" &&
+    golem_3.position.x + golem_3.width <= canvas.width
+  ) {
+    golem_3.velocity.x = 1.5;
+    golem_3.image = golem_3.sprites.walk.image;
+  } else if (
+    golemSkin === "golem 3" &&
+    keys.q.pressed &&
+    golem_3.lastKey === "q" &&
+    golem_3.position.x >= 10
+  ) {
+    golem_3.velocity.x = -1.5;
+    golem_3.image = golem_3.sprites.walk.image;
+  }
+
+  if (golem_1.velocity.y < 0 && !startEffect && golemSkin === "golem 1") {
+    golem_1.image = golem_1.sprites.jump.image;
+  } else if (
+    golem_1.velocity.y > 0 &&
+    !startEffect &&
+    golemSkin === "golem 1"
+  ) {
+    golem_1.image = golem_1.sprites.fall.image;
+  }
+
+  if (golem_2.velocity.y < 0 && !startEffect && golemSkin === "golem 2") {
+    golem_2.image = golem_2.sprites.jump.image;
+  } else if (
+    golem_2.velocity.y > 0 &&
+    !startEffect &&
+    golemSkin === "golem 2"
+  ) {
+    golem_2.image = golem_2.sprites.fall.image;
+  }
+
+  if (golem_3.velocity.y < 0 && !startEffect && golemSkin === "golem 3") {
+    golem_3.image = golem_3.sprites.jump.image;
+  } else if (
+    golem_3.velocity.y > 0 &&
+    !startEffect &&
+    golemSkin === "golem 3"
+  ) {
+    golem_3.image = golem_3.sprites.fall.image;
   }
 
   //minotaur move
@@ -280,21 +322,65 @@ function animate() {
   } else if (minotaur.velocity.y > 0 && !startEffect) {
     minotaur.image = minotaur.sprites.fall.image;
   }
-  //attack box collision
+  //attack box collision Golem
   if (
-    golemminotaurCollision({ body1: golem, body2: minotaur }) &&
-    golem.isAttacking &&
-    (golem.dirX === 1 || golem.dirX === -1)
+    golemMinotaurCollision({
+      body1: golem_1,
+      body2: minotaur,
+    }) &&
+    golem_1.isAttacking &&
+    golemSkin === "golem 1" &&
+    (golem_1.dirX === 1 || golem_1.dirX === -1)
   ) {
     golemHit.update();
     setTimeout(() => {
-      golem.isAttacking = false;
+      golem_1.isAttacking = false;
     }, 100);
     minotaur.health -= 0.05;
     minotaurHealth.style.width = minotaur.health + "%";
   }
+
   if (
-    golemminotaurCollision({ body1: minotaur, body2: golem }) &&
+    golemMinotaurCollision({
+      body1: golem_2,
+      body2: minotaur,
+    }) &&
+    golem_2.isAttacking &&
+    golemSkin === "golem 2" &&
+    (golem_2.dirX === 1 || golem_2.dirX === -1)
+  ) {
+    golemHit.update();
+    setTimeout(() => {
+      golem_2.isAttacking = false;
+    }, 100);
+    minotaur.health -= 0.05;
+    minotaurHealth.style.width = minotaur.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: golem_3,
+      body2: minotaur,
+    }) &&
+    golem_3.isAttacking &&
+    golemSkin === "golem 3" &&
+    (golem_3.dirX === 1 || golem_3.dirX === -1)
+  ) {
+    golemHit.update();
+    setTimeout(() => {
+      golem_3.isAttacking = false;
+    }, 100);
+    minotaur.health -= 0.05;
+    minotaurHealth.style.width = minotaur.health + "%";
+  }
+
+  //attack box collision Minotaur
+  if (
+    golemMinotaurCollision({
+      body1: minotaur,
+      body2: golem_1,
+    }) &&
+    golemSkin === "golem 1" &&
     minotaur.isAttacking &&
     (minotaur.dirX === 1 || minotaur.dirX === -1)
   ) {
@@ -302,15 +388,78 @@ function animate() {
     setTimeout(() => {
       minotaur.isAttacking = false;
     }, 100);
-    golem.health -= 0.05;
-    golemHealth.style.width = golem.health + "%";
+    golem_1.health -= 0.05;
+    golemHealth.style.width = golem_1.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: minotaur,
+      body2: golem_2,
+    }) &&
+    golemSkin === "golem 2" &&
+    minotaur.isAttacking &&
+    (minotaur.dirX === 1 || minotaur.dirX === -1)
+  ) {
+    minotaurHit.update();
+    setTimeout(() => {
+      minotaur.isAttacking = false;
+    }, 100);
+    golem_2.health -= 0.05;
+    golemHealth.style.width = golem_2.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: minotaur,
+      body2: golem_3,
+    }) &&
+    golemSkin === "golem 3" &&
+    minotaur.isAttacking &&
+    (minotaur.dirX === 1 || minotaur.dirX === -1)
+  ) {
+    minotaurHit.update();
+    setTimeout(() => {
+      minotaur.isAttacking = false;
+    }, 100);
+    golem_3.health -= 0.05;
+    golemHealth.style.width = golem_3.health + "%";
   }
 
   // Game over
-  if (gameOver && minotaur.health < golem.health) {
+  if (gameOver) {
+    canvas.style.animation = "none";
+    canvas.style.background = "url('./image/background/background.jpg')";
+  }
+
+  if (golemSkin === "golem 1" && gameOver && minotaur.health < golem_1.health) {
     minotaur.image = minotaur.sprites.death.image;
-  } else if (gameOver && minotaur.health > golem.health) {
-    golem.image = golem.sprites.death.image;
+  } else if (
+    golemSkin === "golem 1" &&
+    gameOver &&
+    minotaur.health > golem_1.health
+  ) {
+    golem_1.image = golem_1.sprites.death.image;
+  }
+
+  if (golemSkin === "golem 2" && gameOver && minotaur.health < golem_2.health) {
+    minotaur.image = minotaur.sprites.death.image;
+  } else if (
+    golemSkin === "golem 2" &&
+    gameOver &&
+    minotaur.health > golem_2.health
+  ) {
+    golem_2.image = golem_2.sprites.death.image;
+  }
+
+  if (golemSkin === "golem 3" && gameOver && minotaur.health < golem_3.health) {
+    minotaur.image = minotaur.sprites.death.image;
+  } else if (
+    golemSkin === "golem 3" &&
+    gameOver &&
+    minotaur.health > golem_3.health
+  ) {
+    golem_3.image = golem_3.sprites.death.image;
   }
 }
 animate();
@@ -322,21 +471,56 @@ window.addEventListener("keydown", (e) => {
       // golem keys
       case "d":
         keys.d.pressed = true;
-        golem.lastKey = "d";
-        golem.dirX = 1;
+        if (golemSkin === "golem 1") {
+          golem_1.lastKey = "d";
+          golem_1.dirX = 1;
+        }
+        if (golemSkin === "golem 2") {
+          golem_2.lastKey = "d";
+          golem_2.dirX = 1;
+        }
+        if (golemSkin === "golem 3") {
+          golem_3.lastKey = "d";
+          golem_3.dirX = 1;
+        }
         break;
       case "q":
         keys.q.pressed = true;
-        golem.lastKey = "q";
-        golem.dirX = -1;
+        if (golemSkin === "golem 1") {
+          golem_1.lastKey = "q";
+          golem_1.dirX = -1;
+        }
+        if (golemSkin === "golem 2") {
+          golem_2.lastKey = "q";
+          golem_2.dirX = -1;
+        }
+        if (golemSkin === "golem 3") {
+          golem_3.lastKey = "q";
+          golem_3.dirX = -1;
+        }
+
         break;
       case "z":
-        if (golem.velocity.y === 0) {
-          golem.velocity.y = -7;
+        if (golem_1.velocity.y === 0 && golemSkin === "golem 1") {
+          golem_1.velocity.y = -7;
+        }
+        if (golem_2.velocity.y === 0 && golemSkin === "golem 2") {
+          golem_2.velocity.y = -7;
+        }
+        if (golem_3.velocity.y === 0 && golemSkin === "golem 3") {
+          golem_3.velocity.y = -7;
         }
         break;
       case "s":
-        golem.isAttacking = true;
+        if (golemSkin === "golem 1") {
+          golem_1.isAttacking = true;
+        }
+        if (golemSkin === "golem 2") {
+          golem_2.isAttacking = true;
+        }
+        if (golemSkin === "golem 3") {
+          golem_3.isAttacking = true;
+        }
         keys.s.pressed = true;
         break;
 
@@ -368,7 +552,11 @@ window.addEventListener("keydown", (e) => {
 });
 
 window.addEventListener("keyup", (e) => {
-  if (golem.health && minotaur.health) {
+  if (
+    (golem_1.health && minotaur.health) ||
+    (golem_2.health && minotaur.health) ||
+    (golem_3.health && minotaur.health)
+  ) {
     switch (e.key) {
       // golem keys
       case "d":
@@ -378,7 +566,9 @@ window.addEventListener("keyup", (e) => {
         keys.q.pressed = false;
         break;
       case "s":
-        golem.isAttacking = false;
+        golem_1.isAttacking = false;
+        golem_2.isAttacking = false;
+        golem_3.isAttacking = false;
         setTimeout(() => {
           keys.s.pressed = false;
         }, 250);
@@ -404,27 +594,24 @@ window.addEventListener("keyup", (e) => {
   }
 });
 
+// Maps event
 city1.addEventListener("click", () => {
   canvas.style.background = "url('./image/background/City1.png')";
   canvas.style.backgroundSize = "cover";
   gameStart = true;
-  start = true;
 });
 city2.addEventListener("click", () => {
   canvas.style.background = "url('./image/background/City2.png')";
   canvas.style.backgroundSize = "cover";
   gameStart = true;
-  start = true;
 });
 city3.addEventListener("click", () => {
   canvas.style.background = "url('./image/background/City3.png')";
   canvas.style.backgroundSize = "cover";
   gameStart = true;
-  start = true;
 });
 city4.addEventListener("click", () => {
   canvas.style.background = "url('./image/background/City4.png')";
   canvas.style.backgroundSize = "cover";
   gameStart = true;
-  start = true;
 });
