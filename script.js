@@ -2,23 +2,8 @@
 let gravity = 0.002;
 setTimeout(() => (gravity = 0.1), 2000);
 
-console.log(golem_1);
-console.log(golem_2);
-
-//Hits
-const golemHit = new Hits({
-  color: "green",
-  imageSrc: "./image/start-effect/Explosion_white.png",
-});
-
-const minotaurHit = new Hits({
-  position: {
-    x: minotaur.position.x,
-    y: minotaur.position.y,
-  },
-  color: "red",
-  imageSrc: "./image/start-effect/Explosion_green.png",
-});
+// console.log(golem_1);
+// console.log(golem_2);
 
 // timer function with display text
 let timerCount = 60;
@@ -133,7 +118,7 @@ const decreaseTimer = () => {
 
 setInterval(() => {
   decreaseTimer();
-  console.log(gameOver);
+  // console.log(gameOver);
 }, 1000);
 
 const keys = {
@@ -175,7 +160,6 @@ function animate() {
       golem_2.update();
     } else if (golemSkin === "golem 3") {
       golem_3.update();
-      console.log(3);
     }
     minotaur.update();
   }
@@ -332,7 +316,6 @@ function animate() {
     golemSkin === "golem 1" &&
     (golem_1.dirX === 1 || golem_1.dirX === -1)
   ) {
-    golemHit.update();
     setTimeout(() => {
       golem_1.isAttacking = false;
     }, 100);
@@ -349,7 +332,6 @@ function animate() {
     golemSkin === "golem 2" &&
     (golem_2.dirX === 1 || golem_2.dirX === -1)
   ) {
-    golemHit.update();
     setTimeout(() => {
       golem_2.isAttacking = false;
     }, 100);
@@ -366,7 +348,6 @@ function animate() {
     golemSkin === "golem 3" &&
     (golem_3.dirX === 1 || golem_3.dirX === -1)
   ) {
-    golemHit.update();
     setTimeout(() => {
       golem_3.isAttacking = false;
     }, 100);
@@ -384,7 +365,6 @@ function animate() {
     minotaur.isAttacking &&
     (minotaur.dirX === 1 || minotaur.dirX === -1)
   ) {
-    minotaurHit.update();
     setTimeout(() => {
       minotaur.isAttacking = false;
     }, 100);
@@ -401,7 +381,6 @@ function animate() {
     minotaur.isAttacking &&
     (minotaur.dirX === 1 || minotaur.dirX === -1)
   ) {
-    minotaurHit.update();
     setTimeout(() => {
       minotaur.isAttacking = false;
     }, 100);
@@ -418,7 +397,6 @@ function animate() {
     minotaur.isAttacking &&
     (minotaur.dirX === 1 || minotaur.dirX === -1)
   ) {
-    minotaurHit.update();
     setTimeout(() => {
       minotaur.isAttacking = false;
     }, 100);
