@@ -31,4 +31,3 @@ function clearCanvas() {
 let gameStart = false;
 let gameOver = false;
 let startEffect = true;
-let minotaurSkin = "";

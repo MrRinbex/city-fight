@@ -1,38 +1,20 @@
 let golemSkin = "";
-if (golemSkin !== "" || "golem 2" || "golem 3") {
-  golem1.addEventListener("click", () => {
-    gameStart = true;
-    golemSkin = "golem 1";
-  });
-}
-if (golemSkin !== "" || "golem 1" || "golem 3") {
-  golem2.addEventListener("click", () => {
-    gameStart = true;
-    golemSkin = "golem 2";
-  });
-}
-if (golemSkin !== "" || "golem 2" || "golem 1") {
-  golem3.addEventListener("click", () => {
-    gameStart = true;
-    golemSkin = "golem 3";
-  });
-}
 
-//Minotaur
-minotaur1.addEventListener("click", () => {
+// Golem Event Click
+golem1.addEventListener("click", () => {
   gameStart = true;
-  minotaurSkin = "minotaur 1";
+  golemSkin = "golem 1";
 });
-minotaur2.addEventListener("click", () => {
+golem2.addEventListener("click", () => {
   gameStart = true;
-  minotaurSkin = "minotaur 2";
+  golemSkin = "golem 2";
 });
-minotaur3.addEventListener("click", () => {
+golem3.addEventListener("click", () => {
   gameStart = true;
-  minotaurSkin = "minotaur 3";
+  golemSkin = "golem 3";
 });
 
-// golem
+// Golem
 const golem_1 = new Fighter({
   position: {
     x: 50,

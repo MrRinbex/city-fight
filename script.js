@@ -2,9 +2,6 @@
 let gravity = 0.002;
 setTimeout(() => (gravity = 0.1), 2000);
 
-// console.log(golem_1);
-// console.log(golem_2);
-
 // timer function with display text
 let timerCount = 60;
 const decreaseTimer = () => {
@@ -16,7 +13,7 @@ const decreaseTimer = () => {
   //golem 1
   if (
     golemSkin === "golem 1" &&
-    golem_1.health === minotaur.health &&
+    golem_1.health === minotaur_1.health &&
     timerCount === 0
   ) {
     notification.innerHTML = "Tie Game";
@@ -25,9 +22,9 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 1" &&
-      golem_1.health > minotaur.health &&
+      golem_1.health > minotaur_1.health &&
       timerCount === 0) ||
-    minotaur.health <= 0
+    minotaur_1.health <= 0
   ) {
     notification.innerHTML = "Blue Win";
     notification.style.display = "flex";
@@ -36,7 +33,73 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 1" &&
-      golem_1.health < minotaur.health &&
+      golem_1.health < minotaur_1.health &&
+      timerCount === 0) ||
+    golem_1.health <= 0
+  ) {
+    notification.innerHTML = "Red Win";
+    notification.style.display = "flex";
+    timerCount = 0;
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  }
+
+  if (
+    golemSkin === "golem 1" &&
+    golem_1.health === minotaur_2.health &&
+    timerCount === 0
+  ) {
+    notification.innerHTML = "Tie Game";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 1" &&
+      golem_1.health > minotaur_2.health &&
+      timerCount === 0) ||
+    minotaur_2.health <= 0
+  ) {
+    notification.innerHTML = "Blue Win";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    timerCount = 0;
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 1" &&
+      golem_1.health < minotaur_2.health &&
+      timerCount === 0) ||
+    golem_1.health <= 0
+  ) {
+    notification.innerHTML = "Red Win";
+    notification.style.display = "flex";
+    timerCount = 0;
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  }
+
+  if (
+    golemSkin === "golem 1" &&
+    golem_1.health === minotaur_3.health &&
+    timerCount === 0
+  ) {
+    notification.innerHTML = "Tie Game";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 1" &&
+      golem_1.health > minotaur_3.health &&
+      timerCount === 0) ||
+    minotaur_3.health <= 0
+  ) {
+    notification.innerHTML = "Blue Win";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    timerCount = 0;
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 1" &&
+      golem_1.health < minotaur_3.health &&
       timerCount === 0) ||
     golem_1.health <= 0
   ) {
@@ -50,7 +113,7 @@ const decreaseTimer = () => {
   //golem 2
   if (
     golemSkin === "golem 2" &&
-    golem_2.health === minotaur.health &&
+    golem_2.health === minotaur_1.health &&
     timerCount === 0
   ) {
     notification.innerHTML = "Tie Game";
@@ -59,9 +122,9 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 2" &&
-      golem_2.health > minotaur.health &&
+      golem_2.health > minotaur_1.health &&
       timerCount === 0) ||
-    minotaur.health <= 0
+    minotaur_1.health <= 0
   ) {
     notification.innerHTML = "Blue Win";
     notification.style.display = "flex";
@@ -70,7 +133,73 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 2" &&
-      golem_2.health < minotaur.health &&
+      golem_2.health < minotaur_1.health &&
+      timerCount === 0) ||
+    golem_2.health <= 0
+  ) {
+    notification.innerHTML = "Red Win";
+    notification.style.display = "flex";
+    timerCount = 0;
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  }
+
+  if (
+    golemSkin === "golem 2" &&
+    golem_2.health === minotaur_2.health &&
+    timerCount === 0
+  ) {
+    notification.innerHTML = "Tie Game";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 2" &&
+      golem_2.health > minotaur_2.health &&
+      timerCount === 0) ||
+    minotaur_2.health <= 0
+  ) {
+    notification.innerHTML = "Blue Win";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    timerCount = 0;
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 2" &&
+      golem_2.health < minotaur_2.health &&
+      timerCount === 0) ||
+    golem_2.health <= 0
+  ) {
+    notification.innerHTML = "Red Win";
+    notification.style.display = "flex";
+    timerCount = 0;
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  }
+
+  if (
+    golemSkin === "golem 2" &&
+    golem_2.health === minotaur_3.health &&
+    timerCount === 0
+  ) {
+    notification.innerHTML = "Tie Game";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 2" &&
+      golem_2.health > minotaur_3.health &&
+      timerCount === 0) ||
+    minotaur_3.health <= 0
+  ) {
+    notification.innerHTML = "Blue Win";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    timerCount = 0;
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 2" &&
+      golem_2.health < minotaur_3.health &&
       timerCount === 0) ||
     golem_2.health <= 0
   ) {
@@ -84,7 +213,7 @@ const decreaseTimer = () => {
   //golem 3
   if (
     golemSkin === "golem 3" &&
-    golem_3.health === minotaur.health &&
+    golem_3.health === minotaur_1.health &&
     timerCount === 0
   ) {
     notification.innerHTML = "Tie Game";
@@ -93,9 +222,9 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 3" &&
-      golem_3.health > minotaur.health &&
+      golem_3.health > minotaur_1.health &&
       timerCount === 0) ||
-    minotaur.health <= 0
+    minotaur_1.health <= 0
   ) {
     notification.innerHTML = "Blue Win";
     notification.style.display = "flex";
@@ -104,7 +233,73 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 3" &&
-      golem_3.health < minotaur.health &&
+      golem_3.health < minotaur_1.health &&
+      timerCount === 0) ||
+    golem_3.health <= 0
+  ) {
+    notification.innerHTML = "Red Win";
+    notification.style.display = "flex";
+    timerCount = 0;
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  }
+
+  if (
+    golemSkin === "golem 3" &&
+    golem_3.health === minotaur_2.health &&
+    timerCount === 0
+  ) {
+    notification.innerHTML = "Tie Game";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 3" &&
+      golem_3.health > minotaur_2.health &&
+      timerCount === 0) ||
+    minotaur_2.health <= 0
+  ) {
+    notification.innerHTML = "Blue Win";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    timerCount = 0;
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 3" &&
+      golem_3.health < minotaur_2.health &&
+      timerCount === 0) ||
+    golem_3.health <= 0
+  ) {
+    notification.innerHTML = "Red Win";
+    notification.style.display = "flex";
+    timerCount = 0;
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  }
+
+  if (
+    golemSkin === "golem 3" &&
+    golem_3.health === minotaur_3.health &&
+    timerCount === 0
+  ) {
+    notification.innerHTML = "Tie Game";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 3" &&
+      golem_3.health > minotaur_3.health &&
+      timerCount === 0) ||
+    minotaur_3.health <= 0
+  ) {
+    notification.innerHTML = "Blue Win";
+    notification.style.display = "flex";
+    timer.innerHTML = "Game Over";
+    timerCount = 0;
+    gameOver = true;
+  } else if (
+    (golemSkin === "golem 3" &&
+      golem_3.health < minotaur_3.health &&
       timerCount === 0) ||
     golem_3.health <= 0
   ) {
@@ -154,6 +349,7 @@ function animate() {
     context.fillStyle = "black";
     context.fillRect(0, 0, canvas.width, canvas.height);
     clearCanvas();
+
     if (golemSkin === "golem 1") {
       golem_1.update();
     } else if (golemSkin === "golem 2") {
@@ -161,13 +357,21 @@ function animate() {
     } else if (golemSkin === "golem 3") {
       golem_3.update();
     }
-    minotaur.update();
+
+    if (minotaurSkin === "minotaur 1") {
+      minotaur_1.update();
+    } else if (minotaurSkin === "minotaur 2") {
+      minotaur_2.update();
+    } else if (minotaurSkin === "minotaur 3") {
+      minotaur_3.update();
+    }
   }
 
   // golem Move
   golem_1.velocity.x = 0;
   golem_2.velocity.x = 0;
   golem_3.velocity.x = 0;
+
   if (startEffect && golemSkin === "golem 1") {
     golem_1.image = golem_1.sprites.startEffect.image;
   } else if (keys.s.pressed) {
@@ -191,6 +395,7 @@ function animate() {
   } else {
     golem_3.image = golem_3.sprites.idle.image;
   }
+
   if (
     golemSkin === "golem 1" &&
     keys.d.pressed &&
@@ -276,97 +481,297 @@ function animate() {
   }
 
   //minotaur move
-  minotaur.velocity.x = 0;
-  if (startEffect) {
-    minotaur.image = minotaur.sprites.startEffect.image;
+  minotaur_1.velocity.x = 0;
+  minotaur_2.velocity.x = 0;
+  minotaur_3.velocity.x = 0;
+
+  if (startEffect && minotaurSkin === "minotaur 1") {
+    minotaur_1.image = minotaur_1.sprites.startEffect.image;
   } else if (keys.ArrowDown.pressed) {
-    minotaur.image = minotaur.sprites.startAttack.image;
+    minotaur_1.image = minotaur_1.sprites.startAttack.image;
   } else {
-    minotaur.image = minotaur.sprites.idle.image;
+    minotaur_1.image = minotaur_1.sprites.idle.image;
+  }
+
+  if (startEffect && minotaurSkin === "minotaur 2") {
+    minotaur_2.image = minotaur_2.sprites.startEffect.image;
+  } else if (keys.ArrowDown.pressed) {
+    minotaur_2.image = minotaur_2.sprites.startAttack.image;
+  } else {
+    minotaur_2.image = minotaur_2.sprites.idle.image;
+  }
+
+  if (startEffect && minotaurSkin === "minotaur 3") {
+    minotaur_3.image = minotaur_3.sprites.startEffect.image;
+  } else if (keys.ArrowDown.pressed) {
+    minotaur_3.image = minotaur_3.sprites.startAttack.image;
+  } else {
+    minotaur_3.image = minotaur_3.sprites.idle.image;
   }
 
   if (
+    minotaurSkin === "minotaur 1" &&
     keys.ArrowRight.pressed &&
-    minotaur.lastKey === "ArrowRight" &&
-    minotaur.position.x + minotaur.width <= canvas.width
+    minotaur_1.lastKey === "ArrowRight" &&
+    minotaur_1.position.x + minotaur_1.width <= canvas.width
   ) {
-    minotaur.velocity.x = 1.5;
-    minotaur.image = minotaur.sprites.walk.image;
+    minotaur_1.velocity.x = 1.5;
+    minotaur_1.image = minotaur_1.sprites.walk.image;
   } else if (
+    minotaurSkin === "minotaur 1" &&
     keys.ArrowLeft.pressed &&
-    minotaur.lastKey === "ArrowLeft" &&
-    minotaur.position.x >= 0
+    minotaur_1.lastKey === "ArrowLeft" &&
+    minotaur_1.position.x >= 0
   ) {
-    minotaur.velocity.x = -1.5;
-    minotaur.image = minotaur.sprites.walk.image;
+    minotaur_1.velocity.x = -1.5;
+    minotaur_1.image = minotaur_1.sprites.walk.image;
   }
 
-  if (minotaur.velocity.y < 0 && !startEffect) {
-    minotaur.image = minotaur.sprites.jump.image;
-  } else if (minotaur.velocity.y > 0 && !startEffect) {
-    minotaur.image = minotaur.sprites.fall.image;
+  if (
+    minotaurSkin === "minotaur 2" &&
+    keys.ArrowRight.pressed &&
+    minotaur_2.lastKey === "ArrowRight" &&
+    minotaur_2.position.x + minotaur_2.width <= canvas.width
+  ) {
+    minotaur_2.velocity.x = 1.5;
+    minotaur_2.image = minotaur_2.sprites.walk.image;
+  } else if (
+    minotaurSkin === "minotaur 2" &&
+    keys.ArrowLeft.pressed &&
+    minotaur_2.lastKey === "ArrowLeft" &&
+    minotaur_2.position.x >= 0
+  ) {
+    minotaur_2.velocity.x = -1.5;
+    minotaur_2.image = minotaur_2.sprites.walk.image;
   }
+
+  if (
+    minotaurSkin === "minotaur 3" &&
+    keys.ArrowRight.pressed &&
+    minotaur_3.lastKey === "ArrowRight" &&
+    minotaur_3.position.x + minotaur_3.width <= canvas.width
+  ) {
+    minotaur_3.velocity.x = 1.5;
+    minotaur_3.image = minotaur_3.sprites.walk.image;
+  } else if (
+    minotaurSkin === "minotaur 3" &&
+    keys.ArrowLeft.pressed &&
+    minotaur_3.lastKey === "ArrowLeft" &&
+    minotaur_3.position.x >= 0
+  ) {
+    minotaur_3.velocity.x = -1.5;
+    minotaur_3.image = minotaur_3.sprites.walk.image;
+  }
+
+  if (
+    minotaurSkin === "minotaur 1" &&
+    minotaur_1.velocity.y < 0 &&
+    !startEffect
+  ) {
+    minotaur_1.image = minotaur_1.sprites.jump.image;
+  } else if (
+    minotaurSkin === "minotaur 1" &&
+    minotaur_1.velocity.y > 0 &&
+    !startEffect
+  ) {
+    minotaur_1.image = minotaur_1.sprites.fall.image;
+  }
+
+  if (
+    minotaurSkin === "minotaur 2" &&
+    minotaur_2.velocity.y < 0 &&
+    !startEffect
+  ) {
+    minotaur_2.image = minotaur_2.sprites.jump.image;
+  } else if (
+    minotaurSkin === "minotaur 2" &&
+    minotaur_2.velocity.y > 0 &&
+    !startEffect
+  ) {
+    minotaur_2.image = minotaur_2.sprites.fall.image;
+  }
+
+  if (
+    minotaurSkin === "minotaur 3" &&
+    minotaur_3.velocity.y < 0 &&
+    !startEffect
+  ) {
+    minotaur_3.image = minotaur_3.sprites.jump.image;
+  } else if (
+    minotaurSkin === "minotaur 3" &&
+    minotaur_3.velocity.y > 0 &&
+    !startEffect
+  ) {
+    minotaur_3.image = minotaur_3.sprites.fall.image;
+  }
+
   //attack box collision Golem
   if (
     golemMinotaurCollision({
       body1: golem_1,
-      body2: minotaur,
+      body2: minotaur_1,
     }) &&
     golem_1.isAttacking &&
     golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 1" &&
     (golem_1.dirX === 1 || golem_1.dirX === -1)
   ) {
     setTimeout(() => {
       golem_1.isAttacking = false;
     }, 100);
-    minotaur.health -= 0.05;
-    minotaurHealth.style.width = minotaur.health + "%";
+    minotaur_1.health -= 0.05;
+    minotaurHealth.style.width = minotaur_1.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: golem_1,
+      body2: minotaur_2,
+    }) &&
+    golem_1.isAttacking &&
+    golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 2" &&
+    (golem_1.dirX === 1 || golem_1.dirX === -1)
+  ) {
+    setTimeout(() => {
+      golem_1.isAttacking = false;
+    }, 100);
+    minotaur_2.health -= 0.05;
+    minotaurHealth.style.width = minotaur_2.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: golem_1,
+      body2: minotaur_3,
+    }) &&
+    golem_1.isAttacking &&
+    golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 3" &&
+    (golem_1.dirX === 1 || golem_1.dirX === -1)
+  ) {
+    setTimeout(() => {
+      golem_1.isAttacking = false;
+    }, 100);
+    minotaur_3.health -= 0.05;
+    minotaurHealth.style.width = minotaur_3.health + "%";
   }
 
   if (
     golemMinotaurCollision({
       body1: golem_2,
-      body2: minotaur,
+      body2: minotaur_1,
     }) &&
     golem_2.isAttacking &&
     golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 1" &&
     (golem_2.dirX === 1 || golem_2.dirX === -1)
   ) {
     setTimeout(() => {
       golem_2.isAttacking = false;
     }, 100);
-    minotaur.health -= 0.05;
-    minotaurHealth.style.width = minotaur.health + "%";
+    minotaur_1.health -= 0.05;
+    minotaurHealth.style.width = minotaur_1.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: golem_2,
+      body2: minotaur_2,
+    }) &&
+    golem_2.isAttacking &&
+    golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 2" &&
+    (golem_2.dirX === 1 || golem_2.dirX === -1)
+  ) {
+    setTimeout(() => {
+      golem_2.isAttacking = false;
+    }, 100);
+    minotaur_2.health -= 0.05;
+    minotaurHealth.style.width = minotaur_2.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: golem_2,
+      body2: minotaur_3,
+    }) &&
+    golem_2.isAttacking &&
+    golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 3" &&
+    (golem_2.dirX === 1 || golem_2.dirX === -1)
+  ) {
+    setTimeout(() => {
+      golem_2.isAttacking = false;
+    }, 100);
+    minotaur_3.health -= 0.05;
+    minotaurHealth.style.width = minotaur_3.health + "%";
   }
 
   if (
     golemMinotaurCollision({
       body1: golem_3,
-      body2: minotaur,
+      body2: minotaur_1,
     }) &&
     golem_3.isAttacking &&
     golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 1" &&
     (golem_3.dirX === 1 || golem_3.dirX === -1)
   ) {
     setTimeout(() => {
       golem_3.isAttacking = false;
     }, 100);
-    minotaur.health -= 0.05;
-    minotaurHealth.style.width = minotaur.health + "%";
+    minotaur_1.health -= 0.05;
+    minotaurHealth.style.width = minotaur_1.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: golem_3,
+      body2: minotaur_2,
+    }) &&
+    golem_3.isAttacking &&
+    golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 2" &&
+    (golem_3.dirX === 1 || golem_3.dirX === -1)
+  ) {
+    setTimeout(() => {
+      golem_3.isAttacking = false;
+    }, 100);
+    minotaur_2.health -= 0.05;
+    minotaurHealth.style.width = minotaur_2.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: golem_3,
+      body2: minotaur_3,
+    }) &&
+    golem_3.isAttacking &&
+    golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 3" &&
+    (golem_3.dirX === 1 || golem_3.dirX === -1)
+  ) {
+    setTimeout(() => {
+      golem_3.isAttacking = false;
+    }, 100);
+    minotaur_3.health -= 0.05;
+    minotaurHealth.style.width = minotaur_3.health + "%";
   }
 
   //attack box collision Minotaur
   if (
     golemMinotaurCollision({
-      body1: minotaur,
+      body1: minotaur_1,
       body2: golem_1,
     }) &&
     golemSkin === "golem 1" &&
-    minotaur.isAttacking &&
-    (minotaur.dirX === 1 || minotaur.dirX === -1)
+    minotaurSkin === "minotaur 1" &&
+    minotaur_1.isAttacking &&
+    (minotaur_1.dirX === 1 || minotaur_1.dirX === -1)
   ) {
     setTimeout(() => {
-      minotaur.isAttacking = false;
+      minotaur_1.isAttacking = false;
     }, 100);
     golem_1.health -= 0.05;
     golemHealth.style.width = golem_1.health + "%";
@@ -374,15 +779,50 @@ function animate() {
 
   if (
     golemMinotaurCollision({
-      body1: minotaur,
+      body1: minotaur_2,
+      body2: golem_1,
+    }) &&
+    golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 2" &&
+    minotaur_2.isAttacking &&
+    (minotaur_2.dirX === 1 || minotaur_2.dirX === -1)
+  ) {
+    setTimeout(() => {
+      minotaur_2.isAttacking = false;
+    }, 100);
+    golem_1.health -= 0.05;
+    golemHealth.style.width = golem_1.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: minotaur_3,
+      body2: golem_1,
+    }) &&
+    golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 3" &&
+    minotaur_3.isAttacking &&
+    (minotaur_3.dirX === 1 || minotaur_3.dirX === -1)
+  ) {
+    setTimeout(() => {
+      minotaur_3.isAttacking = false;
+    }, 100);
+    golem_1.health -= 0.05;
+    golemHealth.style.width = golem_1.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: minotaur_1,
       body2: golem_2,
     }) &&
     golemSkin === "golem 2" &&
-    minotaur.isAttacking &&
-    (minotaur.dirX === 1 || minotaur.dirX === -1)
+    minotaurSkin === "minotaur 1" &&
+    minotaur_1.isAttacking &&
+    (minotaur_1.dirX === 1 || minotaur_1.dirX === -1)
   ) {
     setTimeout(() => {
-      minotaur.isAttacking = false;
+      minotaur_1.isAttacking = false;
     }, 100);
     golem_2.health -= 0.05;
     golemHealth.style.width = golem_2.health + "%";
@@ -390,15 +830,84 @@ function animate() {
 
   if (
     golemMinotaurCollision({
-      body1: minotaur,
+      body1: minotaur_2,
+      body2: golem_2,
+    }) &&
+    golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 2" &&
+    minotaur_2.isAttacking &&
+    (minotaur_2.dirX === 1 || minotaur_2.dirX === -1)
+  ) {
+    setTimeout(() => {
+      minotaur_2.isAttacking = false;
+    }, 100);
+    golem_2.health -= 0.05;
+    golemHealth.style.width = golem_2.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: minotaur_3,
+      body2: golem_2,
+    }) &&
+    golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 3" &&
+    minotaur_3.isAttacking &&
+    (minotaur_3.dirX === 1 || minotaur_3.dirX === -1)
+  ) {
+    setTimeout(() => {
+      minotaur_3.isAttacking = false;
+    }, 100);
+    golem_2.health -= 0.05;
+    golemHealth.style.width = golem_2.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: minotaur_1,
       body2: golem_3,
     }) &&
     golemSkin === "golem 3" &&
-    minotaur.isAttacking &&
-    (minotaur.dirX === 1 || minotaur.dirX === -1)
+    minotaurSkin === "minotaur 1" &&
+    minotaur_1.isAttacking &&
+    (minotaur_1.dirX === 1 || minotaur_1.dirX === -1)
   ) {
     setTimeout(() => {
-      minotaur.isAttacking = false;
+      minotaur_1.isAttacking = false;
+    }, 100);
+    golem_3.health -= 0.05;
+    golemHealth.style.width = golem_3.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: minotaur_2,
+      body2: golem_3,
+    }) &&
+    golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 2" &&
+    minotaur_2.isAttacking &&
+    (minotaur_2.dirX === 1 || minotaur_2.dirX === -1)
+  ) {
+    setTimeout(() => {
+      minotaur_2.isAttacking = false;
+    }, 100);
+    golem_3.health -= 0.05;
+    golemHealth.style.width = golem_3.health + "%";
+  }
+
+  if (
+    golemMinotaurCollision({
+      body1: minotaur_3,
+      body2: golem_3,
+    }) &&
+    golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 3" &&
+    minotaur_3.isAttacking &&
+    (minotaur_3.dirX === 1 || minotaur_3.dirX === -1)
+  ) {
+    setTimeout(() => {
+      minotaur_3.isAttacking = false;
     }, 100);
     golem_3.health -= 0.05;
     golemHealth.style.width = golem_3.health + "%";
@@ -410,32 +919,146 @@ function animate() {
     canvas.style.background = "url('./image/background/background.jpg')";
   }
 
-  if (golemSkin === "golem 1" && gameOver && minotaur.health < golem_1.health) {
-    minotaur.image = minotaur.sprites.death.image;
+  if (
+    golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 1" &&
+    gameOver &&
+    minotaur_1.health < golem_1.health
+  ) {
+    minotaur_1.image = minotaur_1.sprites.death.image;
   } else if (
     golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 1" &&
     gameOver &&
-    minotaur.health > golem_1.health
+    minotaur_1.health > golem_1.health
   ) {
     golem_1.image = golem_1.sprites.death.image;
   }
 
-  if (golemSkin === "golem 2" && gameOver && minotaur.health < golem_2.health) {
-    minotaur.image = minotaur.sprites.death.image;
+  if (
+    golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 2" &&
+    gameOver &&
+    minotaur_2.health < golem_1.health
+  ) {
+    minotaur_2.image = minotaur_2.sprites.death.image;
+  } else if (
+    golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 2" &&
+    gameOver &&
+    minotaur_2.health > golem_1.health
+  ) {
+    golem_1.image = golem_1.sprites.death.image;
+  }
+
+  if (
+    golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 3" &&
+    gameOver &&
+    minotaur_3.health < golem_1.health
+  ) {
+    minotaur_3.image = minotaur_3.sprites.death.image;
+  } else if (
+    golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 3" &&
+    gameOver &&
+    minotaur_3.health > golem_1.health
+  ) {
+    golem_1.image = golem_1.sprites.death.image;
+  }
+
+  if (
+    golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 1" &&
+    gameOver &&
+    minotaur_1.health < golem_2.health
+  ) {
+    minotaur_1.image = minotaur_1.sprites.death.image;
   } else if (
     golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 1" &&
     gameOver &&
-    minotaur.health > golem_2.health
+    minotaur_1.health > golem_2.health
   ) {
     golem_2.image = golem_2.sprites.death.image;
   }
 
-  if (golemSkin === "golem 3" && gameOver && minotaur.health < golem_3.health) {
-    minotaur.image = minotaur.sprites.death.image;
+  if (
+    golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 2" &&
+    gameOver &&
+    minotaur_2.health < golem_2.health
+  ) {
+    minotaur_2.image = minotaur_2.sprites.death.image;
+  } else if (
+    golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 2" &&
+    gameOver &&
+    minotaur_2.health > golem_2.health
+  ) {
+    golem_2.image = golem_2.sprites.death.image;
+  }
+
+  if (
+    golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 3" &&
+    gameOver &&
+    minotaur_3.health < golem_2.health
+  ) {
+    minotaur_3.image = minotaur_3.sprites.death.image;
+  } else if (
+    golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 3" &&
+    gameOver &&
+    minotaur_3.health > golem_2.health
+  ) {
+    golem_2.image = golem_2.sprites.death.image;
+  }
+
+  if (
+    golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 1" &&
+    gameOver &&
+    minotaur_1.health < golem_3.health
+  ) {
+    minotaur_1.image = minotaur_1.sprites.death.image;
   } else if (
     golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 1" &&
     gameOver &&
-    minotaur.health > golem_3.health
+    minotaur_1.health > golem_3.health
+  ) {
+    golem_3.image = golem_3.sprites.death.image;
+  }
+
+  if (
+    golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 2" &&
+    gameOver &&
+    minotaur_2.health < golem_3.health
+  ) {
+    minotaur_2.image = minotaur_2.sprites.death.image;
+  } else if (
+    golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 2" &&
+    gameOver &&
+    minotaur_2.health > golem_3.health
+  ) {
+    golem_3.image = golem_3.sprites.death.image;
+  }
+
+  if (
+    golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 3" &&
+    gameOver &&
+    minotaur_3.health < golem_3.health
+  ) {
+    minotaur_3.image = minotaur_3.sprites.death.image;
+  } else if (
+    golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 3" &&
+    gameOver &&
+    minotaur_3.health > golem_3.health
   ) {
     golem_3.image = golem_3.sprites.death.image;
   }
@@ -505,22 +1128,56 @@ window.addEventListener("keydown", (e) => {
       // minotaur keys
       case "ArrowRight":
         keys.ArrowRight.pressed = true;
-        minotaur.lastKey = "ArrowRight";
-        minotaur.dirX = 1;
+        if (minotaurSkin === "minotaur 1") {
+          minotaur_1.lastKey = "ArrowRight";
+          minotaur_1.dirX = 1;
+        }
+        if (minotaurSkin === "minotaur 2") {
+          minotaur_2.lastKey = "ArrowRight";
+          minotaur_2.dirX = 1;
+        }
+        if (minotaurSkin === "minotaur 3") {
+          minotaur_3.lastKey = "ArrowRight";
+          minotaur_3.dirX = 1;
+        }
         break;
       case "ArrowLeft":
         keys.ArrowLeft.pressed = true;
-        minotaur.lastKey = "ArrowLeft";
-        minotaur.dirX = -1;
+        if (minotaurSkin === "minotaur 1") {
+          minotaur_1.lastKey = "ArrowLeft";
+          minotaur_1.dirX = -1;
+        }
+        if (minotaurSkin === "minotaur 2") {
+          minotaur_2.lastKey = "ArrowLeft";
+          minotaur_2.dirX = -1;
+        }
+        if (minotaurSkin === "minotaur 3") {
+          minotaur_3.lastKey = "ArrowLeft";
+          minotaur_3.dirX = -1;
+        }
         break;
       case "ArrowUp":
-        if (minotaur.velocity.y === 0) {
-          minotaur.velocity.y = -7;
+        if (minotaur_1.velocity.y === 0 && minotaurSkin === "minotaur 1") {
+          minotaur_1.velocity.y = -7;
+        }
+        if (minotaur_2.velocity.y === 0 && minotaurSkin === "minotaur 2") {
+          minotaur_2.velocity.y = -7;
+        }
+        if (minotaur_3.velocity.y === 0 && minotaurSkin === "minotaur 3") {
+          minotaur_3.velocity.y = -7;
         }
         break;
       case "ArrowDown":
-        minotaur.isAttacking = true;
         keys.ArrowDown.pressed = true;
+        if (minotaurSkin === "minotaur 1") {
+          minotaur_1.isAttacking = true;
+        }
+        if (minotaurSkin === "minotaur 2") {
+          minotaur_2.isAttacking = true;
+        }
+        if (minotaurSkin === "minotaur 3") {
+          minotaur_3.isAttacking = true;
+        }
         break;
 
       default:
@@ -531,9 +1188,15 @@ window.addEventListener("keydown", (e) => {
 
 window.addEventListener("keyup", (e) => {
   if (
-    (golem_1.health && minotaur.health) ||
-    (golem_2.health && minotaur.health) ||
-    (golem_3.health && minotaur.health)
+    (golem_1.health && minotaur_1.health) ||
+    (golem_2.health && minotaur_1.health) ||
+    (golem_3.health && minotaur_1.health) ||
+    (golem_1.health && minotaur_2.health) ||
+    (golem_2.health && minotaur_2.health) ||
+    (golem_3.health && minotaur_2.health) ||
+    (golem_1.health && minotaur_3.health) ||
+    (golem_2.health && minotaur_3.health) ||
+    (golem_3.health && minotaur_3.health)
   ) {
     switch (e.key) {
       // golem keys
@@ -560,7 +1223,9 @@ window.addEventListener("keyup", (e) => {
         keys.ArrowLeft.pressed = false;
         break;
       case "ArrowDown":
-        minotaur.isAttacking = false;
+        minotaur_1.isAttacking = false;
+        minotaur_2.isAttacking = false;
+        minotaur_3.isAttacking = false;
         setTimeout(() => {
           keys.ArrowDown.pressed = false;
         }, 250);
