@@ -1,5 +1,5 @@
 class Fighter {
-  constructor({ position, velocity, color, offset, sprites, dirX }) {
+  constructor({ position, velocity, color, offset, sprites, dirX, imageURL }) {
     this.position = position;
     this.velocity = velocity;
     this.lastKey;
@@ -7,6 +7,7 @@ class Fighter {
     this.width = 255;
     this.height = 175;
     this.dirX = dirX;
+    this.imageURL = imageURL;
 
     //sprites images
     this.sprites = sprites;

@@ -313,7 +313,10 @@ const decreaseTimer = () => {
 
 setInterval(() => {
   decreaseTimer();
-  // console.log(gameOver);
+  // console.log(golemReady);
+  // console.log(minotaurReady);
+  // console.log(mapSet);
+  // console.log(selectedImageGolem.style.background);
 }, 1000);
 
 const keys = {
@@ -342,10 +345,31 @@ function golemMinotaurCollision({ body1, body2 }) {
 function animate() {
   window.requestAnimationFrame(animate);
 
+  //Entrance manipulation
+  if (modeGame > 0) {
+    hiddenContainer.style.display = "none";
+  }
+  if (modeGame === 1 && golemReady && minotaurReady && mapSet) {
+    minotaur1.style.display = "none";
+    minotaur2.style.display = "none";
+    minotaur3.style.display = "none";
+    golem1.style.display = "none";
+    golem2.style.display = "none";
+    golem3.style.display = "none";
+  }
+
+  if (golemReady && minotaurReady && mapSet) {
+    startBtn.style.display = "flex";
+    teamVsTeam.style.display = "none";
+    fighterVsFighter.style.display = "none";
+    textDisplay.innerHTML = "Click START!";
+    golemProfile.style.display = "flex";
+    minotaurProfile.style.display = "flex";
+  }
+
   // Game Start
   if (gameStart) {
     setTimeout(() => (startEffect = false), 2000);
-    mapsContainer.style.display = "none";
     entranceContainer.style.display = "none";
     containerCanvas.style.borderBottom = "4px solid white";
     context.fillStyle = "black";
@@ -625,6 +649,22 @@ function animate() {
     }, 100);
     minotaur_1.health -= 0.05;
     minotaurHealth.style.width = minotaur_1.health + "%";
+
+    if (minotaur_1.health <= 80) {
+      heartRed5.style.display = "none";
+    }
+    if (minotaur_1.health <= 60) {
+      heartRed4.style.display = "none";
+    }
+    if (minotaur_1.health <= 40) {
+      heartRed3.style.display = "none";
+    }
+    if (minotaur_1.health <= 20) {
+      heartRed2.style.display = "none";
+    }
+    if (minotaur_1.health <= 0) {
+      heartRed1.style.display = "none";
+    }
   }
 
   if (
@@ -642,6 +682,22 @@ function animate() {
     }, 100);
     minotaur_2.health -= 0.05;
     minotaurHealth.style.width = minotaur_2.health + "%";
+
+    if (minotaur_2.health <= 80) {
+      heartRed5.style.display = "none";
+    }
+    if (minotaur_2.health <= 60) {
+      heartRed4.style.display = "none";
+    }
+    if (minotaur_2.health <= 40) {
+      heartRed3.style.display = "none";
+    }
+    if (minotaur_2.health <= 20) {
+      heartRed2.style.display = "none";
+    }
+    if (minotaur_2.health <= 0) {
+      heartRed1.style.display = "none";
+    }
   }
 
   if (
@@ -659,6 +715,22 @@ function animate() {
     }, 100);
     minotaur_3.health -= 0.05;
     minotaurHealth.style.width = minotaur_3.health + "%";
+
+    if (minotaur_3.health <= 80) {
+      heartRed5.style.display = "none";
+    }
+    if (minotaur_3.health <= 60) {
+      heartRed4.style.display = "none";
+    }
+    if (minotaur_3.health <= 40) {
+      heartRed3.style.display = "none";
+    }
+    if (minotaur_3.health <= 20) {
+      heartRed2.style.display = "none";
+    }
+    if (minotaur_3.health <= 0) {
+      heartRed1.style.display = "none";
+    }
   }
 
   if (
@@ -676,6 +748,22 @@ function animate() {
     }, 100);
     minotaur_1.health -= 0.05;
     minotaurHealth.style.width = minotaur_1.health + "%";
+
+    if (minotaur_1.health <= 80) {
+      heartRed5.style.display = "none";
+    }
+    if (minotaur_1.health <= 60) {
+      heartRed4.style.display = "none";
+    }
+    if (minotaur_1.health <= 40) {
+      heartRed3.style.display = "none";
+    }
+    if (minotaur_1.health <= 20) {
+      heartRed2.style.display = "none";
+    }
+    if (minotaur_1.health <= 0) {
+      heartRed1.style.display = "none";
+    }
   }
 
   if (
@@ -693,6 +781,22 @@ function animate() {
     }, 100);
     minotaur_2.health -= 0.05;
     minotaurHealth.style.width = minotaur_2.health + "%";
+
+    if (minotaur_2.health <= 80) {
+      heartRed5.style.display = "none";
+    }
+    if (minotaur_2.health <= 60) {
+      heartRed4.style.display = "none";
+    }
+    if (minotaur_2.health <= 40) {
+      heartRed3.style.display = "none";
+    }
+    if (minotaur_2.health <= 20) {
+      heartRed2.style.display = "none";
+    }
+    if (minotaur_2.health <= 0) {
+      heartRed1.style.display = "none";
+    }
   }
 
   if (
@@ -710,6 +814,22 @@ function animate() {
     }, 100);
     minotaur_3.health -= 0.05;
     minotaurHealth.style.width = minotaur_3.health + "%";
+
+    if (minotaur_3.health <= 80) {
+      heartRed5.style.display = "none";
+    }
+    if (minotaur_3.health <= 60) {
+      heartRed4.style.display = "none";
+    }
+    if (minotaur_3.health <= 40) {
+      heartRed3.style.display = "none";
+    }
+    if (minotaur_3.health <= 20) {
+      heartRed2.style.display = "none";
+    }
+    if (minotaur_3.health <= 0) {
+      heartRed1.style.display = "none";
+    }
   }
 
   if (
@@ -727,6 +847,22 @@ function animate() {
     }, 100);
     minotaur_1.health -= 0.05;
     minotaurHealth.style.width = minotaur_1.health + "%";
+
+    if (minotaur_1.health <= 80) {
+      heartRed5.style.display = "none";
+    }
+    if (minotaur_1.health <= 60) {
+      heartRed4.style.display = "none";
+    }
+    if (minotaur_1.health <= 40) {
+      heartRed3.style.display = "none";
+    }
+    if (minotaur_1.health <= 20) {
+      heartRed2.style.display = "none";
+    }
+    if (minotaur_1.health <= 0) {
+      heartRed1.style.display = "none";
+    }
   }
 
   if (
@@ -744,6 +880,22 @@ function animate() {
     }, 100);
     minotaur_2.health -= 0.05;
     minotaurHealth.style.width = minotaur_2.health + "%";
+
+    if (minotaur_2.health <= 80) {
+      heartRed5.style.display = "none";
+    }
+    if (minotaur_2.health <= 60) {
+      heartRed4.style.display = "none";
+    }
+    if (minotaur_2.health <= 40) {
+      heartRed3.style.display = "none";
+    }
+    if (minotaur_2.health <= 20) {
+      heartRed2.style.display = "none";
+    }
+    if (minotaur_2.health <= 0) {
+      heartRed1.style.display = "none";
+    }
   }
 
   if (
@@ -761,6 +913,22 @@ function animate() {
     }, 100);
     minotaur_3.health -= 0.05;
     minotaurHealth.style.width = minotaur_3.health + "%";
+
+    if (minotaur_3.health <= 80) {
+      heartRed5.style.display = "none";
+    }
+    if (minotaur_3.health <= 60) {
+      heartRed4.style.display = "none";
+    }
+    if (minotaur_3.health <= 40) {
+      heartRed3.style.display = "none";
+    }
+    if (minotaur_3.health <= 20) {
+      heartRed2.style.display = "none";
+    }
+    if (minotaur_3.health <= 0) {
+      heartRed1.style.display = "none";
+    }
   }
 
   //attack box collision Minotaur
@@ -779,6 +947,22 @@ function animate() {
     }, 100);
     golem_1.health -= 0.05;
     golemHealth.style.width = golem_1.health + "%";
+
+    if (golem_1.health <= 80) {
+      heartBlue5.style.display = "none";
+    }
+    if (golem_1.health <= 60) {
+      heartBlue4.style.display = "none";
+    }
+    if (golem_1.health <= 40) {
+      heartBlue3.style.display = "none";
+    }
+    if (golem_1.health <= 20) {
+      heartBlue2.style.display = "none";
+    }
+    if (golem_1.health <= 0) {
+      heartBlue1.style.display = "none";
+    }
   }
 
   if (
@@ -796,6 +980,22 @@ function animate() {
     }, 100);
     golem_1.health -= 0.05;
     golemHealth.style.width = golem_1.health + "%";
+
+    if (golem_1.health <= 80) {
+      heartBlue5.style.display = "none";
+    }
+    if (golem_1.health <= 60) {
+      heartBlue4.style.display = "none";
+    }
+    if (golem_1.health <= 40) {
+      heartBlue3.style.display = "none";
+    }
+    if (golem_1.health <= 20) {
+      heartBlue2.style.display = "none";
+    }
+    if (golem_1.health <= 0) {
+      heartBlue1.style.display = "none";
+    }
   }
 
   if (
@@ -813,6 +1013,22 @@ function animate() {
     }, 100);
     golem_1.health -= 0.05;
     golemHealth.style.width = golem_1.health + "%";
+
+    if (golem_1.health <= 80) {
+      heartBlue5.style.display = "none";
+    }
+    if (golem_1.health <= 60) {
+      heartBlue4.style.display = "none";
+    }
+    if (golem_1.health <= 40) {
+      heartBlue3.style.display = "none";
+    }
+    if (golem_1.health <= 20) {
+      heartBlue2.style.display = "none";
+    }
+    if (golem_1.health <= 0) {
+      heartBlue1.style.display = "none";
+    }
   }
 
   if (
@@ -830,6 +1046,22 @@ function animate() {
     }, 100);
     golem_2.health -= 0.05;
     golemHealth.style.width = golem_2.health + "%";
+
+    if (golem_2.health <= 80) {
+      heartBlue5.style.display = "none";
+    }
+    if (golem_2.health <= 60) {
+      heartBlue4.style.display = "none";
+    }
+    if (golem_2.health <= 40) {
+      heartBlue3.style.display = "none";
+    }
+    if (golem_2.health <= 20) {
+      heartBlue2.style.display = "none";
+    }
+    if (golem_2.health <= 0) {
+      heartBlue1.style.display = "none";
+    }
   }
 
   if (
@@ -847,6 +1079,22 @@ function animate() {
     }, 100);
     golem_2.health -= 0.05;
     golemHealth.style.width = golem_2.health + "%";
+
+    if (golem_2.health <= 80) {
+      heartBlue5.style.display = "none";
+    }
+    if (golem_2.health <= 60) {
+      heartBlue4.style.display = "none";
+    }
+    if (golem_2.health <= 40) {
+      heartBlue3.style.display = "none";
+    }
+    if (golem_2.health <= 20) {
+      heartBlue2.style.display = "none";
+    }
+    if (golem_2.health <= 0) {
+      heartBlue1.style.display = "none";
+    }
   }
 
   if (
@@ -864,6 +1112,22 @@ function animate() {
     }, 100);
     golem_2.health -= 0.05;
     golemHealth.style.width = golem_2.health + "%";
+
+    if (golem_2.health <= 80) {
+      heartBlue5.style.display = "none";
+    }
+    if (golem_2.health <= 60) {
+      heartBlue4.style.display = "none";
+    }
+    if (golem_2.health <= 40) {
+      heartBlue3.style.display = "none";
+    }
+    if (golem_2.health <= 20) {
+      heartBlue2.style.display = "none";
+    }
+    if (golem_2.health <= 0) {
+      heartBlue1.style.display = "none";
+    }
   }
 
   if (
@@ -881,6 +1145,22 @@ function animate() {
     }, 100);
     golem_3.health -= 0.05;
     golemHealth.style.width = golem_3.health + "%";
+
+    if (golem_3.health <= 80) {
+      heartBlue5.style.display = "none";
+    }
+    if (golem_3.health <= 60) {
+      heartBlue4.style.display = "none";
+    }
+    if (golem_3.health <= 40) {
+      heartBlue3.style.display = "none";
+    }
+    if (golem_3.health <= 20) {
+      heartBlue2.style.display = "none";
+    }
+    if (golem_3.health <= 0) {
+      heartBlue1.style.display = "none";
+    }
   }
 
   if (
@@ -898,6 +1178,22 @@ function animate() {
     }, 100);
     golem_3.health -= 0.05;
     golemHealth.style.width = golem_3.health + "%";
+
+    if (golem_3.health <= 80) {
+      heartBlue5.style.display = "none";
+    }
+    if (golem_3.health <= 60) {
+      heartBlue4.style.display = "none";
+    }
+    if (golem_3.health <= 40) {
+      heartBlue3.style.display = "none";
+    }
+    if (golem_3.health <= 20) {
+      heartBlue3.style.display = "none";
+    }
+    if (golem_3.health <= 0) {
+      heartBlue1.style.display = "none";
+    }
   }
 
   if (
@@ -915,6 +1211,22 @@ function animate() {
     }, 100);
     golem_3.health -= 0.05;
     golemHealth.style.width = golem_3.health + "%";
+
+    if (golem_3.health <= 80) {
+      heartBlue5.style.display = "none";
+    }
+    if (golem_3.health <= 60) {
+      heartBlue4.style.display = "none";
+    }
+    if (golem_3.health <= 40) {
+      heartBlue3.style.display = "none";
+    }
+    if (golem_3.health <= 20) {
+      heartBlue2.style.display = "none";
+    }
+    if (golem_3.health <= 0) {
+      heartBlue1.style.display = "none";
+    }
   }
 
   // Game over
@@ -1239,26 +1551,4 @@ window.addEventListener("keyup", (e) => {
         break;
     }
   }
-});
-
-// Maps event
-city1.addEventListener("click", () => {
-  canvas.style.background = "url('./image/background/City1.png')";
-  canvas.style.backgroundSize = "cover";
-  gameStart = true;
-});
-city2.addEventListener("click", () => {
-  canvas.style.background = "url('./image/background/City2.png')";
-  canvas.style.backgroundSize = "cover";
-  gameStart = true;
-});
-city3.addEventListener("click", () => {
-  canvas.style.background = "url('./image/background/City3.png')";
-  canvas.style.backgroundSize = "cover";
-  gameStart = true;
-});
-city4.addEventListener("click", () => {
-  canvas.style.background = "url('./image/background/City4.png')";
-  canvas.style.backgroundSize = "cover";
-  gameStart = true;
 });

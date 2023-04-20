@@ -1,19 +1,5 @@
 let minotaurSkin = "";
 
-// Minotaur Event Click
-minotaur1.addEventListener("click", () => {
-  gameStart = true;
-  minotaurSkin = "minotaur 1";
-});
-minotaur2.addEventListener("click", () => {
-  gameStart = true;
-  minotaurSkin = "minotaur 2";
-});
-minotaur3.addEventListener("click", () => {
-  gameStart = true;
-  minotaurSkin = "minotaur 3";
-});
-
 //Minotaur
 const minotaur_1 = new Fighter({
   position: {
@@ -53,9 +39,10 @@ const minotaur_1 = new Fighter({
       imageSrc: "./image/minotaur/1/minotaur_1_FullDying.png",
     },
     startEffect: {
-      imageSrc: "./image/start-effect/Explosion_white.png",
+      imageSrc: "./image/start-effect/red-effect.png",
     },
   },
+  imageURL: "url('./image/team-minotaur/Minotaur_01.png')",
 });
 
 const minotaur_2 = new Fighter({
@@ -96,9 +83,10 @@ const minotaur_2 = new Fighter({
       imageSrc: "./image/minotaur/2/minotaur_2_FullDying.png",
     },
     startEffect: {
-      imageSrc: "./image/start-effect/Explosion_white.png",
+      imageSrc: "./image/start-effect/red-effect.png",
     },
   },
+  imageURL: "url('./image/team-minotaur/Minotaur_02.png')",
 });
 
 const minotaur_3 = new Fighter({
@@ -139,7 +127,34 @@ const minotaur_3 = new Fighter({
       imageSrc: "./image/minotaur/3/minotaur_3_FullDying.png",
     },
     startEffect: {
-      imageSrc: "./image/start-effect/Explosion_white.png",
+      imageSrc: "./image/start-effect/red-effect.png",
     },
   },
+  imageURL: "url('./image/team-minotaur/Minotaur_03.png')",
+});
+
+// Minotaur Event Click
+minotaur1.addEventListener("click", () => {
+  minotaurReady = true;
+  minotaurSkin = "minotaur 1";
+  minotaur1.style.backgroundColor = "red";
+  minotaur2.style.backgroundColor = "black";
+  minotaur3.style.backgroundColor = "black";
+  selectedImageMinotaur.style.backgroundImage = minotaur_1.imageURL;
+});
+minotaur2.addEventListener("click", () => {
+  minotaurReady = true;
+  minotaurSkin = "minotaur 2";
+  minotaur1.style.backgroundColor = "black";
+  minotaur2.style.backgroundColor = "red";
+  minotaur3.style.backgroundColor = "black";
+  selectedImageMinotaur.style.backgroundImage = minotaur_2.imageURL;
+});
+minotaur3.addEventListener("click", () => {
+  minotaurReady = true;
+  minotaurSkin = "minotaur 3";
+  minotaur1.style.backgroundColor = "black";
+  minotaur2.style.backgroundColor = "black";
+  minotaur3.style.backgroundColor = "red";
+  selectedImageMinotaur.style.backgroundImage = minotaur_3.imageURL;
 });

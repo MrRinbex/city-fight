@@ -5,7 +5,19 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+  <!--Team Golem-->
   <div class="right-side">
+    <div id="golem-static">
+      <div class="image-golem"></div>
+      <div class="health-image-golem">
+        <div class="heart-blue-1"></div>
+        <div class="heart-blue-2"></div>
+        <div class="heart-blue-3"></div>
+        <div class="heart-blue-4"></div>
+        <div class="heart-blue-5"></div>
+      </div>
+      <div class="static-golem"></div>
+    </div>
     <div class="golem-team">Team Golem</div>
     <div class="golem-fighter-1"></div>
     <div class="golem-fighter-2"></div>
@@ -27,25 +39,32 @@
         <div id="minotaurHealth"></div>
       </div>
     </div>
+    <!--Entrance-->
     <div class="entrance-container">
-      <div class="1vs1">
+      <div id="text-entrance">
+        <p class="text-display">Choice your Game Mode</p>
+      </div>
+      <div id="fighter-vs-fighter">
         <span class="text-golem">1 &nbsp</span>vs<span class="text-minotaur">
           &nbsp 1</span
         >
       </div>
-      <div class="go">GO</div>
-      <div class="team-vs-team">
+      <div id="go">START</div>
+      <div id="team-vs-team">
         <span class="text-golem">Team Golem &nbsp</span>vs<span
           class="text-minotaur"
           >&nbsp Team Minotaur</span
         >
       </div>
     </div>
+    <!--Game Notification-->
     <div id="notification"></div>
     <div class="container-canvas">
       <canvas></canvas>
     </div>
-    <div class="maps-container">
+    <!--Maps-city-->
+    <div id="maps-container">
+      <div id="hidden-container"></div>
       <div id="city1" class="maps">
         <div>CurLanda</div>
       </div>
@@ -54,7 +73,19 @@
       <div id="city4" class="maps"><div>Paris</div></div>
     </div>
   </div>
+  <!--Team Minotaur-->
   <div class="left-side">
+    <div id="minotaur-static">
+      <div class="image-minotaur"></div>
+      <div class="health-image-minotaur">
+        <div class="heart-red-1"></div>
+        <div class="heart-red-2"></div>
+        <div class="heart-red-3"></div>
+        <div class="heart-red-4"></div>
+        <div class="heart-red-5"></div>
+      </div>
+      <div class="static-minotaur"></div>
+    </div>
     <div class="minotaur-team">Team Minotaur</div>
     <div class="minotaur-fighter-1"></div>
     <div class="minotaur-fighter-2"></div>

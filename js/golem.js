@@ -1,19 +1,5 @@
 let golemSkin = "";
 
-// Golem Event Click
-golem1.addEventListener("click", () => {
-  gameStart = true;
-  golemSkin = "golem 1";
-});
-golem2.addEventListener("click", () => {
-  gameStart = true;
-  golemSkin = "golem 2";
-});
-golem3.addEventListener("click", () => {
-  gameStart = true;
-  golemSkin = "golem 3";
-});
-
 // Golem
 const golem_1 = new Fighter({
   position: {
@@ -53,9 +39,10 @@ const golem_1 = new Fighter({
       imageSrc: "./image/Golem/1/Golem_1_FullDying.png",
     },
     startEffect: {
-      imageSrc: "./image/start-effect/Explosion_green.png",
+      imageSrc: "./image/start-effect/blue-effect.png",
     },
   },
+  imageURL: "url('./image/team-golem/Golem_01.png')",
 });
 
 const golem_2 = new Fighter({
@@ -96,9 +83,10 @@ const golem_2 = new Fighter({
       imageSrc: "./image/Golem/2/Golem_2_FullDying.png",
     },
     startEffect: {
-      imageSrc: "./image/start-effect/Explosion_green.png",
+      imageSrc: "./image/start-effect/blue-effect.png",
     },
   },
+  imageURL: "url('./image/team-golem/Golem_02.png')",
 });
 
 const golem_3 = new Fighter({
@@ -139,7 +127,34 @@ const golem_3 = new Fighter({
       imageSrc: "./image/Golem/3/Golem_3_FullDying.png",
     },
     startEffect: {
-      imageSrc: "./image/start-effect/Explosion_green.png",
+      imageSrc: "./image/start-effect/blue-effect.png",
     },
   },
+  imageURL: "url('./image/team-golem/Golem_03.png')",
+});
+
+// Golem Event Click
+golem1.addEventListener("click", () => {
+  golemSkin = "golem 1";
+  golemReady = true;
+  golem1.style.backgroundColor = "blue";
+  golem2.style.backgroundColor = "black";
+  golem3.style.backgroundColor = "black";
+  selectedImageGolem.style.backgroundImage = golem_1.imageURL;
+});
+golem2.addEventListener("click", () => {
+  golemSkin = "golem 2";
+  golemReady = true;
+  golem1.style.backgroundColor = "black";
+  golem2.style.backgroundColor = "blue";
+  golem3.style.backgroundColor = "black";
+  selectedImageGolem.style.backgroundImage = golem_2.imageURL;
+});
+golem3.addEventListener("click", () => {
+  golemSkin = "golem 3";
+  golemReady = true;
+  golem1.style.backgroundColor = "black";
+  golem2.style.backgroundColor = "black";
+  golem3.style.backgroundColor = "blue";
+  selectedImageGolem.style.backgroundImage = golem_3.imageURL;
 });
