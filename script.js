@@ -346,6 +346,8 @@ function animate() {
   if (gameStart) {
     setTimeout(() => (startEffect = false), 2000);
     mapsContainer.style.display = "none";
+    entranceContainer.style.display = "none";
+    containerCanvas.style.borderBottom = "4px solid white";
     context.fillStyle = "black";
     context.fillRect(0, 0, canvas.width, canvas.height);
     clearCanvas();
@@ -365,6 +367,8 @@ function animate() {
     } else if (minotaurSkin === "minotaur 3") {
       minotaur_3.update();
     }
+  } else {
+    containerCanvas.style.borderBottom = "none";
   }
 
   // golem Move

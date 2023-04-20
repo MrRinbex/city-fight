@@ -108,6 +108,54 @@ body {
   align-items: center;
   justify-content: center;
 }
+.entrance-container {
+  display: flex;
+  padding-top: 1vh;
+  position: absolute;
+  border: 1px solid green;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+}
+
+.entrance-container div {
+  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  height: 100%;
+  color: white;
+  font-size: 1.3vmax;
+}
+.text-golem {
+  color: blue;
+  animation: blinkBlue 1s infinite;
+  -webkit-animation: blinkBlue 10s infinite;
+}
+.text-minotaur {
+  color: red;
+  animation: blinkRed 1s infinite;
+  -webkit-animation: blinkRed 10s infinite;
+}
+.go {
+  color: white;
+  animation: blink 1s infinite;
+  -webkit-animation: blink 10s infinite;
+}
+
+#notification {
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .container-canvas {
   border: 4px solid white;
   border-radius: 3px 3px 3px 3px;
@@ -218,18 +266,6 @@ canvas {
   border-radius: 0px 30px 30px 0px;
 }
 
-#notification {
-  position: absolute;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
 .maps-container {
   height: 10vh;
   width: 100%;
@@ -262,7 +298,6 @@ canvas {
   background-size: contain;
   background-repeat: repeat-x;
   border: dashed green;
-  border-top: none;
 }
 
 #city2 {
@@ -270,7 +305,6 @@ canvas {
   background-size: contain;
   background-repeat: repeat-x;
   border: dashed goldenrod;
-  border-top: none;
 }
 
 #city3 {
@@ -278,7 +312,6 @@ canvas {
   background-size: contain;
   background-repeat: repeat-x;
   border: dashed palevioletred;
-  border-top: none;
 }
 
 #city4 {
@@ -286,7 +319,6 @@ canvas {
   background-size: contain;
   background-repeat: repeat-x;
   border: dashed yellowgreen;
-  border-top: none;
 }
 
 @keyframes blink {
@@ -308,5 +340,47 @@ canvas {
       0 0 40px #220318, 0 0 60px #9e8997, 0 0 10px blanchedalmond,
       0 0 98px #b91382;
     color: blanchedalmond;
+  }
+}
+
+@keyframes blinkBlue {
+  20%,
+  24%,
+  50% {
+    color: #fffcfc00;
+    text-shadow: none;
+  }
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px #1613b9, 0 0 15px #0d17a5, 0 0 20px #101758,
+      0 0 40px #040322, 0 0 60px #8a899e, 0 0 10px blue, 0 0 98px #1613b9;
+    color: blue;
+  }
+}
+
+@keyframes blinkRed {
+  20%,
+  24%,
+  50% {
+    color: #fffcfc00;
+    text-shadow: none;
+  }
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px #b91313, 0 0 15px #a50d0d, 0 0 20px #581010,
+      0 0 40px #220318, 0 0 60px #9e8989, 0 0 10px red, 0 0 98px #b91313;
+    color: red;
   }
 }

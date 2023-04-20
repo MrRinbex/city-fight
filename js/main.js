@@ -18,6 +18,7 @@ const minotaur2 = document.querySelector(".minotaur-fighter-2");
 const minotaur3 = document.querySelector(".minotaur-fighter-3");
 
 const containerCanvas = document.querySelector(".container-canvas");
+const entranceContainer = document.querySelector(".entrance-container");
 const context = canvas.getContext("2d");
 
 canvas.width = containerCanvas.offsetWidth;
