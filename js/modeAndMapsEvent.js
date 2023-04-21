@@ -42,10 +42,10 @@ startBtn.addEventListener("click", () => {
 
 // Maps event
 city1.addEventListener("click", () => {
-  canvas.style.background = "url('./image/background/City1.png')";
-  canvas.style.backgroundSize = "cover";
   mapSet = true;
   map = 1;
+  canvas.style.background = "url('./image/background/City1.png')";
+  canvas.style.backgroundSize = "cover";
   setTimeout(() => {
     city2.style.display = "none";
     city3.style.display = "none";
@@ -54,10 +54,10 @@ city1.addEventListener("click", () => {
 });
 
 city2.addEventListener("click", () => {
-  canvas.style.background = "url('./image/background/City2.png')";
-  canvas.style.backgroundSize = "cover";
   mapSet = true;
   map = 2;
+  canvas.style.background = "url('./image/background/City2.png')";
+  canvas.style.backgroundSize = "cover";
   setTimeout(() => {
     city1.style.display = "none";
     city3.style.display = "none";
@@ -66,10 +66,10 @@ city2.addEventListener("click", () => {
 });
 
 city3.addEventListener("click", () => {
-  canvas.style.background = "url('./image/background/City3.png')";
-  canvas.style.backgroundSize = "cover";
   mapSet = true;
   map = 3;
+  canvas.style.background = "url('./image/background/City3.png')";
+  canvas.style.backgroundSize = "cover";
   setTimeout(() => {
     city1.style.display = "none";
     city2.style.display = "none";
@@ -78,10 +78,10 @@ city3.addEventListener("click", () => {
 });
 
 city4.addEventListener("click", () => {
-  canvas.style.background = "url('./image/background/City4.png')";
-  canvas.style.backgroundSize = "cover";
   mapSet = true;
   map = 4;
+  canvas.style.background = "url('./image/background/City4.png')";
+  canvas.style.backgroundSize = "cover";
   setTimeout(() => {
     city1.style.display = "none";
     city2.style.display = "none";

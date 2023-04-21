@@ -69,7 +69,22 @@ function animate() {
   if (gameStart) {
     setTimeout(() => (startEffect = false), 2000);
     entranceContainer.style.display = "none";
-    canvas.style.border = "4px solid white";
+
+    switch (map) {
+      case 1:
+        canvas.style.border = "4px dashed green";
+        break;
+      case 2:
+        canvas.style.border = "4px dashed goldenrod";
+        break;
+      case 3:
+        canvas.style.border = "4px dashed palevioletred";
+        break;
+      case 4:
+        canvas.style.border = "4px dashed burlywood";
+        break;
+    }
+
     context.fillStyle = "black";
     context.fillRect(0, 0, canvas.width, canvas.height);
     clearCanvas();

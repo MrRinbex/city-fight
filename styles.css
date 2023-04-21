@@ -541,7 +541,7 @@ canvas {
   background: url(./image/background/City4.png);
   background-size: contain;
   background-repeat: repeat-x;
-  border: dashed yellowgreen;
+  border: dashed burlywood;
 }
 
 @keyframes blink {
