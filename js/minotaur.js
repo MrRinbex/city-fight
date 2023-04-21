@@ -43,6 +43,11 @@ const minotaur_1 = new Fighter({
     },
   },
   imageURL: "url('./image/team-minotaur/Minotaur_01.png')",
+  name: "Rhurdohk",
+  age: "45",
+  skin: "Cider",
+  weapon: "Wooden stick",
+  titleNbr: "3",
 });
 
 const minotaur_2 = new Fighter({
@@ -87,6 +92,11 @@ const minotaur_2 = new Fighter({
     },
   },
   imageURL: "url('./image/team-minotaur/Minotaur_02.png')",
+  name: "Itakov",
+  age: "65",
+  skin: "Steel",
+  weapon: "Stone ax",
+  titleNbr: "7",
 });
 
 const minotaur_3 = new Fighter({
@@ -131,6 +141,11 @@ const minotaur_3 = new Fighter({
     },
   },
   imageURL: "url('./image/team-minotaur/Minotaur_03.png')",
+  name: "Nanen",
+  age: "19",
+  skin: "Spruce",
+  weapon: "Ironwood stick",
+  titleNbr: "3",
 });
 
 // Minotaur Event Click

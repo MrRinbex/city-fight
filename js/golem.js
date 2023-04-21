@@ -43,6 +43,11 @@ const golem_1 = new Fighter({
     },
   },
   imageURL: "url('./image/team-golem/Golem_01.png')",
+  name: "Drodra",
+  age: "43",
+  skin: "Rust",
+  weapon: "Wooden stick",
+  titleNbr: "9",
 });
 
 const golem_2 = new Fighter({
@@ -87,6 +92,11 @@ const golem_2 = new Fighter({
     },
   },
   imageURL: "url('./image/team-golem/Golem_02.png')",
+  name: "Ivia",
+  age: "23",
+  skin: "Olive",
+  weapon: "Hatchet",
+  titleNbr: "5",
 });
 
 const golem_3 = new Fighter({
@@ -131,6 +141,11 @@ const golem_3 = new Fighter({
     },
   },
   imageURL: "url('./image/team-golem/Golem_03.png')",
+  name: "Gror",
+  age: "50",
+  skin: "Stone",
+  weapon: "Stone sword",
+  titleNbr: "1",
 });
 
 // Golem Event Click

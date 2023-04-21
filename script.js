@@ -313,10 +313,7 @@ const decreaseTimer = () => {
 
 setInterval(() => {
   decreaseTimer();
-  // console.log(golemReady);
-  // console.log(minotaurReady);
-  // console.log(mapSet);
-  // console.log(selectedImageGolem.style.background);
+  console.log(golem_1.name);
 }, 1000);
 
 const keys = {
@@ -367,13 +364,53 @@ function animate() {
     textDisplay.innerHTML = "Click START!";
     golemProfile.style.display = "flex";
     minotaurProfile.style.display = "flex";
+
+    if (golemSkin === "golem 1") {
+      golemName.innerHTML = golem_1.name;
+      golemAge.innerHTML = golem_1.age;
+      golemColor.innerHTML = golem_1.skin;
+      golemWeapon.innerHTML = golem_1.weapon;
+      golemTitle.innerHTML = golem_1.titleNbr;
+    } else if (golemSkin === "golem 2") {
+      golemName.innerHTML = golem_2.name;
+      golemAge.innerHTML = golem_2.age;
+      golemColor.innerHTML = golem_2.skin;
+      golemWeapon.innerHTML = golem_2.weapon;
+      golemTitle.innerHTML = golem_2.titleNbr;
+    } else if (golemSkin === "golem 3") {
+      golemName.innerHTML = golem_3.name;
+      golemAge.innerHTML = golem_3.age;
+      golemColor.innerHTML = golem_3.skin;
+      golemWeapon.innerHTML = golem_3.weapon;
+      golemTitle.innerHTML = golem_3.titleNbr;
+    }
+
+    if (minotaurSkin === "minotaur 1") {
+      minotaurName.innerHTML = minotaur_1.name;
+      minotaurAge.innerHTML = minotaur_1.age;
+      minotaurColor.innerHTML = minotaur_1.skin;
+      minotaurWeapon.innerHTML = minotaur_1.weapon;
+      minotaurTitle.innerHTML = minotaur_1.titleNbr;
+    } else if (minotaurSkin === "minotaur 2") {
+      minotaurName.innerHTML = minotaur_2.name;
+      minotaurAge.innerHTML = minotaur_2.age;
+      minotaurColor.innerHTML = minotaur_2.skin;
+      minotaurWeapon.innerHTML = minotaur_2.weapon;
+      minotaurTitle.innerHTML = minotaur_2.titleNbr;
+    } else if (minotaurSkin === "minotaur 3") {
+      minotaurName.innerHTML = minotaur_3.name;
+      minotaurAge.innerHTML = minotaur_3.age;
+      minotaurColor.innerHTML = minotaur_3.skin;
+      minotaurWeapon.innerHTML = minotaur_3.weapon;
+      minotaurTitle.innerHTML = minotaur_3.titleNbr;
+    }
   }
 
   // Game Start
   if (gameStart) {
     setTimeout(() => (startEffect = false), 2000);
     entranceContainer.style.display = "none";
-    containerCanvas.style.border = "4px solid white";
+    canvas.style.border = "4px solid white";
     context.fillStyle = "black";
     context.fillRect(0, 0, canvas.width, canvas.height);
     clearCanvas();
@@ -393,8 +430,6 @@ function animate() {
     } else if (minotaurSkin === "minotaur 3") {
       minotaur_3.update();
     }
-  } else {
-    containerCanvas.style.borderBottom = "none";
   }
 
   // golem Move

@@ -31,6 +31,19 @@ const minotaurProfile = document.querySelector("#minotaur-static");
 const selectedImageGolem = document.querySelector(".image-golem");
 const selectedImageMinotaur = document.querySelector(".image-minotaur");
 
+// Profile information
+const golemName = document.querySelector(".golem-name");
+const golemAge = document.querySelector(".golem-age");
+const golemColor = document.querySelector(".golem-skin");
+const golemWeapon = document.querySelector(".golem-weapon");
+const golemTitle = document.querySelector(".golem-title");
+
+const minotaurName = document.querySelector(".minotaur-name");
+const minotaurAge = document.querySelector(".minotaur-age");
+const minotaurColor = document.querySelector(".minotaur-skin");
+const minotaurWeapon = document.querySelector(".minotaur-weapon");
+const minotaurTitle = document.querySelector(".minotaur-title");
+
 // health Images
 const heartBlue1 = document.querySelector(".heart-blue-1");
 const heartBlue2 = document.querySelector(".heart-blue-2");

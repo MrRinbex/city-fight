@@ -369,7 +369,7 @@ body {
   left: 0;
 }
 
-.container-canvas {
+canvas {
   border-radius: 3px 3px 3px 3px;
 }
 
