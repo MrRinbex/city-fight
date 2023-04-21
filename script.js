@@ -348,6 +348,8 @@ function animate() {
   //Entrance manipulation
   if (modeGame > 0) {
     hiddenContainer.style.display = "none";
+    rightSlide.style.display = "flex";
+    leftSlide.style.display = "flex";
   }
   if (modeGame === 1 && golemReady && minotaurReady && mapSet) {
     minotaur1.style.display = "none";
@@ -371,7 +373,7 @@ function animate() {
   if (gameStart) {
     setTimeout(() => (startEffect = false), 2000);
     entranceContainer.style.display = "none";
-    containerCanvas.style.borderBottom = "4px solid white";
+    containerCanvas.style.border = "4px solid white";
     context.fillStyle = "black";
     context.fillRect(0, 0, canvas.width, canvas.height);
     clearCanvas();

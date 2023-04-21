@@ -23,6 +23,9 @@ const minotaur1 = document.querySelector(".minotaur-fighter-1");
 const minotaur2 = document.querySelector(".minotaur-fighter-2");
 const minotaur3 = document.querySelector(".minotaur-fighter-3");
 
+const rightSlide = document.querySelector(".right-side");
+const leftSlide = document.querySelector(".left-side");
+
 const golemProfile = document.querySelector("#golem-static");
 const minotaurProfile = document.querySelector("#minotaur-static");
 const selectedImageGolem = document.querySelector(".image-golem");
