@@ -9,6 +9,7 @@ const decreaseTimer = () => {
   //golem 1
   if (
     golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 1" &&
     golem_1.health === minotaur_1.health &&
     timerCount === 0
   ) {
@@ -18,22 +19,29 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 1" &&
+      minotaurSkin === "minotaur 1" &&
       golem_1.health > minotaur_1.health &&
       timerCount === 0) ||
-    minotaur_1.health <= 0
+    (golemSkin === "golem 1" &&
+      minotaurSkin === "minotaur 1" &&
+      minotaur_1.health <= 0)
   ) {
-    notification.innerHTML = "Blue Win";
     notification.style.display = "flex";
+    notification.innerHTML = `${golem_1.name} won ${minotaur_1.name}`;
+    console.log(`${golem_1.name} won ${minotaur_1.name}`);
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
   } else if (
     (golemSkin === "golem 1" &&
+      minotaurSkin === "minotaur 1" &&
       golem_1.health < minotaur_1.health &&
       timerCount === 0) ||
-    golem_1.health <= 0
+    (golemSkin === "golem 1" &&
+      minotaurSkin === "minotaur 1" &&
+      golem_1.health <= 0)
   ) {
-    notification.innerHTML = "Red Win";
+    notification.innerHTML = `${minotaur_1.name} won ${golem_1.name}`;
     notification.style.display = "flex";
     timerCount = 0;
     timer.innerHTML = "Game Over";
@@ -42,6 +50,7 @@ const decreaseTimer = () => {
 
   if (
     golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 2" &&
     golem_1.health === minotaur_2.health &&
     timerCount === 0
   ) {
@@ -51,22 +60,28 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 1" &&
+      minotaurSkin === "minotaur 1" &&
       golem_1.health > minotaur_2.health &&
       timerCount === 0) ||
-    minotaur_2.health <= 0
+    (golemSkin === "golem 1" &&
+      minotaurSkin === "minotaur 1" &&
+      minotaur_2.health <= 0)
   ) {
-    notification.innerHTML = "Blue Win";
+    notification.innerHTML = `${golem_1.name} won ${minotaur_2.name}`;
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
   } else if (
     (golemSkin === "golem 1" &&
+      minotaurSkin === "minotaur 2" &&
       golem_1.health < minotaur_2.health &&
       timerCount === 0) ||
-    golem_1.health <= 0
+    (golemSkin === "golem 1" &&
+      minotaurSkin === "minotaur 2" &&
+      golem_1.health <= 0)
   ) {
-    notification.innerHTML = "Red Win";
+    notification.innerHTML = `${minotaur_2.name} won ${golem_1.name}`;
     notification.style.display = "flex";
     timerCount = 0;
     timer.innerHTML = "Game Over";
@@ -75,6 +90,7 @@ const decreaseTimer = () => {
 
   if (
     golemSkin === "golem 1" &&
+    minotaurSkin === "minotaur 3" &&
     golem_1.health === minotaur_3.health &&
     timerCount === 0
   ) {
@@ -84,22 +100,28 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 1" &&
+      minotaurSkin === "minotaur 3" &&
       golem_1.health > minotaur_3.health &&
       timerCount === 0) ||
-    minotaur_3.health <= 0
+    (golemSkin === "golem 1" &&
+      minotaurSkin === "minotaur 3" &&
+      minotaur_3.health <= 0)
   ) {
-    notification.innerHTML = "Blue Win";
+    notification.innerHTML = `${golem_1.name} won ${minotaur_3.name}`;
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
   } else if (
     (golemSkin === "golem 1" &&
+      minotaurSkin === "minotaur 3" &&
       golem_1.health < minotaur_3.health &&
       timerCount === 0) ||
-    golem_1.health <= 0
+    (golemSkin === "golem 1" &&
+      minotaurSkin === "minotaur 3" &&
+      golem_1.health <= 0)
   ) {
-    notification.innerHTML = "Red Win";
+    notification.innerHTML = `${minotaur_3.name} won ${golem_1.name}`;
     notification.style.display = "flex";
     timerCount = 0;
     timer.innerHTML = "Game Over";
@@ -109,6 +131,7 @@ const decreaseTimer = () => {
   //golem 2
   if (
     golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 1" &&
     golem_2.health === minotaur_1.health &&
     timerCount === 0
   ) {
@@ -118,22 +141,28 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 2" &&
+      minotaurSkin === "minotaur 1" &&
       golem_2.health > minotaur_1.health &&
       timerCount === 0) ||
-    minotaur_1.health <= 0
+    (golemSkin === "golem 2" &&
+      minotaurSkin === "minotaur 1" &&
+      minotaur_1.health <= 0)
   ) {
-    notification.innerHTML = "Blue Win";
+    notification.innerHTML = `${golem_2.name} won ${minotaur_1.name}`;
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
   } else if (
     (golemSkin === "golem 2" &&
+      minotaurSkin === "minotaur 1" &&
       golem_2.health < minotaur_1.health &&
       timerCount === 0) ||
-    golem_2.health <= 0
+    (golemSkin === "golem 2" &&
+      minotaurSkin === "minotaur 1" &&
+      golem_2.health <= 0)
   ) {
-    notification.innerHTML = "Red Win";
+    notification.innerHTML = `${minotaur_1.name} won ${golem_2.name}`;
     notification.style.display = "flex";
     timerCount = 0;
     timer.innerHTML = "Game Over";
@@ -142,6 +171,7 @@ const decreaseTimer = () => {
 
   if (
     golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 2" &&
     golem_2.health === minotaur_2.health &&
     timerCount === 0
   ) {
@@ -151,22 +181,28 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 2" &&
+      minotaurSkin === "minotaur 2" &&
       golem_2.health > minotaur_2.health &&
       timerCount === 0) ||
-    minotaur_2.health <= 0
+    (golemSkin === "golem 2" &&
+      minotaurSkin === "minotaur 2" &&
+      minotaur_2.health <= 0)
   ) {
-    notification.innerHTML = "Blue Win";
+    notification.innerHTML = `${golem_2.name} won ${minotaur_2.name}`;
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
   } else if (
     (golemSkin === "golem 2" &&
+      minotaurSkin === "minotaur 2" &&
       golem_2.health < minotaur_2.health &&
       timerCount === 0) ||
-    golem_2.health <= 0
+    (golemSkin === "golem 2" &&
+      minotaurSkin === "minotaur 2" &&
+      golem_2.health <= 0)
   ) {
-    notification.innerHTML = "Red Win";
+    notification.innerHTML = `${minotaur_2.name} won ${golem_2.name}`;
     notification.style.display = "flex";
     timerCount = 0;
     timer.innerHTML = "Game Over";
@@ -175,6 +211,7 @@ const decreaseTimer = () => {
 
   if (
     golemSkin === "golem 2" &&
+    minotaurSkin === "minotaur 3" &&
     golem_2.health === minotaur_3.health &&
     timerCount === 0
   ) {
@@ -184,22 +221,28 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 2" &&
+      minotaurSkin === "minotaur 3" &&
       golem_2.health > minotaur_3.health &&
       timerCount === 0) ||
-    minotaur_3.health <= 0
+    (golemSkin === "golem 2" &&
+      minotaurSkin === "minotaur 3" &&
+      minotaur_3.health <= 0)
   ) {
-    notification.innerHTML = "Blue Win";
+    notification.innerHTML = `${golem_2.name} won ${minotaur_3.name}`;
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
   } else if (
     (golemSkin === "golem 2" &&
+      minotaurSkin === "minotaur 3" &&
       golem_2.health < minotaur_3.health &&
       timerCount === 0) ||
-    golem_2.health <= 0
+    (golemSkin === "golem 2" &&
+      minotaurSkin === "minotaur 3" &&
+      golem_2.health <= 0)
   ) {
-    notification.innerHTML = "Red Win";
+    notification.innerHTML = `${minotaur_3.name} won ${golem_2.name}`;
     notification.style.display = "flex";
     timerCount = 0;
     timer.innerHTML = "Game Over";
@@ -209,6 +252,7 @@ const decreaseTimer = () => {
   //golem 3
   if (
     golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 1" &&
     golem_3.health === minotaur_1.health &&
     timerCount === 0
   ) {
@@ -218,22 +262,28 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 3" &&
+      minotaurSkin === "minotaur 1" &&
       golem_3.health > minotaur_1.health &&
       timerCount === 0) ||
-    minotaur_1.health <= 0
+    (golemSkin === "golem 3" &&
+      minotaurSkin === "minotaur 1" &&
+      minotaur_1.health <= 0)
   ) {
-    notification.innerHTML = "Blue Win";
+    notification.innerHTML = `${golem_3.name} won ${minotaur_1.name}`;
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
   } else if (
     (golemSkin === "golem 3" &&
+      minotaurSkin === "minotaur 1" &&
       golem_3.health < minotaur_1.health &&
       timerCount === 0) ||
-    golem_3.health <= 0
+    (golemSkin === "golem 3" &&
+      minotaurSkin === "minotaur 1" &&
+      golem_3.health <= 0)
   ) {
-    notification.innerHTML = "Red Win";
+    notification.innerHTML = `${minotaur_1.name} won ${golem_3.name}`;
     notification.style.display = "flex";
     timerCount = 0;
     timer.innerHTML = "Game Over";
@@ -242,6 +292,7 @@ const decreaseTimer = () => {
 
   if (
     golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 2" &&
     golem_3.health === minotaur_2.health &&
     timerCount === 0
   ) {
@@ -251,22 +302,28 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 3" &&
+      minotaurSkin === "minotaur 2" &&
       golem_3.health > minotaur_2.health &&
       timerCount === 0) ||
-    minotaur_2.health <= 0
+    (golemSkin === "golem 3" &&
+      minotaurSkin === "minotaur 2" &&
+      minotaur_2.health <= 0)
   ) {
-    notification.innerHTML = "Blue Win";
+    notification.innerHTML = `${golem_3.name} won ${minotaur_2.name}`;
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
   } else if (
     (golemSkin === "golem 3" &&
+      minotaurSkin === "minotaur 2" &&
       golem_3.health < minotaur_2.health &&
       timerCount === 0) ||
-    golem_3.health <= 0
+    (golemSkin === "golem 3" &&
+      minotaurSkin === "minotaur 2" &&
+      golem_3.health <= 0)
   ) {
-    notification.innerHTML = "Red Win";
+    notification.innerHTML = `${minotaur_2.name} won ${golem_3.name}`;
     notification.style.display = "flex";
     timerCount = 0;
     timer.innerHTML = "Game Over";
@@ -275,6 +332,7 @@ const decreaseTimer = () => {
 
   if (
     golemSkin === "golem 3" &&
+    minotaurSkin === "minotaur 3" &&
     golem_3.health === minotaur_3.health &&
     timerCount === 0
   ) {
@@ -284,22 +342,28 @@ const decreaseTimer = () => {
     gameOver = true;
   } else if (
     (golemSkin === "golem 3" &&
+      minotaurSkin === "minotaur 3" &&
       golem_3.health > minotaur_3.health &&
       timerCount === 0) ||
-    minotaur_3.health <= 0
+    (golemSkin === "golem 3" &&
+      minotaurSkin === "minotaur 3" &&
+      minotaur_3.health <= 0)
   ) {
-    notification.innerHTML = "Blue Win";
+    notification.innerHTML = `${golem_3.name} won ${minotaur_3.name}`;
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
   } else if (
     (golemSkin === "golem 3" &&
+      minotaurSkin === "minotaur 3" &&
       golem_3.health < minotaur_3.health &&
       timerCount === 0) ||
-    golem_3.health <= 0
+    (golemSkin === "golem 3" &&
+      minotaurSkin === "minotaur 3" &&
+      golem_3.health <= 0)
   ) {
-    notification.innerHTML = "Red Win";
+    notification.innerHTML = `${minotaur_3.name} won ${golem_3.name}`;
     notification.style.display = "flex";
     timerCount = 0;
     timer.innerHTML = "Game Over";
