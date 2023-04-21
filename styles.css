@@ -46,7 +46,36 @@ body {
 
 .static-golem {
   flex: 2;
-  border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5%;
+  font-size: 1vmax;
+}
+
+.static-display-golem {
+  color: blue;
+}
+
+.golem-name {
+  color: white;
+}
+
+.golem-age {
+  color: white;
+}
+
+.golem-skin {
+  color: white;
+}
+
+.golem-weapon {
+  color: white;
+}
+
+.golem-title {
+  color: white;
 }
 
 .right-side div {
@@ -147,7 +176,36 @@ body {
 
 .static-minotaur {
   flex: 2;
-  border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5%;
+  font-size: 1vmax;
+}
+
+.static-display-minotaur {
+  color: red;
+}
+
+.minotaur-name {
+  color: white;
+}
+
+.minotaur-age {
+  color: white;
+}
+
+.minotaur-skin {
+  color: white;
+}
+
+.minotaur-weapon {
+  color: white;
+}
+
+.minotaur-title {
+  color: white;
 }
 
 .left-side div {
