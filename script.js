@@ -347,19 +347,39 @@ function animate() {
     minotaurHealth.style.width = minotaur_1.health + "%";
 
     if (minotaur_1.health <= 80) {
-      heartRed5.style.display = "none";
+      heartRed5.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed5.style.backgroundSize = "contain";
+      heartRed5.style.backgroundRepeat = "no-repeat";
+      heartRed5.style.backgroundPosition = "center";
     }
     if (minotaur_1.health <= 60) {
-      heartRed4.style.display = "none";
+      heartRed4.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed4.style.backgroundSize = "contain";
+      heartRed4.style.backgroundRepeat = "no-repeat";
+      heartRed4.style.backgroundPosition = "center";
     }
     if (minotaur_1.health <= 40) {
-      heartRed3.style.display = "none";
+      heartRed3.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed3.style.backgroundSize = "contain";
+      heartRed3.style.backgroundRepeat = "no-repeat";
+      heartRed3.style.backgroundPosition = "center";
     }
     if (minotaur_1.health <= 20) {
-      heartRed2.style.display = "none";
+      heartRed2.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed2.style.backgroundSize = "contain";
+      heartRed2.style.backgroundRepeat = "no-repeat";
+      heartRed2.style.backgroundPosition = "center";
     }
     if (minotaur_1.health <= 0) {
-      heartRed1.style.display = "none";
+      heartRed1.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed1.style.backgroundSize = "contain";
+      heartRed1.style.backgroundRepeat = "no-repeat";
+      heartRed1.style.backgroundPosition = "center";
     }
   }
 
@@ -380,19 +400,39 @@ function animate() {
     minotaurHealth.style.width = minotaur_2.health + "%";
 
     if (minotaur_2.health <= 80) {
-      heartRed5.style.display = "none";
+      heartRed5.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed5.style.backgroundSize = "contain";
+      heartRed5.style.backgroundRepeat = "no-repeat";
+      heartRed5.style.backgroundPosition = "center";
     }
     if (minotaur_2.health <= 60) {
-      heartRed4.style.display = "none";
+      heartRed4.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed4.style.backgroundSize = "contain";
+      heartRed4.style.backgroundRepeat = "no-repeat";
+      heartRed4.style.backgroundPosition = "center";
     }
     if (minotaur_2.health <= 40) {
-      heartRed3.style.display = "none";
+      heartRed3.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed3.style.backgroundSize = "contain";
+      heartRed3.style.backgroundRepeat = "no-repeat";
+      heartRed3.style.backgroundPosition = "center";
     }
     if (minotaur_2.health <= 20) {
-      heartRed2.style.display = "none";
+      heartRed2.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed2.style.backgroundSize = "contain";
+      heartRed2.style.backgroundRepeat = "no-repeat";
+      heartRed2.style.backgroundPosition = "center";
     }
     if (minotaur_2.health <= 0) {
-      heartRed1.style.display = "none";
+      heartRed1.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed1.style.backgroundSize = "contain";
+      heartRed1.style.backgroundRepeat = "no-repeat";
+      heartRed1.style.backgroundPosition = "center";
     }
   }
 
@@ -413,19 +453,39 @@ function animate() {
     minotaurHealth.style.width = minotaur_3.health + "%";
 
     if (minotaur_3.health <= 80) {
-      heartRed5.style.display = "none";
+      heartRed5.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed5.style.backgroundSize = "contain";
+      heartRed5.style.backgroundRepeat = "no-repeat";
+      heartRed5.style.backgroundPosition = "center";
     }
     if (minotaur_3.health <= 60) {
-      heartRed4.style.display = "none";
+      heartRed4.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed4.style.backgroundSize = "contain";
+      heartRed4.style.backgroundRepeat = "no-repeat";
+      heartRed4.style.backgroundPosition = "center";
     }
     if (minotaur_3.health <= 40) {
-      heartRed3.style.display = "none";
+      heartRed3.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed3.style.backgroundSize = "contain";
+      heartRed3.style.backgroundRepeat = "no-repeat";
+      heartRed3.style.backgroundPosition = "center";
     }
     if (minotaur_3.health <= 20) {
-      heartRed2.style.display = "none";
+      heartRed2.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed2.style.backgroundSize = "contain";
+      heartRed2.style.backgroundRepeat = "no-repeat";
+      heartRed2.style.backgroundPosition = "center";
     }
     if (minotaur_3.health <= 0) {
-      heartRed1.style.display = "none";
+      heartRed1.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed1.style.backgroundSize = "contain";
+      heartRed1.style.backgroundRepeat = "no-repeat";
+      heartRed1.style.backgroundPosition = "center";
     }
   }
 
@@ -446,19 +506,39 @@ function animate() {
     minotaurHealth.style.width = minotaur_1.health + "%";
 
     if (minotaur_1.health <= 80) {
-      heartRed5.style.display = "none";
+      heartRed5.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed5.style.backgroundSize = "contain";
+      heartRed5.style.backgroundRepeat = "no-repeat";
+      heartRed5.style.backgroundPosition = "center";
     }
     if (minotaur_1.health <= 60) {
-      heartRed4.style.display = "none";
+      heartRed4.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed4.style.backgroundSize = "contain";
+      heartRed4.style.backgroundRepeat = "no-repeat";
+      heartRed4.style.backgroundPosition = "center";
     }
     if (minotaur_1.health <= 40) {
-      heartRed3.style.display = "none";
+      heartRed3.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed3.style.backgroundSize = "contain";
+      heartRed3.style.backgroundRepeat = "no-repeat";
+      heartRed3.style.backgroundPosition = "center";
     }
     if (minotaur_1.health <= 20) {
-      heartRed2.style.display = "none";
+      heartRed2.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed2.style.backgroundSize = "contain";
+      heartRed2.style.backgroundRepeat = "no-repeat";
+      heartRed2.style.backgroundPosition = "center";
     }
     if (minotaur_1.health <= 0) {
-      heartRed1.style.display = "none";
+      heartRed1.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed1.style.backgroundSize = "contain";
+      heartRed1.style.backgroundRepeat = "no-repeat";
+      heartRed1.style.backgroundPosition = "center";
     }
   }
 
@@ -479,19 +559,39 @@ function animate() {
     minotaurHealth.style.width = minotaur_2.health + "%";
 
     if (minotaur_2.health <= 80) {
-      heartRed5.style.display = "none";
+      heartRed5.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed5.style.backgroundSize = "contain";
+      heartRed4.style.backgroundRepeat = "no-repeat";
+      heartRed4.style.backgroundPosition = "center";
     }
     if (minotaur_2.health <= 60) {
-      heartRed4.style.display = "none";
+      heartRed4.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed4.style.backgroundSize = "contain";
+      heartRed4.style.backgroundRepeat = "no-repeat";
+      heartRed4.style.backgroundPosition = "center";
     }
     if (minotaur_2.health <= 40) {
-      heartRed3.style.display = "none";
+      heartRed3.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed3.style.backgroundSize = "contain";
+      heartRed3.style.backgroundRepeat = "no-repeat";
+      heartRed3.style.backgroundPosition = "center";
     }
     if (minotaur_2.health <= 20) {
-      heartRed2.style.display = "none";
+      heartRed2.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed2.style.backgroundSize = "contain";
+      heartRed2.style.backgroundRepeat = "no-repeat";
+      heartRed2.style.backgroundPosition = "center";
     }
     if (minotaur_2.health <= 0) {
-      heartRed1.style.display = "none";
+      heartRed1.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed1.style.backgroundSize = "contain";
+      heartRed1.style.backgroundRepeat = "no-repeat";
+      heartRed1.style.backgroundPosition = "center";
     }
   }
 
@@ -512,19 +612,39 @@ function animate() {
     minotaurHealth.style.width = minotaur_3.health + "%";
 
     if (minotaur_3.health <= 80) {
-      heartRed5.style.display = "none";
+      heartRed5.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed5.style.backgroundSize = "contain";
+      heartRed5.style.backgroundRepeat = "no-repeat";
+      heartRed5.style.backgroundPosition = "center";
     }
     if (minotaur_3.health <= 60) {
-      heartRed4.style.display = "none";
+      heartRed4.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed4.style.backgroundSize = "contain";
+      heartRed4.style.backgroundRepeat = "no-repeat";
+      heartRed4.style.backgroundPosition = "center";
     }
     if (minotaur_3.health <= 40) {
-      heartRed3.style.display = "none";
+      heartRed3.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed3.style.backgroundSize = "contain";
+      heartRed3.style.backgroundRepeat = "no-repeat";
+      heartRed3.style.backgroundPosition = "center";
     }
     if (minotaur_3.health <= 20) {
-      heartRed2.style.display = "none";
+      heartRed2.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed2.style.backgroundSize = "contain";
+      heartRed2.style.backgroundRepeat = "no-repeat";
+      heartRed2.style.backgroundPosition = "center";
     }
     if (minotaur_3.health <= 0) {
-      heartRed1.style.display = "none";
+      heartRed1.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed1.style.backgroundSize = "contain";
+      heartRed1.style.backgroundRepeat = "no-repeat";
+      heartRed1.style.backgroundPosition = "center";
     }
   }
 
@@ -545,19 +665,39 @@ function animate() {
     minotaurHealth.style.width = minotaur_1.health + "%";
 
     if (minotaur_1.health <= 80) {
-      heartRed5.style.display = "none";
+      heartRed5.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed5.style.backgroundSize = "contain";
+      heartRed5.style.backgroundRepeat = "no-repeat";
+      heartRed5.style.backgroundPosition = "center";
     }
     if (minotaur_1.health <= 60) {
-      heartRed4.style.display = "none";
+      heartRed4.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed4.style.backgroundSize = "contain";
+      heartRed4.style.backgroundRepeat = "no-repeat";
+      heartRed4.style.backgroundPosition = "center";
     }
     if (minotaur_1.health <= 40) {
-      heartRed3.style.display = "none";
+      heartRed3.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed3.style.backgroundSize = "contain";
+      heartRed3.style.backgroundRepeat = "no-repeat";
+      heartRed3.style.backgroundPosition = "center";
     }
     if (minotaur_1.health <= 20) {
-      heartRed2.style.display = "none";
+      heartRed2.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed2.style.backgroundSize = "contain";
+      heartRed2.style.backgroundRepeat = "no-repeat";
+      heartRed2.style.backgroundPosition = "center";
     }
     if (minotaur_1.health <= 0) {
-      heartRed1.style.display = "none";
+      heartRed1.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed1.style.backgroundSize = "contain";
+      heartRed1.style.backgroundRepeat = "no-repeat";
+      heartRed1.style.backgroundPosition = "center";
     }
   }
 
@@ -578,19 +718,39 @@ function animate() {
     minotaurHealth.style.width = minotaur_2.health + "%";
 
     if (minotaur_2.health <= 80) {
-      heartRed5.style.display = "none";
+      heartRed5.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed5.style.backgroundSize = "contain";
+      heartRed5.style.backgroundRepeat = "no-repeat";
+      heartRed5.style.backgroundPosition = "center";
     }
     if (minotaur_2.health <= 60) {
-      heartRed4.style.display = "none";
+      heartRed4.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed4.style.backgroundSize = "contain";
+      heartRed4.style.backgroundRepeat = "no-repeat";
+      heartRed4.style.backgroundPosition = "center";
     }
     if (minotaur_2.health <= 40) {
-      heartRed3.style.display = "none";
+      heartRed3.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed3.style.backgroundSize = "contain";
+      heartRed3.style.backgroundRepeat = "no-repeat";
+      heartRed3.style.backgroundPosition = "center";
     }
     if (minotaur_2.health <= 20) {
-      heartRed2.style.display = "none";
+      heartRed2.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed2.style.backgroundSize = "contain";
+      heartRed2.style.backgroundRepeat = "no-repeat";
+      heartRed2.style.backgroundPosition = "center";
     }
     if (minotaur_2.health <= 0) {
-      heartRed1.style.display = "none";
+      heartRed1.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed1.style.backgroundSize = "contain";
+      heartRed1.style.backgroundRepeat = "no-repeat";
+      heartRed1.style.backgroundPosition = "center";
     }
   }
 
@@ -611,19 +771,39 @@ function animate() {
     minotaurHealth.style.width = minotaur_3.health + "%";
 
     if (minotaur_3.health <= 80) {
-      heartRed5.style.display = "none";
+      heartRed5.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed5.style.backgroundSize = "contain";
+      heartRed5.style.backgroundRepeat = "no-repeat";
+      heartRed5.style.backgroundPosition = "center";
     }
     if (minotaur_3.health <= 60) {
-      heartRed4.style.display = "none";
+      heartRed4.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed4.style.backgroundSize = "contain";
+      heartRed4.style.backgroundRepeat = "no-repeat";
+      heartRed4.style.backgroundPosition = "center";
     }
     if (minotaur_3.health <= 40) {
-      heartRed3.style.display = "none";
+      heartRed3.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed3.style.backgroundSize = "contain";
+      heartRed3.style.backgroundRepeat = "no-repeat";
+      heartRed3.style.backgroundPosition = "center";
     }
     if (minotaur_3.health <= 20) {
-      heartRed2.style.display = "none";
+      heartRed2.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed2.style.backgroundSize = "contain";
+      heartRed2.style.backgroundRepeat = "no-repeat";
+      heartRed2.style.backgroundPosition = "center";
     }
     if (minotaur_3.health <= 0) {
-      heartRed1.style.display = "none";
+      heartRed1.style.background =
+        "url('./image/team-minotaur/empty-red-heart.png')";
+      heartRed1.style.backgroundSize = "contain";
+      heartRed1.style.backgroundRepeat = "no-repeat";
+      heartRed1.style.backgroundPosition = "center";
     }
   }
 
@@ -645,19 +825,39 @@ function animate() {
     golemHealth.style.width = golem_1.health + "%";
 
     if (golem_1.health <= 80) {
-      heartBlue5.style.display = "none";
+      heartBlue5.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue5.style.backgroundSize = "contain";
+      heartBlue5.style.backgroundRepeat = "no-repeat";
+      heartBlue5.style.backgroundPosition = "center";
     }
     if (golem_1.health <= 60) {
-      heartBlue4.style.display = "none";
+      heartBlue4.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue4.style.backgroundSize = "contain";
+      heartBlue4.style.backgroundRepeat = "no-repeat";
+      heartBlue4.style.backgroundPosition = "center";
     }
     if (golem_1.health <= 40) {
-      heartBlue3.style.display = "none";
+      heartBlue3.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue3.style.backgroundSize = "contain";
+      heartBlue3.style.backgroundRepeat = "no-repeat";
+      heartBlue3.style.backgroundPosition = "center";
     }
     if (golem_1.health <= 20) {
-      heartBlue2.style.display = "none";
+      heartBlue2.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue2.style.backgroundSize = "contain";
+      heartBlue2.style.backgroundRepeat = "no-repeat";
+      heartBlue2.style.backgroundPosition = "center";
     }
     if (golem_1.health <= 0) {
-      heartBlue1.style.display = "none";
+      heartBlue1.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue1.style.backgroundSize = "contain";
+      heartBlue1.style.backgroundRepeat = "no-repeat";
+      heartBlue1.style.backgroundPosition = "center";
     }
   }
 
@@ -678,19 +878,39 @@ function animate() {
     golemHealth.style.width = golem_1.health + "%";
 
     if (golem_1.health <= 80) {
-      heartBlue5.style.display = "none";
+      heartBlue5.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue5.style.backgroundSize = "contain";
+      heartBlue5.style.backgroundRepeat = "no-repeat";
+      heartBlue5.style.backgroundPosition = "center";
     }
     if (golem_1.health <= 60) {
-      heartBlue4.style.display = "none";
+      heartBlue4.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue4.style.backgroundSize = "contain";
+      heartBlue4.style.backgroundRepeat = "no-repeat";
+      heartBlue4.style.backgroundPosition = "center";
     }
     if (golem_1.health <= 40) {
-      heartBlue3.style.display = "none";
+      heartBlue3.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue3.style.backgroundSize = "contain";
+      heartBlue3.style.backgroundRepeat = "no-repeat";
+      heartBlue3.style.backgroundPosition = "center";
     }
     if (golem_1.health <= 20) {
-      heartBlue2.style.display = "none";
+      heartBlue2.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue2.style.backgroundSize = "contain";
+      heartBlue2.style.backgroundRepeat = "no-repeat";
+      heartBlue2.style.backgroundPosition = "center";
     }
     if (golem_1.health <= 0) {
-      heartBlue1.style.display = "none";
+      heartBlue1.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue1.style.backgroundSize = "contain";
+      heartBlue1.style.backgroundRepeat = "no-repeat";
+      heartBlue1.style.backgroundPosition = "center";
     }
   }
 
@@ -711,19 +931,39 @@ function animate() {
     golemHealth.style.width = golem_1.health + "%";
 
     if (golem_1.health <= 80) {
-      heartBlue5.style.display = "none";
+      heartBlue5.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue5.style.backgroundSize = "contain";
+      heartBlue5.style.backgroundRepeat = "no-repeat";
+      heartBlue5.style.backgroundPosition = "center";
     }
     if (golem_1.health <= 60) {
-      heartBlue4.style.display = "none";
+      heartBlue4.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue4.style.backgroundSize = "contain";
+      heartBlue4.style.backgroundRepeat = "no-repeat";
+      heartBlue4.style.backgroundPosition = "center";
     }
     if (golem_1.health <= 40) {
-      heartBlue3.style.display = "none";
+      heartBlue3.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue3.style.backgroundSize = "contain";
+      heartBlue3.style.backgroundRepeat = "no-repeat";
+      heartBlue3.style.backgroundPosition = "center";
     }
     if (golem_1.health <= 20) {
-      heartBlue2.style.display = "none";
+      heartBlue2.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue2.style.backgroundSize = "contain";
+      heartBlue2.style.backgroundRepeat = "no-repeat";
+      heartBlue2.style.backgroundPosition = "center";
     }
     if (golem_1.health <= 0) {
-      heartBlue1.style.display = "none";
+      heartBlue1.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue1.style.backgroundSize = "contain";
+      heartBlue1.style.backgroundRepeat = "no-repeat";
+      heartBlue1.style.backgroundPosition = "center";
     }
   }
 
@@ -744,19 +984,39 @@ function animate() {
     golemHealth.style.width = golem_2.health + "%";
 
     if (golem_2.health <= 80) {
-      heartBlue5.style.display = "none";
+      heartBlue5.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue5.style.backgroundSize = "contain";
+      heartBlue5.style.backgroundRepeat = "no-repeat";
+      heartBlue5.style.backgroundPosition = "center";
     }
     if (golem_2.health <= 60) {
-      heartBlue4.style.display = "none";
+      heartBlue4.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue4.style.backgroundSize = "contain";
+      heartBlue4.style.backgroundRepeat = "no-repeat";
+      heartBlue4.style.backgroundPosition = "center";
     }
     if (golem_2.health <= 40) {
-      heartBlue3.style.display = "none";
+      heartBlue3.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue3.style.backgroundSize = "contain";
+      heartBlue3.style.backgroundRepeat = "no-repeat";
+      heartBlue3.style.backgroundPosition = "center";
     }
     if (golem_2.health <= 20) {
-      heartBlue2.style.display = "none";
+      heartBlue2.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue2.style.backgroundSize = "contain";
+      heartBlue2.style.backgroundRepeat = "no-repeat";
+      heartBlue2.style.backgroundPosition = "center";
     }
     if (golem_2.health <= 0) {
-      heartBlue1.style.display = "none";
+      heartBlue1.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue1.style.backgroundSize = "contain";
+      heartBlue1.style.backgroundRepeat = "no-repeat";
+      heartBlue1.style.backgroundPosition = "center";
     }
   }
 
@@ -777,19 +1037,39 @@ function animate() {
     golemHealth.style.width = golem_2.health + "%";
 
     if (golem_2.health <= 80) {
-      heartBlue5.style.display = "none";
+      heartBlue5.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue5.style.backgroundSize = "contain";
+      heartBlue5.style.backgroundRepeat = "no-repeat";
+      heartBlue5.style.backgroundPosition = "center";
     }
     if (golem_2.health <= 60) {
-      heartBlue4.style.display = "none";
+      heartBlue4.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue4.style.backgroundSize = "contain";
+      heartBlue4.style.backgroundRepeat = "no-repeat";
+      heartBlue4.style.backgroundPosition = "center";
     }
     if (golem_2.health <= 40) {
-      heartBlue3.style.display = "none";
+      heartBlue3.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue3.style.backgroundSize = "contain";
+      heartBlue3.style.backgroundRepeat = "no-repeat";
+      heartBlue3.style.backgroundPosition = "center";
     }
     if (golem_2.health <= 20) {
-      heartBlue2.style.display = "none";
+      heartBlue2.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue2.style.backgroundSize = "contain";
+      heartBlue2.style.backgroundRepeat = "no-repeat";
+      heartBlue2.style.backgroundPosition = "center";
     }
     if (golem_2.health <= 0) {
-      heartBlue1.style.display = "none";
+      heartBlue1.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue1.style.backgroundSize = "contain";
+      heartBlue1.style.backgroundRepeat = "no-repeat";
+      heartBlue1.style.backgroundPosition = "center";
     }
   }
 
@@ -810,19 +1090,39 @@ function animate() {
     golemHealth.style.width = golem_2.health + "%";
 
     if (golem_2.health <= 80) {
-      heartBlue5.style.display = "none";
+      heartBlue5.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue5.style.backgroundSize = "contain";
+      heartBlue5.style.backgroundRepeat = "no-repeat";
+      heartBlue5.style.backgroundPosition = "center";
     }
     if (golem_2.health <= 60) {
-      heartBlue4.style.display = "none";
+      heartBlue4.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue4.style.backgroundSize = "contain";
+      heartBlue4.style.backgroundRepeat = "no-repeat";
+      heartBlue4.style.backgroundPosition = "center";
     }
     if (golem_2.health <= 40) {
-      heartBlue3.style.display = "none";
+      heartBlue3.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue3.style.backgroundSize = "contain";
+      heartBlue3.style.backgroundRepeat = "no-repeat";
+      heartBlue3.style.backgroundPosition = "center";
     }
     if (golem_2.health <= 20) {
-      heartBlue2.style.display = "none";
+      heartBlue2.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue2.style.backgroundSize = "contain";
+      heartBlue2.style.backgroundRepeat = "no-repeat";
+      heartBlue2.style.backgroundPosition = "center";
     }
     if (golem_2.health <= 0) {
-      heartBlue1.style.display = "none";
+      heartBlue1.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue1.style.backgroundSize = "contain";
+      heartBlue1.style.backgroundRepeat = "no-repeat";
+      heartBlue1.style.backgroundPosition = "center";
     }
   }
 
@@ -843,19 +1143,39 @@ function animate() {
     golemHealth.style.width = golem_3.health + "%";
 
     if (golem_3.health <= 80) {
-      heartBlue5.style.display = "none";
+      heartBlue5.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue5.style.backgroundSize = "contain";
+      heartBlue5.style.backgroundRepeat = "no-repeat";
+      heartBlue5.style.backgroundPosition = "center";
     }
     if (golem_3.health <= 60) {
-      heartBlue4.style.display = "none";
+      heartBlue4.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue4.style.backgroundSize = "contain";
+      heartBlue4.style.backgroundRepeat = "no-repeat";
+      heartBlue4.style.backgroundPosition = "center";
     }
     if (golem_3.health <= 40) {
-      heartBlue3.style.display = "none";
+      heartBlue3.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue3.style.backgroundSize = "contain";
+      heartBlue3.style.backgroundRepeat = "no-repeat";
+      heartBlue3.style.backgroundPosition = "center";
     }
     if (golem_3.health <= 20) {
-      heartBlue2.style.display = "none";
+      heartBlue2.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue2.style.backgroundSize = "contain";
+      heartBlue2.style.backgroundRepeat = "no-repeat";
+      heartBlue2.style.backgroundPosition = "center";
     }
     if (golem_3.health <= 0) {
-      heartBlue1.style.display = "none";
+      heartBlue1.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue1.style.backgroundSize = "contain";
+      heartBlue1.style.backgroundRepeat = "no-repeat";
+      heartBlue1.style.backgroundPosition = "center";
     }
   }
 
@@ -876,19 +1196,39 @@ function animate() {
     golemHealth.style.width = golem_3.health + "%";
 
     if (golem_3.health <= 80) {
-      heartBlue5.style.display = "none";
+      heartBlue5.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue5.style.backgroundSize = "contain";
+      heartBlue5.style.backgroundRepeat = "no-repeat";
+      heartBlue5.style.backgroundPosition = "center";
     }
     if (golem_3.health <= 60) {
-      heartBlue4.style.display = "none";
+      heartBlue4.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue4.style.backgroundSize = "contain";
+      heartBlue4.style.backgroundRepeat = "no-repeat";
+      heartBlue4.style.backgroundPosition = "center";
     }
     if (golem_3.health <= 40) {
-      heartBlue3.style.display = "none";
+      heartBlue3.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue3.style.backgroundSize = "contain";
+      heartBlue3.style.backgroundRepeat = "no-repeat";
+      heartBlue3.style.backgroundPosition = "center";
     }
     if (golem_3.health <= 20) {
-      heartBlue3.style.display = "none";
+      heartBlue2.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue2.style.backgroundSize = "contain";
+      heartBlue2.style.backgroundRepeat = "no-repeat";
+      heartBlue2.style.backgroundPosition = "center";
     }
     if (golem_3.health <= 0) {
-      heartBlue1.style.display = "none";
+      heartBlue1.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue1.style.backgroundSize = "contain";
+      heartBlue1.style.backgroundRepeat = "no-repeat";
+      heartBlue1.style.backgroundPosition = "center";
     }
   }
 
@@ -909,19 +1249,39 @@ function animate() {
     golemHealth.style.width = golem_3.health + "%";
 
     if (golem_3.health <= 80) {
-      heartBlue5.style.display = "none";
+      heartBlue5.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue5.style.backgroundSize = "contain";
+      heartBlue5.style.backgroundRepeat = "no-repeat";
+      heartBlue5.style.backgroundPosition = "center";
     }
     if (golem_3.health <= 60) {
-      heartBlue4.style.display = "none";
+      heartBlue4.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue4.style.backgroundSize = "contain";
+      heartBlue4.style.backgroundRepeat = "no-repeat";
+      heartBlue4.style.backgroundPosition = "center";
     }
     if (golem_3.health <= 40) {
-      heartBlue3.style.display = "none";
+      heartBlue3.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue3.style.backgroundSize = "contain";
+      heartBlue3.style.backgroundRepeat = "no-repeat";
+      heartBlue3.style.backgroundPosition = "center";
     }
     if (golem_3.health <= 20) {
-      heartBlue2.style.display = "none";
+      heartBlue2.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue2.style.backgroundSize = "contain";
+      heartBlue2.style.backgroundRepeat = "no-repeat";
+      heartBlue2.style.backgroundPosition = "center";
     }
     if (golem_3.health <= 0) {
-      heartBlue1.style.display = "none";
+      heartBlue1.style.background =
+        "url('./image/team-golem/empty-blue-heart.png')";
+      heartBlue1.style.backgroundSize = "contain";
+      heartBlue1.style.backgroundRepeat = "no-repeat";
+      heartBlue1.style.backgroundPosition = "center";
     }
   }
 
