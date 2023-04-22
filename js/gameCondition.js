@@ -64,11 +64,11 @@ const decreaseTimer = () => {
     winner = "Tie Game";
   } else if (
     (golemSkin === "golem 1" &&
-      minotaurSkin === "minotaur 1" &&
+      minotaurSkin === "minotaur 2" &&
       golem_1.health > minotaur_2.health &&
       timerCount === 0) ||
     (golemSkin === "golem 1" &&
-      minotaurSkin === "minotaur 1" &&
+      minotaurSkin === "minotaur 2" &&
       minotaur_2.health <= 0)
   ) {
     notification.innerHTML = `${golem_1.name} won ${minotaur_2.name}`;

@@ -589,8 +589,8 @@ function animate() {
       heartRed5.style.background =
         "url('./image/team-minotaur/empty-red-heart.png')";
       heartRed5.style.backgroundSize = "contain";
-      heartRed4.style.backgroundRepeat = "no-repeat";
-      heartRed4.style.backgroundPosition = "center";
+      heartRed5.style.backgroundRepeat = "no-repeat";
+      heartRed5.style.backgroundPosition = "center";
     }
     if (minotaur_2.health <= 60) {
       heartRed4.style.background =
