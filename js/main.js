@@ -1,4 +1,4 @@
-const canvas = document.querySelector("canvas");
+let canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
 
 const minotaurHealth = document.querySelector("#minotaurHealth");
@@ -15,6 +15,10 @@ const city1 = document.querySelector("#city1");
 const city2 = document.querySelector("#city2");
 const city3 = document.querySelector("#city3");
 const city4 = document.querySelector("#city4");
+const city5 = document.querySelector("#city5");
+const city6 = document.querySelector("#city6");
+const city7 = document.querySelector("#city7");
+const city8 = document.querySelector("#city8");
 
 const golem1 = document.querySelector(".golem-fighter-1");
 const golem2 = document.querySelector(".golem-fighter-2");

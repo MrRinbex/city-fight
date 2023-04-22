@@ -272,7 +272,6 @@ body {
 
 .container {
   position: relative;
-  height: 68vh;
   width: 60vw;
   align-items: center;
   justify-content: center;
@@ -281,7 +280,7 @@ body {
   display: flex;
   padding-top: 1vh;
   position: absolute;
-  height: 100%;
+  height: 65%;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -356,6 +355,10 @@ body {
   animation: blinkRed 1s infinite;
   -webkit-animation: blinkRed 10s infinite;
 }
+.container-canvas {
+  /* height: fit-content; */
+  height: 65vh;
+}
 
 #notification {
   position: absolute;
@@ -368,10 +371,6 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-}
-
-canvas {
-  border-radius: 3px 3px 3px 3px;
 }
 
 .title {
@@ -398,6 +397,7 @@ canvas {
   }
 }
 canvas {
+  border-radius: 3px 3px 3px 3px;
   margin-bottom: 5px;
   background-size: cover;
   height: 100%;
@@ -496,19 +496,20 @@ canvas {
   gap: 10px;
   padding-left: 1%;
   padding-right: 1%;
+  flex-wrap: wrap;
 }
 
 #hidden-container {
   position: absolute;
-  height: 100%;
+  height: 300%;
   width: 100%;
   background-color: #000;
+  bottom: -110%;
 }
 
 .maps {
   display: flex;
-  flex-wrap: wrap;
-  width: 25%;
+  width: 20%;
   height: 100%;
   text-align: center;
   color: blanchedalmond;
@@ -552,6 +553,34 @@ canvas {
   background-size: contain;
   background-repeat: repeat-x;
   border: dashed burlywood;
+}
+
+#city5 {
+  background: url(./image/background/City5.png);
+  background-size: contain;
+  background-repeat: repeat-x;
+  border: dashed #cea00b;
+}
+
+#city6 {
+  background: url(./image/background/City6.png);
+  background-size: contain;
+  background-repeat: repeat-x;
+  border: dashed #20dabb;
+}
+
+#city7 {
+  background: url(./image/background/City7.png);
+  background-size: contain;
+  background-repeat: repeat-x;
+  border: dashed #ffffff;
+}
+
+#city8 {
+  background: url(./image/background/City8.png);
+  background-size: contain;
+  background-repeat: repeat-x;
+  border: dashed #19a6dd;
 }
 
 @keyframes blink {

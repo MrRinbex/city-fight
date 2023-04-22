@@ -399,6 +399,5 @@ const decreaseTimer = () => {
 };
 
 setInterval(() => {
-  console.log(winner);
   decreaseTimer();
 }, 1000);

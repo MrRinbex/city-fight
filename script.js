@@ -83,6 +83,18 @@ function animate() {
       case 4:
         canvas.style.border = "4px dashed burlywood";
         break;
+      case 5:
+        canvas.style.border = "4px dashed #cea00b";
+        break;
+      case 6:
+        canvas.style.border = "4px dashed #20dabb";
+        break;
+      case 7:
+        canvas.style.border = "4px dashed white";
+        break;
+      case 8:
+        canvas.style.border = "4px dashed #19a6dd";
+        break;
     }
 
     context.fillStyle = "black";

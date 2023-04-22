@@ -50,6 +50,10 @@ city1.addEventListener("click", () => {
     city2.style.display = "none";
     city3.style.display = "none";
     city4.style.display = "none";
+    city5.style.display = "none";
+    city6.style.display = "none";
+    city7.style.display = "none";
+    city8.style.display = "none";
   }, 200);
 });
 
@@ -62,6 +66,10 @@ city2.addEventListener("click", () => {
     city1.style.display = "none";
     city3.style.display = "none";
     city4.style.display = "none";
+    city5.style.display = "none";
+    city6.style.display = "none";
+    city7.style.display = "none";
+    city8.style.display = "none";
   }, 200);
 });
 
@@ -74,6 +82,10 @@ city3.addEventListener("click", () => {
     city1.style.display = "none";
     city2.style.display = "none";
     city4.style.display = "none";
+    city5.style.display = "none";
+    city6.style.display = "none";
+    city7.style.display = "none";
+    city8.style.display = "none";
   }, 200);
 });
 
@@ -86,5 +98,73 @@ city4.addEventListener("click", () => {
     city1.style.display = "none";
     city2.style.display = "none";
     city3.style.display = "none";
+    city5.style.display = "none";
+    city6.style.display = "none";
+    city7.style.display = "none";
+    city8.style.display = "none";
+  }, 200);
+});
+
+city5.addEventListener("click", () => {
+  mapSet = true;
+  map = 5;
+  canvas.style.background = "url('./image/background/City5.png')";
+  canvas.style.backgroundSize = "cover";
+  setTimeout(() => {
+    city1.style.display = "none";
+    city2.style.display = "none";
+    city3.style.display = "none";
+    city4.style.display = "none";
+    city6.style.display = "none";
+    city7.style.display = "none";
+    city8.style.display = "none";
+  }, 200);
+});
+
+city6.addEventListener("click", () => {
+  mapSet = true;
+  map = 6;
+  canvas.style.background = "url('./image/background/City6.png')";
+  canvas.style.backgroundSize = "cover";
+  setTimeout(() => {
+    city1.style.display = "none";
+    city2.style.display = "none";
+    city3.style.display = "none";
+    city4.style.display = "none";
+    city5.style.display = "none";
+    city7.style.display = "none";
+    city8.style.display = "none";
+  }, 200);
+});
+
+city7.addEventListener("click", () => {
+  mapSet = true;
+  map = 7;
+  canvas.style.background = "url('./image/background/City7.png')";
+  canvas.style.backgroundSize = "cover";
+  setTimeout(() => {
+    city1.style.display = "none";
+    city2.style.display = "none";
+    city3.style.display = "none";
+    city4.style.display = "none";
+    city5.style.display = "none";
+    city6.style.display = "none";
+    city8.style.display = "none";
+  }, 200);
+});
+
+city8.addEventListener("click", () => {
+  mapSet = true;
+  map = 8;
+  canvas.style.background = "url('./image/background/City8.png')";
+  canvas.style.backgroundSize = "cover";
+  setTimeout(() => {
+    city1.style.display = "none";
+    city2.style.display = "none";
+    city3.style.display = "none";
+    city4.style.display = "none";
+    city5.style.display = "none";
+    city6.style.display = "none";
+    city7.style.display = "none";
   }, 200);
 });
