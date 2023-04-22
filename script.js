@@ -1301,9 +1301,28 @@ function animate() {
   }
 
   // Game over
-  if (gameOver) {
-    canvas.style.animation = "none";
-    canvas.style.background = "url('./image/background/background.jpg')";
+  if (gameOver && winner === "Tie Game") {
+    canvas.style.animation = "fadeIn 3s";
+    canvas.style.backgroundSize = "cover";
+    canvas.style.backgroundRepeat = "no-repeat";
+  } else if (
+    (gameOver && winner === golem_1.name) ||
+    (gameOver && winner === golem_2.name) ||
+    (gameOver && winner === golem_3.name)
+  ) {
+    canvas.style.animation = "fadeIn 3s";
+    canvas.style.background = "url('./image/background/gameOverRed.png')";
+    canvas.style.backgroundPosition = "right bottom";
+    canvas.style.backgroundRepeat = "no-repeat";
+  } else if (
+    (gameOver && winner === minotaur_1.name) ||
+    (gameOver && winner === minotaur_2.name) ||
+    (gameOver && winner === minotaur_3.name)
+  ) {
+    canvas.style.animation = "fadeIn 3s";
+    canvas.style.background = "url('./image/background/gameOverBlue.png')";
+    canvas.style.backgroundPosition = "left bottom";
+    canvas.style.backgroundRepeat = "no-repeat";
   }
 
   if (

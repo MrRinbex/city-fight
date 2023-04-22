@@ -17,6 +17,7 @@ const decreaseTimer = () => {
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = "Tie Game";
   } else if (
     (golemSkin === "golem 1" &&
       minotaurSkin === "minotaur 1" &&
@@ -32,6 +33,7 @@ const decreaseTimer = () => {
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
+    winner = golem_1.name;
   } else if (
     (golemSkin === "golem 1" &&
       minotaurSkin === "minotaur 1" &&
@@ -46,6 +48,7 @@ const decreaseTimer = () => {
     timerCount = 0;
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = minotaur_1.name;
   }
 
   if (
@@ -58,6 +61,7 @@ const decreaseTimer = () => {
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = "Tie Game";
   } else if (
     (golemSkin === "golem 1" &&
       minotaurSkin === "minotaur 1" &&
@@ -72,6 +76,7 @@ const decreaseTimer = () => {
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
+    winner = golem_1.name;
   } else if (
     (golemSkin === "golem 1" &&
       minotaurSkin === "minotaur 2" &&
@@ -86,6 +91,7 @@ const decreaseTimer = () => {
     timerCount = 0;
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = minotaur_2.name;
   }
 
   if (
@@ -98,6 +104,7 @@ const decreaseTimer = () => {
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = "Tie Game";
   } else if (
     (golemSkin === "golem 1" &&
       minotaurSkin === "minotaur 3" &&
@@ -112,6 +119,7 @@ const decreaseTimer = () => {
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
+    winner = golem_1.name;
   } else if (
     (golemSkin === "golem 1" &&
       minotaurSkin === "minotaur 3" &&
@@ -126,6 +134,7 @@ const decreaseTimer = () => {
     timerCount = 0;
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = minotaur_3.name;
   }
 
   //golem 2
@@ -139,6 +148,7 @@ const decreaseTimer = () => {
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = "Tie Game";
   } else if (
     (golemSkin === "golem 2" &&
       minotaurSkin === "minotaur 1" &&
@@ -153,6 +163,7 @@ const decreaseTimer = () => {
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
+    winner = golem_2.name;
   } else if (
     (golemSkin === "golem 2" &&
       minotaurSkin === "minotaur 1" &&
@@ -167,6 +178,7 @@ const decreaseTimer = () => {
     timerCount = 0;
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = minotaur_1.name;
   }
 
   if (
@@ -179,6 +191,7 @@ const decreaseTimer = () => {
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = "Tie Game";
   } else if (
     (golemSkin === "golem 2" &&
       minotaurSkin === "minotaur 2" &&
@@ -193,6 +206,7 @@ const decreaseTimer = () => {
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
+    winner = golem_2.name;
   } else if (
     (golemSkin === "golem 2" &&
       minotaurSkin === "minotaur 2" &&
@@ -207,6 +221,7 @@ const decreaseTimer = () => {
     timerCount = 0;
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = minotaur_2.name;
   }
 
   if (
@@ -219,6 +234,7 @@ const decreaseTimer = () => {
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = "Tie Game";
   } else if (
     (golemSkin === "golem 2" &&
       minotaurSkin === "minotaur 3" &&
@@ -233,6 +249,7 @@ const decreaseTimer = () => {
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
+    winner = golem_2.name;
   } else if (
     (golemSkin === "golem 2" &&
       minotaurSkin === "minotaur 3" &&
@@ -247,6 +264,7 @@ const decreaseTimer = () => {
     timerCount = 0;
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = minotaur_3.name;
   }
 
   //golem 3
@@ -260,6 +278,7 @@ const decreaseTimer = () => {
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = "Tie Game";
   } else if (
     (golemSkin === "golem 3" &&
       minotaurSkin === "minotaur 1" &&
@@ -274,6 +293,7 @@ const decreaseTimer = () => {
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
+    winner = golem_3.name;
   } else if (
     (golemSkin === "golem 3" &&
       minotaurSkin === "minotaur 1" &&
@@ -288,6 +308,7 @@ const decreaseTimer = () => {
     timerCount = 0;
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = minotaur_1.name;
   }
 
   if (
@@ -300,6 +321,7 @@ const decreaseTimer = () => {
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = "Tie Game";
   } else if (
     (golemSkin === "golem 3" &&
       minotaurSkin === "minotaur 2" &&
@@ -314,6 +336,7 @@ const decreaseTimer = () => {
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
+    winner = golem_3.name;
   } else if (
     (golemSkin === "golem 3" &&
       minotaurSkin === "minotaur 2" &&
@@ -328,6 +351,7 @@ const decreaseTimer = () => {
     timerCount = 0;
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = minotaur_2.name;
   }
 
   if (
@@ -340,6 +364,7 @@ const decreaseTimer = () => {
     notification.style.display = "flex";
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = "Tie Game";
   } else if (
     (golemSkin === "golem 3" &&
       minotaurSkin === "minotaur 3" &&
@@ -354,6 +379,7 @@ const decreaseTimer = () => {
     timer.innerHTML = "Game Over";
     timerCount = 0;
     gameOver = true;
+    winner = golem_3.name;
   } else if (
     (golemSkin === "golem 3" &&
       minotaurSkin === "minotaur 3" &&
@@ -368,9 +394,11 @@ const decreaseTimer = () => {
     timerCount = 0;
     timer.innerHTML = "Game Over";
     gameOver = true;
+    winner = minotaur_3.name;
   }
 };
 
 setInterval(() => {
+  console.log(winner);
   decreaseTimer();
 }, 1000);

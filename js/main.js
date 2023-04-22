@@ -80,5 +80,6 @@ let map = 0;
 let modeGame = 0;
 let golemReady = false;
 let minotaurReady = false;
+let winner = "";
 let gravity = 0.002;
 setTimeout(() => (gravity = 0.1), 2000);
