@@ -1,5 +1,4 @@
 // timer function with display text and game over conditions
-let timerCount = 60;
 const decreaseTimer = () => {
   if (timerCount > 0 && gameStart) {
     timerCount--;

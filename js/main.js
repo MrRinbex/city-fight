@@ -11,6 +11,7 @@ const mapsContainer = document.querySelector("#maps-container");
 const hiddenContainer = document.querySelector("#hidden-container");
 const textDisplay = document.querySelector(".text-display");
 
+// City
 const city1 = document.querySelector("#city1");
 const city2 = document.querySelector("#city2");
 const city3 = document.querySelector("#city3");
@@ -20,6 +21,7 @@ const city6 = document.querySelector("#city6");
 const city7 = document.querySelector("#city7");
 const city8 = document.querySelector("#city8");
 
+// Fighter Selection
 const golem1 = document.querySelector(".golem-fighter-1");
 const golem2 = document.querySelector(".golem-fighter-2");
 const golem3 = document.querySelector(".golem-fighter-3");
@@ -27,6 +29,7 @@ const minotaur1 = document.querySelector(".minotaur-fighter-1");
 const minotaur2 = document.querySelector(".minotaur-fighter-2");
 const minotaur3 = document.querySelector(".minotaur-fighter-3");
 
+// right and left Sliders
 const rightSlide = document.querySelector(".right-side");
 const leftSlide = document.querySelector(".left-side");
 
@@ -61,9 +64,11 @@ const heartRed3 = document.querySelector(".heart-red-3");
 const heartRed4 = document.querySelector(".heart-red-4");
 const heartRed5 = document.querySelector(".heart-red-5");
 
+// canvas
 const containerCanvas = document.querySelector(".container-canvas");
 const entranceContainer = document.querySelector(".entrance-container");
 
+// Entrance
 const fighterVsFighter = document.querySelector("#fighter-vs-fighter");
 const teamVsTeam = document.querySelector("#team-vs-team");
 const startBtn = document.querySelector("#go");
@@ -84,6 +89,7 @@ let map = 0;
 let modeGame = 0;
 let golemReady = false;
 let minotaurReady = false;
+let timerCount = 60;
 let winner = "";
 let gravity = 0.002;
 setTimeout(() => (gravity = 0.1), 2000);
