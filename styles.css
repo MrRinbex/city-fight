@@ -17,6 +17,7 @@ body {
   flex-direction: column;
   height: 86vh;
   width: 20vw;
+  margin-right: 1%;
 }
 
 #golem-static {
@@ -147,6 +148,7 @@ body {
   flex-direction: column;
   height: 86vh;
   width: 20vw;
+  margin-left: 1%;
 }
 
 #minotaur-static {

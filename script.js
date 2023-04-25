@@ -1,12 +1,62 @@
+mapModeTeamSelected = [city1, city2, city3, city4, city5, city6, city7, city8];
+
 function animate() {
   window.requestAnimationFrame(animate);
 
+  checkGolem();
+  checkMinotaur();
+
+  // Mode game Teams
+  if (modeGame === 2) {
+    hiddenContainer.style.display = "none";
+    golemProfile.style.display = "none";
+    minotaurProfile.style.display = "none";
+    rightSlide.style.display = "flex";
+    leftSlide.style.display = "flex";
+  }
+
+  if (modeGame === 2 && mapModeTeam.length === 3) {
+    startBtn.style.display = "flex";
+    teamVsTeam.style.display = "none";
+    fighterVsFighter.style.display = "none";
+    textDisplay.innerHTML = "Click START!";
+    canvas.style.background = mapModeTeam[0];
+    canvas.style.backgroundSize = "cover";
+    city1.style.display = "none";
+    city2.style.display = "none";
+    city3.style.display = "none";
+    city4.style.display = "none";
+    city5.style.display = "none";
+    city6.style.display = "none";
+    city7.style.display = "none";
+    city8.style.display = "none";
+
+    const cityPicked = mapModeTeamSelected.filter((city) => {
+      return city.innerText === "X";
+    });
+    cityPicked.map((city) => {
+      return (city.style.display = "flex");
+    });
+
+    if (golem_1.health <= 0 || minotaur_1.health <= 0) {
+      notification.style.display = "none";
+      canvas.style.background = mapModeTeam[1];
+      canvas.style.backgroundSize = "cover";
+    }
+    if (golem_2.health <= 0 || minotaur_2.health <= 0) {
+      notification.style.display = "none";
+      canvas.style.background = mapModeTeam[2];
+      canvas.style.backgroundSize = "cover";
+    }
+  }
+
   //Entrance manipulation
-  if (modeGame > 0) {
+  if (modeGame === 1) {
     hiddenContainer.style.display = "none";
     rightSlide.style.display = "flex";
     leftSlide.style.display = "flex";
   }
+
   if (modeGame === 1 && golemReady && minotaurReady && mapSet) {
     minotaur1.style.display = "none";
     minotaur2.style.display = "none";
@@ -14,9 +64,6 @@ function animate() {
     golem1.style.display = "none";
     golem2.style.display = "none";
     golem3.style.display = "none";
-  }
-
-  if (golemReady && minotaurReady && mapSet) {
     startBtn.style.display = "flex";
     teamVsTeam.style.display = "none";
     fighterVsFighter.style.display = "none";
@@ -70,30 +117,37 @@ function animate() {
     setTimeout(() => (startEffect = false), 2000);
     entranceContainer.style.display = "none";
 
+    if (modeGame === 2) {
+      canvas.style.borderTop = "4px dashed black";
+      canvas.style.borderLeft = "4px dashed blue";
+      canvas.style.borderRight = "4px dashed red";
+      canvas.style.borderBottom = "4px dashed black";
+    }
+
     switch (map) {
       case 1:
-        canvas.style.border = "4px dashed green";
+        canvas.style.outline = "4px dashed green";
         break;
       case 2:
-        canvas.style.border = "4px dashed goldenrod";
+        canvas.style.outline = "4px dashed goldenrod";
         break;
       case 3:
-        canvas.style.border = "4px dashed palevioletred";
+        canvas.style.outline = "4px dashed palevioletred";
         break;
       case 4:
-        canvas.style.border = "4px dashed burlywood";
+        canvas.style.outline = "4px dashed burlywood";
         break;
       case 5:
-        canvas.style.border = "4px dashed #cea00b";
+        canvas.style.outline = "4px dashed #cea00b";
         break;
       case 6:
-        canvas.style.border = "4px dashed #20dabb";
+        canvas.style.outline = "4px dashed #20dabb";
         break;
       case 7:
-        canvas.style.border = "4px dashed white";
+        canvas.style.outline = "4px dashed white";
         break;
       case 8:
-        canvas.style.border = "4px dashed #19a6dd";
+        canvas.style.outline = "4px dashed #19a6dd";
         break;
     }
 

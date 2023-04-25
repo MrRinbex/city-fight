@@ -149,27 +149,54 @@ const minotaur_3 = new Fighter({
 });
 
 // Minotaur Event Click
-minotaur1.addEventListener("click", () => {
-  minotaurReady = true;
-  minotaurSkin = "minotaur 1";
-  minotaur1.style.backgroundColor = "red";
-  minotaur2.style.backgroundColor = "black";
-  minotaur3.style.backgroundColor = "black";
-  selectedImageMinotaur.style.backgroundImage = minotaur_1.imageURL;
-});
-minotaur2.addEventListener("click", () => {
-  minotaurReady = true;
-  minotaurSkin = "minotaur 2";
-  minotaur1.style.backgroundColor = "black";
-  minotaur2.style.backgroundColor = "red";
-  minotaur3.style.backgroundColor = "black";
-  selectedImageMinotaur.style.backgroundImage = minotaur_2.imageURL;
-});
-minotaur3.addEventListener("click", () => {
-  minotaurReady = true;
-  minotaurSkin = "minotaur 3";
-  minotaur1.style.backgroundColor = "black";
-  minotaur2.style.backgroundColor = "black";
-  minotaur3.style.backgroundColor = "red";
-  selectedImageMinotaur.style.backgroundImage = minotaur_3.imageURL;
-});
+function checkMinotaur() {
+  if (modeGame === 1) {
+    minotaur1.addEventListener("click", () => {
+      minotaurReady = true;
+      minotaurSkin = "minotaur 1";
+      minotaur1.style.backgroundColor = "red";
+      minotaur2.style.backgroundColor = "black";
+      minotaur3.style.backgroundColor = "black";
+      selectedImageMinotaur.style.backgroundImage = minotaur_1.imageURL;
+    });
+    minotaur2.addEventListener("click", () => {
+      minotaurReady = true;
+      minotaurSkin = "minotaur 2";
+      minotaur1.style.backgroundColor = "black";
+      minotaur2.style.backgroundColor = "red";
+      minotaur3.style.backgroundColor = "black";
+      selectedImageMinotaur.style.backgroundImage = minotaur_2.imageURL;
+    });
+    minotaur3.addEventListener("click", () => {
+      minotaurReady = true;
+      minotaurSkin = "minotaur 3";
+      minotaur1.style.backgroundColor = "black";
+      minotaur2.style.backgroundColor = "black";
+      minotaur3.style.backgroundColor = "red";
+      selectedImageMinotaur.style.backgroundImage = minotaur_3.imageURL;
+    });
+  }
+  if (modeGame === 2) {
+    minotaurSkin = "minotaur 1";
+    minotaurReady = true;
+    minotaur1.style.backgroundColor = "red";
+    minotaur2.style.backgroundColor = "black";
+    minotaur3.style.backgroundColor = "black";
+
+    if (minotaur_1.health <= 0) {
+      minotaurSkin = "minotaur 2";
+      minotaurReady = true;
+      minotaur1.style.backgroundColor = "black";
+      minotaur2.style.backgroundColor = "red";
+      minotaur3.style.backgroundColor = "black";
+    }
+
+    if (minotaur_2.health <= 0) {
+      minotaurSkin = "minotaur 3";
+      minotaurReady = true;
+      minotaur1.style.backgroundColor = "black";
+      minotaur2.style.backgroundColor = "black";
+      minotaur3.style.backgroundColor = "red";
+    }
+  }
+}

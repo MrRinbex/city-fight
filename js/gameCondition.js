@@ -396,7 +396,17 @@ const decreaseTimer = () => {
     winner = minotaur_3.name;
   }
 };
-
+mapModeTeamSelected = [
+  city1.innerText,
+  city2,
+  city3,
+  city4,
+  city5,
+  city6,
+  city7,
+  city8,
+];
 setInterval(() => {
+  // console.log(mapModeTeamSelected);
   decreaseTimer();
 }, 1000);
