@@ -506,7 +506,7 @@ canvas {
   height: 300%;
   width: 100%;
   background-color: #000;
-  bottom: -120%;
+  bottom: -110%;
 }
 
 .maps {
@@ -533,56 +533,56 @@ canvas {
   background: url(./image/background/City1.png);
   background-size: contain;
   background-repeat: repeat-x;
-  border: dashed green;
+  outline: dashed green;
 }
 
 #city2 {
   background: url(./image/background/City2.png);
   background-size: contain;
   background-repeat: repeat-x;
-  border: dashed goldenrod;
+  outline: dashed goldenrod;
 }
 
 #city3 {
   background: url(./image/background/City3.png);
   background-size: contain;
   background-repeat: repeat-x;
-  border: dashed palevioletred;
+  outline: dashed palevioletred;
 }
 
 #city4 {
   background: url(./image/background/City4.png);
   background-size: contain;
   background-repeat: repeat-x;
-  border: dashed burlywood;
+  outline: dashed burlywood;
 }
 
 #city5 {
   background: url(./image/background/City5.png);
   background-size: contain;
   background-repeat: repeat-x;
-  border: dashed #cea00b;
+  outline: dashed #cea00b;
 }
 
 #city6 {
   background: url(./image/background/City6.png);
   background-size: contain;
   background-repeat: repeat-x;
-  border: dashed #20dabb;
+  outline: dashed #20dabb;
 }
 
 #city7 {
   background: url(./image/background/City7.png);
   background-size: contain;
   background-repeat: repeat-x;
-  border: dashed #ffffff;
+  outline: dashed #ffffff;
 }
 
 #city8 {
   background: url(./image/background/City8.png);
   background-size: contain;
   background-repeat: repeat-x;
-  border: dashed #19a6dd;
+  outline: dashed #19a6dd;
 }
 
 @keyframes blink {
