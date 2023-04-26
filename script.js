@@ -48,6 +48,36 @@ function animate() {
       canvas.style.background = mapModeTeam[2];
       canvas.style.backgroundSize = "cover";
     }
+
+    if (
+      (timerCount === 0 && TeamGolemPoints < TeamMinotaurPoints) ||
+      (timerCount === 0 && golem_1.health < minotaur_1.health) ||
+      golem_3.health <= 0
+    ) {
+      notification.style.display = "flex";
+      notification.innerHTML = `Team Minotaur The Winner`;
+      gameOver = true;
+      winner = "Team Minotaur";
+      canvas.style.animation = "fadeIn 3s";
+      canvas.style.background = "url('./image/background/gameOverBlue.png')";
+      canvas.style.backgroundPosition = "left bottom";
+      canvas.style.backgroundRepeat = "no-repeat";
+    }
+
+    if (
+      (timerCount === 0 && TeamGolemPoints > TeamMinotaurPoints) ||
+      (timerCount === 0 && golem_1.health > minotaur_1.health) ||
+      minotaur_3.health <= 0
+    ) {
+      notification.style.display = "flex";
+      notification.innerHTML = `Team Golem The Winner`;
+      gameOver = true;
+      winner = "Team Golem";
+      canvas.style.animation = "fadeIn 3s";
+      canvas.style.background = "url('./image/background/gameOverRed.png')";
+      canvas.style.backgroundPosition = "right bottom";
+      canvas.style.backgroundRepeat = "no-repeat";
+    }
   }
 
   //Entrance manipulation
@@ -159,16 +189,20 @@ function animate() {
       golem_1.update();
     } else if (golemSkin === "golem 2") {
       golem_2.update();
+      TeamMinotaurPoints = 1;
     } else if (golemSkin === "golem 3") {
       golem_3.update();
+      TeamMinotaurPoints = 2;
     }
 
     if (minotaurSkin === "minotaur 1") {
       minotaur_1.update();
     } else if (minotaurSkin === "minotaur 2") {
       minotaur_2.update();
+      TeamGolemPoints = 1;
     } else if (minotaurSkin === "minotaur 3") {
       minotaur_3.update();
+      TeamGolemPoints = 2;
     }
   }
 

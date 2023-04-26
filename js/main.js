@@ -94,4 +94,6 @@ let minotaurReady = false;
 let timerCount = 120;
 let winner = "";
 let gravity = 0.002;
+let TeamGolemPoints = 0;
+let TeamMinotaurPoints = 0;
 setTimeout(() => (gravity = 0.1), 2000);
