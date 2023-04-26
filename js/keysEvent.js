@@ -35,6 +35,7 @@ window.addEventListener("keydown", (e) => {
 
         break;
       case "z":
+        playJumpEffect1();
         if (golem_1.velocity.y === 0 && golemSkin === "golem 1") {
           golem_1.velocity.y = -7;
         }
@@ -46,6 +47,7 @@ window.addEventListener("keydown", (e) => {
         }
         break;
       case "s":
+        playPunchEffect1();
         if (golemSkin === "golem 1") {
           golem_1.isAttacking = true;
         }
@@ -90,6 +92,7 @@ window.addEventListener("keydown", (e) => {
         }
         break;
       case "ArrowUp":
+        playJumpEffect2();
         if (minotaur_1.velocity.y === 0 && minotaurSkin === "minotaur 1") {
           minotaur_1.velocity.y = -7;
         }
@@ -101,6 +104,7 @@ window.addEventListener("keydown", (e) => {
         }
         break;
       case "ArrowDown":
+        playPunchEffect2();
         keys.ArrowDown.pressed = true;
         if (minotaurSkin === "minotaur 1") {
           minotaur_1.isAttacking = true;

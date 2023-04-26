@@ -4,7 +4,7 @@ let minotaurSkin = "";
 const minotaur_1 = new Fighter({
   position: {
     x: (canvas.width * 60) / 100,
-    y: 150,
+    y: 50,
   },
   velocity: {
     x: 0,
@@ -53,7 +53,7 @@ const minotaur_1 = new Fighter({
 const minotaur_2 = new Fighter({
   position: {
     x: (canvas.width * 60) / 100,
-    y: 150,
+    y: 50,
   },
   velocity: {
     x: 0,
@@ -102,7 +102,7 @@ const minotaur_2 = new Fighter({
 const minotaur_3 = new Fighter({
   position: {
     x: (canvas.width * 60) / 100,
-    y: 150,
+    y: 50,
   },
   velocity: {
     x: 0,
@@ -152,6 +152,7 @@ const minotaur_3 = new Fighter({
 function checkMinotaur() {
   if (modeGame === 1) {
     minotaur1.addEventListener("click", () => {
+      playSelectFighter();
       minotaurReady = true;
       minotaurSkin = "minotaur 1";
       minotaur1.style.backgroundColor = "red";
@@ -160,6 +161,7 @@ function checkMinotaur() {
       selectedImageMinotaur.style.backgroundImage = minotaur_1.imageURL;
     });
     minotaur2.addEventListener("click", () => {
+      playSelectFighter();
       minotaurReady = true;
       minotaurSkin = "minotaur 2";
       minotaur1.style.backgroundColor = "black";
@@ -168,6 +170,7 @@ function checkMinotaur() {
       selectedImageMinotaur.style.backgroundImage = minotaur_2.imageURL;
     });
     minotaur3.addEventListener("click", () => {
+      playSelectFighter();
       minotaurReady = true;
       minotaurSkin = "minotaur 3";
       minotaur1.style.backgroundColor = "black";

@@ -4,7 +4,7 @@ let golemSkin = "";
 const golem_1 = new Fighter({
   position: {
     x: 50,
-    y: 150,
+    y: 50,
   },
   velocity: {
     x: 0,
@@ -53,7 +53,7 @@ const golem_1 = new Fighter({
 const golem_2 = new Fighter({
   position: {
     x: 50,
-    y: 150,
+    y: 50,
   },
   velocity: {
     x: 0,
@@ -102,7 +102,7 @@ const golem_2 = new Fighter({
 const golem_3 = new Fighter({
   position: {
     x: 50,
-    y: 150,
+    y: 50,
   },
   velocity: {
     x: 0,
@@ -152,6 +152,7 @@ const golem_3 = new Fighter({
 function checkGolem() {
   if (modeGame === 1) {
     golem1.addEventListener("click", () => {
+      playSelectFighter();
       golemSkin = "golem 1";
       golemReady = true;
       golem1.style.backgroundColor = "blue";
@@ -160,6 +161,7 @@ function checkGolem() {
       selectedImageGolem.style.backgroundImage = golem_1.imageURL;
     });
     golem2.addEventListener("click", () => {
+      playSelectFighter();
       golemSkin = "golem 2";
       golemReady = true;
       golem1.style.backgroundColor = "black";
@@ -168,6 +170,7 @@ function checkGolem() {
       selectedImageGolem.style.backgroundImage = golem_2.imageURL;
     });
     golem3.addEventListener("click", () => {
+      playSelectFighter();
       golemSkin = "golem 3";
       golemReady = true;
       golem1.style.backgroundColor = "black";

@@ -34,6 +34,7 @@ function animate() {
     const cityPicked = mapModeTeamSelected.filter((city) => {
       return city.innerText === "X";
     });
+
     cityPicked.map((city) => {
       return (
         (city.style.display = "flex"),
@@ -460,6 +461,7 @@ function animate() {
     minotaurSkin === "minotaur 1" &&
     (golem_1.dirX === 1 || golem_1.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       golem_1.isAttacking = false;
     }, 100);
@@ -513,6 +515,7 @@ function animate() {
     minotaurSkin === "minotaur 2" &&
     (golem_1.dirX === 1 || golem_1.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       golem_1.isAttacking = false;
     }, 100);
@@ -566,6 +569,7 @@ function animate() {
     minotaurSkin === "minotaur 3" &&
     (golem_1.dirX === 1 || golem_1.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       golem_1.isAttacking = false;
     }, 100);
@@ -619,6 +623,7 @@ function animate() {
     minotaurSkin === "minotaur 1" &&
     (golem_2.dirX === 1 || golem_2.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       golem_2.isAttacking = false;
     }, 100);
@@ -672,6 +677,7 @@ function animate() {
     minotaurSkin === "minotaur 2" &&
     (golem_2.dirX === 1 || golem_2.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       golem_2.isAttacking = false;
     }, 100);
@@ -725,6 +731,7 @@ function animate() {
     minotaurSkin === "minotaur 3" &&
     (golem_2.dirX === 1 || golem_2.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       golem_2.isAttacking = false;
     }, 100);
@@ -778,6 +785,7 @@ function animate() {
     minotaurSkin === "minotaur 1" &&
     (golem_3.dirX === 1 || golem_3.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       golem_3.isAttacking = false;
     }, 100);
@@ -831,6 +839,7 @@ function animate() {
     minotaurSkin === "minotaur 2" &&
     (golem_3.dirX === 1 || golem_3.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       golem_3.isAttacking = false;
     }, 100);
@@ -884,6 +893,7 @@ function animate() {
     minotaurSkin === "minotaur 3" &&
     (golem_3.dirX === 1 || golem_3.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       golem_3.isAttacking = false;
     }, 100);
@@ -938,6 +948,7 @@ function animate() {
     minotaur_1.isAttacking &&
     (minotaur_1.dirX === 1 || minotaur_1.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       minotaur_1.isAttacking = false;
     }, 100);
@@ -991,6 +1002,7 @@ function animate() {
     minotaur_2.isAttacking &&
     (minotaur_2.dirX === 1 || minotaur_2.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       minotaur_2.isAttacking = false;
     }, 100);
@@ -1044,6 +1056,7 @@ function animate() {
     minotaur_3.isAttacking &&
     (minotaur_3.dirX === 1 || minotaur_3.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       minotaur_3.isAttacking = false;
     }, 100);
@@ -1097,6 +1110,7 @@ function animate() {
     minotaur_1.isAttacking &&
     (minotaur_1.dirX === 1 || minotaur_1.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       minotaur_1.isAttacking = false;
     }, 100);
@@ -1150,6 +1164,7 @@ function animate() {
     minotaur_2.isAttacking &&
     (minotaur_2.dirX === 1 || minotaur_2.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       minotaur_2.isAttacking = false;
     }, 100);
@@ -1203,6 +1218,7 @@ function animate() {
     minotaur_3.isAttacking &&
     (minotaur_3.dirX === 1 || minotaur_3.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       minotaur_3.isAttacking = false;
     }, 100);
@@ -1256,6 +1272,7 @@ function animate() {
     minotaur_1.isAttacking &&
     (minotaur_1.dirX === 1 || minotaur_1.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       minotaur_1.isAttacking = false;
     }, 100);
@@ -1309,6 +1326,7 @@ function animate() {
     minotaur_2.isAttacking &&
     (minotaur_2.dirX === 1 || minotaur_2.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       minotaur_2.isAttacking = false;
     }, 100);
@@ -1362,6 +1380,7 @@ function animate() {
     minotaur_3.isAttacking &&
     (minotaur_3.dirX === 1 || minotaur_3.dirX === -1)
   ) {
+    playGettingHitEffect();
     setTimeout(() => {
       minotaur_3.isAttacking = false;
     }, 100);
@@ -1572,6 +1591,15 @@ function animate() {
     minotaur_3.health > golem_3.health
   ) {
     golem_3.image = golem_3.sprites.death.image;
+  }
+
+  // audio game over play and pause
+  if (gameOver) {
+    playGameOver();
+    setTimeout(() => (stopAudio = true), 2000);
+  }
+  if (gameOver && stopAudio) {
+    stopGameOver();
   }
 }
 animate();

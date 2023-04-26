@@ -1,5 +1,6 @@
 // Mode Game event
 fighterVsFighter.addEventListener("click", () => {
+  playClickEffect();
   modeGame = 1;
   setTimeout(() => {
     teamVsTeam.style.display = "none";
@@ -15,6 +16,7 @@ fighterVsFighter.addEventListener("click", () => {
 });
 
 teamVsTeam.addEventListener("click", () => {
+  playClickEffect();
   modeGame = 2;
   setTimeout(() => {
     fighterVsFighter.style.display = "none";
@@ -29,6 +31,7 @@ teamVsTeam.addEventListener("click", () => {
 });
 
 startBtn.addEventListener("click", () => {
+  playClickStart();
   textDisplay.style.display = "none";
   setTimeout(() => {
     startBtn.innerHTML = "3";
@@ -44,11 +47,13 @@ startBtn.addEventListener("click", () => {
   }, 4000);
   setTimeout(() => {
     gameStart = true;
+    playStartEffect();
   }, 4500);
 });
 
 // Maps event
 city1.addEventListener("click", () => {
+  playClickEffect1();
   if (modeGame === 1) {
     map = 1;
     mapSet = true;
@@ -72,6 +77,7 @@ city1.addEventListener("click", () => {
 });
 
 city2.addEventListener("click", () => {
+  playClickEffect2();
   if (modeGame === 1) {
     map = 2;
     mapSet = true;
@@ -95,6 +101,7 @@ city2.addEventListener("click", () => {
 });
 
 city3.addEventListener("click", () => {
+  playClickEffect3();
   if (modeGame === 1) {
     map = 3;
     mapSet = true;
@@ -118,6 +125,7 @@ city3.addEventListener("click", () => {
 });
 
 city4.addEventListener("click", () => {
+  playClickEffect4();
   if (modeGame === 1) {
     map = 4;
     mapSet = true;
@@ -141,6 +149,7 @@ city4.addEventListener("click", () => {
 });
 
 city5.addEventListener("click", () => {
+  playClickEffect5();
   if (modeGame === 1) {
     map = 5;
     mapSet = true;
@@ -164,6 +173,7 @@ city5.addEventListener("click", () => {
 });
 
 city6.addEventListener("click", () => {
+  playClickEffect6();
   if (modeGame === 1) {
     map = 6;
     mapSet = true;
@@ -187,6 +197,7 @@ city6.addEventListener("click", () => {
 });
 
 city7.addEventListener("click", () => {
+  playClickEffect7();
   if (modeGame === 1) {
     map = 7;
     mapSet = true;
@@ -210,6 +221,7 @@ city7.addEventListener("click", () => {
 });
 
 city8.addEventListener("click", () => {
+  playClickEffect8();
   if (modeGame === 1) {
     map = 8;
     mapSet = true;
