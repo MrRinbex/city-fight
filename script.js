@@ -35,7 +35,10 @@ function animate() {
       return city.innerText === "X";
     });
     cityPicked.map((city) => {
-      return (city.style.display = "flex");
+      return (
+        (city.style.display = "flex"),
+        (city.style.animation = "blink 9s infinite")
+      );
     });
 
     if (golem_1.health <= 0 || minotaur_1.health <= 0) {
@@ -56,6 +59,7 @@ function animate() {
     ) {
       notification.style.display = "flex";
       notification.innerHTML = `Team Minotaur The Winner`;
+      notification.style.animation = "blinkRed 1s infinite";
       gameOver = true;
       winner = "Team Minotaur";
       canvas.style.animation = "fadeIn 3s";
@@ -71,6 +75,7 @@ function animate() {
     ) {
       notification.style.display = "flex";
       notification.innerHTML = `Team Golem The Winner`;
+      notification.style.animation = "blinkBlue 1s infinite";
       gameOver = true;
       winner = "Team Golem";
       canvas.style.animation = "fadeIn 3s";
