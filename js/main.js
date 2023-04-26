@@ -97,4 +97,4 @@ let gravity = 0.002;
 let TeamGolemPoints = 0;
 let TeamMinotaurPoints = 0;
 let stopAudio = false;
-setTimeout(() => (gravity = 0.1), 2000);
+setTimeout(() => (gravity = 0.2), 2000);

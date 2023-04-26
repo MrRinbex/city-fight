@@ -247,7 +247,7 @@ function animate() {
     golem_1.lastKey === "d" &&
     golem_1.position.x + golem_1.width <= canvas.width
   ) {
-    golem_1.velocity.x = 1.5;
+    golem_1.velocity.x = 2.5;
     golem_1.image = golem_1.sprites.walk.image;
   } else if (
     golemSkin === "golem 1" &&
@@ -255,7 +255,7 @@ function animate() {
     golem_1.lastKey === "q" &&
     golem_1.position.x >= 10
   ) {
-    golem_1.velocity.x = -1.5;
+    golem_1.velocity.x = -2.5;
     golem_1.image = golem_1.sprites.walk.image;
   }
 
@@ -265,7 +265,7 @@ function animate() {
     golem_2.lastKey === "d" &&
     golem_2.position.x + golem_2.width <= canvas.width
   ) {
-    golem_2.velocity.x = 1.5;
+    golem_2.velocity.x = 2.5;
     golem_2.image = golem_2.sprites.walk.image;
   } else if (
     golemSkin === "golem 2" &&
@@ -273,7 +273,7 @@ function animate() {
     golem_2.lastKey === "q" &&
     golem_2.position.x >= 10
   ) {
-    golem_2.velocity.x = -1.5;
+    golem_2.velocity.x = -2.5;
     golem_2.image = golem_2.sprites.walk.image;
   }
 
@@ -283,7 +283,7 @@ function animate() {
     golem_3.lastKey === "d" &&
     golem_3.position.x + golem_3.width <= canvas.width
   ) {
-    golem_3.velocity.x = 1.5;
+    golem_3.velocity.x = 2.5;
     golem_3.image = golem_3.sprites.walk.image;
   } else if (
     golemSkin === "golem 3" &&
@@ -291,7 +291,7 @@ function animate() {
     golem_3.lastKey === "q" &&
     golem_3.position.x >= 10
   ) {
-    golem_3.velocity.x = -1.5;
+    golem_3.velocity.x = -2.5;
     golem_3.image = golem_3.sprites.walk.image;
   }
 
@@ -360,7 +360,7 @@ function animate() {
     minotaur_1.lastKey === "ArrowRight" &&
     minotaur_1.position.x + minotaur_1.width <= canvas.width
   ) {
-    minotaur_1.velocity.x = 1.5;
+    minotaur_1.velocity.x = 2.5;
     minotaur_1.image = minotaur_1.sprites.walk.image;
   } else if (
     minotaurSkin === "minotaur 1" &&
@@ -368,7 +368,7 @@ function animate() {
     minotaur_1.lastKey === "ArrowLeft" &&
     minotaur_1.position.x >= 0
   ) {
-    minotaur_1.velocity.x = -1.5;
+    minotaur_1.velocity.x = -2.5;
     minotaur_1.image = minotaur_1.sprites.walk.image;
   }
 
@@ -378,7 +378,7 @@ function animate() {
     minotaur_2.lastKey === "ArrowRight" &&
     minotaur_2.position.x + minotaur_2.width <= canvas.width
   ) {
-    minotaur_2.velocity.x = 1.5;
+    minotaur_2.velocity.x = 2.5;
     minotaur_2.image = minotaur_2.sprites.walk.image;
   } else if (
     minotaurSkin === "minotaur 2" &&
@@ -386,7 +386,7 @@ function animate() {
     minotaur_2.lastKey === "ArrowLeft" &&
     minotaur_2.position.x >= 0
   ) {
-    minotaur_2.velocity.x = -1.5;
+    minotaur_2.velocity.x = -2.5;
     minotaur_2.image = minotaur_2.sprites.walk.image;
   }
 
@@ -396,7 +396,7 @@ function animate() {
     minotaur_3.lastKey === "ArrowRight" &&
     minotaur_3.position.x + minotaur_3.width <= canvas.width
   ) {
-    minotaur_3.velocity.x = 1.5;
+    minotaur_3.velocity.x = 2.5;
     minotaur_3.image = minotaur_3.sprites.walk.image;
   } else if (
     minotaurSkin === "minotaur 3" &&
@@ -404,7 +404,7 @@ function animate() {
     minotaur_3.lastKey === "ArrowLeft" &&
     minotaur_3.position.x >= 0
   ) {
-    minotaur_3.velocity.x = -1.5;
+    minotaur_3.velocity.x = -2.5;
     minotaur_3.image = minotaur_3.sprites.walk.image;
   }
 
